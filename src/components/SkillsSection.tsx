@@ -1,126 +1,299 @@
-import { Progress } from "@/components/ui/progress";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { 
+  Code2, 
+  Database, 
+  Cloud, 
+  Smartphone, 
+  Globe, 
+  Zap,
+  Rocket,
+  Star,
+  Heart,
+  Coffee,
+  Download,
+  Users,
+  Award
+} from "lucide-react";
 
-const skills = [
-  { name: "JavaScript / TypeScript", level: 80, color: "from-yellow-400 to-orange-500" },
-  { name: "PHP / MySQL", level: 90, color: "from-purple-400 to-blue-500" },
-  { name: "React", level: 85, color: "from-blue-400 to-cyan-500" },
-  { name: "Node.js / MongoDB", level: 70, color: "from-green-400 to-emerald-500" },
-  { name: "Vue", level: 65, color: "from-green-300 to-teal-500" },
-  { name: "Python", level: 50, color: "from-blue-300 to-indigo-500" },
+const skillCategories = [
+  {
+    title: "Frontend Development",
+    icon: Globe,
+    skills: ["JavaScript", "TypeScript", "React", "Next.js", "Vue.js", "HTML5", "CSS3", "Tailwind"],
+    color: "text-primary",
+    delay: "0.1s"
+  },
+  {
+    title: "Backend Development", 
+    icon: Database,
+    skills: ["PHP", "Laravel", "Node.js", "Express.js", "Python", "C++", "RESTful APIs"],
+    color: "text-secondary",
+    delay: "0.2s"
+  },
+  {
+    title: "Database & Cloud",
+    icon: Cloud,
+    skills: ["MySQL", "MongoDB", "Docker", "Kubernetes", "Azure", "AWS", "DevOps"],
+    color: "text-accent",
+    delay: "0.3s"
+  },
+  {
+    title: "Mobile & IoT",
+    icon: Smartphone,
+    skills: ["React Native", "IoT Development", "FreeRTOS", "Embedded Systems", "Socket.IO"],
+    color: "text-primary",
+    delay: "0.4s"
+  }
 ];
 
-const technologies = [
-  "Laravel", "Next.js", "Redux", "Express.js", "Koa", "Mongoose",
-  "Docker", "Kubernetes", "Azure", "AWS", "Webpack", "TypeScript",
-  "C++", "IoT", "FreeRTOS", "Socket.IO", "Git", "DevOps"
+const achievements = [
+  {
+    icon: Download,
+    title: "1.2k+ Weekly Downloads",
+    description: "react-read-otp NPM package",
+    stat: "1,200+",
+    color: "text-primary"
+  },
+  {
+    icon: Users,
+    title: "Open Source Projects",
+    description: "Contributing to developer community",
+    stat: "10+",
+    color: "text-secondary"
+  },
+  {
+    icon: Coffee,
+    title: "Years of Experience",
+    description: "Building scalable solutions",
+    stat: "8+",
+    color: "text-accent"
+  },
+  {
+    icon: Rocket,
+    title: "Projects Delivered",
+    description: "From startups to enterprise",
+    stat: "50+",
+    color: "text-primary"
+  }
 ];
 
-const frameworks = [
-  { name: "Laravel", description: "Favorite PHP framework with 5+ years experience" },
-  { name: "React & Next.js", description: "Preferred frontend with functional components" },
-  { name: "Node.js", description: "4 years backend development experience" },
-  { name: "TypeScript", description: "Most favorite language for the last 2 years" },
+const philosophy = [
+  {
+    quote: "Love to code.",
+    description: "Passion drives perfection in every line of code",
+    icon: Heart
+  },
+  {
+    quote: "Degree don't define skills.",
+    description: "Self-taught excellence through dedication and continuous learning",
+    icon: Award
+  },
+  {
+    quote: "Always learning, always growing.",
+    description: "Embracing new technologies and connecting with people",
+    icon: Star
+  }
+];
+
+const featuredProjects = [
+  {
+    name: "YACS",
+    description: "Anonymous chat platform - Connect without sharing contacts",
+    tech: ["React", "Node.js", "Socket.IO", "MongoDB"],
+    type: "Web Application",
+    status: "Live",
+    icon: Zap
+  },
+  {
+    name: "react-read-otp",
+    description: "Popular React OTP input component for TypeScript",
+    tech: ["React", "TypeScript", "NPM"],
+    type: "Open Source",
+    status: "1.2k+ downloads/week",
+    icon: Code2
+  },
+  {
+    name: "truecaller-php-sdk",
+    description: "Unofficial Truecaller authentication SDK for PHP & Laravel",
+    tech: ["PHP", "Laravel", "API Integration"],
+    type: "SDK",
+    status: "Active",
+    icon: Globe
+  }
 ];
 
 const SkillsSection = () => {
   return (
-    <section id="skills" className="py-20 relative">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text">
+    <section id="skills" className="py-20 relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/20 rounded-full blur-3xl animate-float" style={{animationDelay: '3s'}}></div>
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="text-center mb-16 animate-fade-in">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text animate-gradient">
             Skills & Expertise
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical skills and experience across various technologies
+            A passionate developer's journey through technology, innovation, and continuous learning
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
-          {/* Skill Levels */}
-          <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-primary flex items-center">
-                <div className="w-2 h-8 bg-gradient-to-b from-primary to-secondary rounded-full mr-3"></div>
-                Programming Proficiency
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              {skills.map((skill, index) => (
-                <div key={skill.name} className="space-y-2">
-                  <div className="flex justify-between items-center">
-                    <span className="font-medium text-foreground">{skill.name}</span>
-                    <span className="text-sm text-primary font-bold">{skill.level}%</span>
+        {/* Philosophy Cards */}
+        <div className="mb-20">
+          <h3 className="text-2xl font-bold text-center mb-8 text-shimmer">Development Philosophy</h3>
+          <div className="grid md:grid-cols-3 gap-6">
+            {philosophy.map((item, index) => (
+              <div 
+                key={index}
+                className="stagger-item glass-effect rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover-lift group"
+              >
+                <div className="text-center">
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center group-hover:animate-wiggle">
+                    <item.icon className="h-8 w-8 text-white" />
                   </div>
-                  <Progress 
-                    value={skill.level} 
-                    variant="neon"
-                    className="h-3"
-                  />
+                  <h4 className="text-xl font-bold mb-2 gradient-text">{item.quote}</h4>
+                  <p className="text-sm text-muted-foreground">{item.description}</p>
                 </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Frameworks & Specializations */}
-          <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-secondary flex items-center">
-                <div className="w-2 h-8 bg-gradient-to-b from-secondary to-accent rounded-full mr-3"></div>
-                Frameworks & Specializations
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              {frameworks.map((framework, index) => (
-                <div key={framework.name} className="p-4 bg-muted/50 rounded-lg hover:bg-muted/70 transition-colors">
-                  <h4 className="font-semibold text-lg text-foreground mb-2">{framework.name}</h4>
-                  <p className="text-sm text-muted-foreground">{framework.description}</p>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Technologies */}
-        <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-accent flex items-center">
-              <div className="w-2 h-8 bg-gradient-to-b from-accent to-primary rounded-full mr-3"></div>
-              Technologies & Tools
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex flex-wrap gap-3">
-              {technologies.map((tech, index) => (
-                <Badge 
-                  key={tech} 
-                  variant="outline" 
-                  className="text-sm py-2 px-4 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover:scale-105"
-                >
-                  {tech}
-                </Badge>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
+        {/* Skills Categories */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
+          {skillCategories.map((category, index) => (
+            <Card 
+              key={category.title}
+              className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300 hover-scale group"
+              style={{animationDelay: category.delay}}
+            >
+              <CardHeader>
+                <CardTitle className={`text-2xl font-bold ${category.color} flex items-center`}>
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mr-4 group-hover:animate-bounce-in">
+                    <category.icon className="h-6 w-6 text-white" />
+                  </div>
+                  {category.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, skillIndex) => (
+                    <Badge 
+                      key={skill}
+                      variant="outline" 
+                      className="text-sm py-2 px-3 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover-scale cursor-default"
+                      style={{animationDelay: `${skillIndex * 0.1}s`}}
+                    >
+                      {skill}
+                    </Badge>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
 
-        {/* Special Projects Highlight */}
-        <div className="mt-12 text-center">
-          <div className="glass-effect rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold mb-4 gradient-text">Open Source Contributions</h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="space-y-2">
-                <h4 className="font-semibold text-primary">react-read-otp</h4>
-                <p className="text-sm text-muted-foreground">1.2k+ weekly downloads on NPM</p>
+        {/* Achievements Stats */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Achievements & Impact</h3>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {achievements.map((achievement, index) => (
+              <div 
+                key={achievement.title}
+                className="stagger-item text-center p-6 glass-effect rounded-2xl hover:bg-white/10 transition-all duration-300 hover-lift group"
+              >
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center group-hover:animate-pulse-glow`}>
+                  <achievement.icon className="h-8 w-8 text-white" />
+                </div>
+                <div className={`text-3xl font-bold mb-2 ${achievement.color}`}>{achievement.stat}</div>
+                <h4 className="font-semibold text-foreground mb-1">{achievement.title}</h4>
+                <p className="text-xs text-muted-foreground">{achievement.description}</p>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-secondary">truecaller-php-sdk</h4>
-                <p className="text-sm text-muted-foreground">PHP & Laravel authentication SDK</p>
+            ))}
+          </div>
+        </div>
+
+        {/* Featured Projects */}
+        <div className="mb-16">
+          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Featured Projects</h3>
+          <div className="grid md:grid-cols-3 gap-8">
+            {featuredProjects.map((project, index) => (
+              <Card 
+                key={project.name}
+                className="stagger-item glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale group hover-glow"
+              >
+                <CardHeader>
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-secondary to-accent flex items-center justify-center group-hover:animate-wiggle">
+                      <project.icon className="h-6 w-6 text-white" />
+                    </div>
+                    <Badge variant="outline" className="text-xs border-accent/30 hover:border-accent">
+                      {project.type}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-xl font-bold text-secondary group-hover:text-primary transition-colors">
+                    {project.name}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4 text-sm">{project.description}</p>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech.map((tech) => (
+                      <Badge 
+                        key={tech}
+                        variant="outline" 
+                        className="text-xs border-primary/20 hover:border-primary/40"
+                      >
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xs text-accent font-medium">{project.status}</span>
+                    <button className="story-link text-primary text-sm font-medium">
+                      Learn More
+                    </button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Fun Facts */}
+        <div className="text-center glass-effect rounded-2xl p-8 max-w-4xl mx-auto animate-bounce-in">
+          <h3 className="text-2xl font-bold mb-6 gradient-text">Did You Know?</h3>
+          <div className="grid md:grid-cols-2 gap-6 text-left">
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+                <span className="text-muted-foreground">Self-taught since 2009 - "School of Internet" graduate</span>
               </div>
-              <div className="space-y-2">
-                <h4 className="font-semibold text-accent">embedded-ip-cpp</h4>
-                <p className="text-sm text-muted-foreground">IoT networking tools for C++</p>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                <span className="text-muted-foreground">Philanthropist, Tech Junkie, and Gymnast</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                <span className="text-muted-foreground">Built songspk-dl CLI tool entirely in PHP</span>
+              </div>
+            </div>
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: '1.5s'}}></div>
+                <span className="text-muted-foreground">Speaks English, Hindi, and Urdu</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{animationDelay: '2s'}}></div>
+                <span className="text-muted-foreground">Created YACS during lockdown to help people connect</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{animationDelay: '2.5s'}}></div>
+                <span className="text-muted-foreground">TypeScript advocate - "thinks TypeScript first"</span>
               </div>
             </div>
           </div>

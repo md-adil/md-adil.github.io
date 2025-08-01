@@ -120,33 +120,63 @@
     box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
   }
 
-  /* Animations */
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
+  /* Interactive Elements */
+  .story-link {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
   }
 
-  @keyframes pulse-glow {
-    0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
-    50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.6); }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
   }
 
-  @keyframes gradient-shift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-lg;
   }
 
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)];
   }
 
-  .animate-pulse-glow {
-    animation: pulse-glow 2s ease-in-out infinite;
+  /* Staggered animations */
+  .stagger-item {
+    animation: fade-in 0.6s ease-out both;
   }
 
-  .animate-gradient {
-    background-size: 200% 200%;
-    animation: gradient-shift 3s ease infinite;
+  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  .stagger-item:nth-child(6) { animation-delay: 0.6s; }
+
+  /* Text animations */
+  .text-shimmer {
+    background: linear-gradient(90deg, 
+      hsl(var(--muted-foreground)) 0%, 
+      hsl(var(--primary)) 50%, 
+      hsl(var(--muted-foreground)) 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradient-shift 2s ease-in-out infinite;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary-glow));
   }
 }

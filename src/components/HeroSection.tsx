@@ -39,30 +39,30 @@ const HeroSection = () => {
           </div>
 
           {/* Name & Title */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient">
+          <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">
             Hi, I am Adil
           </h1>
           
-          <h2 className="text-2xl md:text-4xl font-light mb-6 text-muted-foreground">
+          <h2 className="text-2xl md:text-4xl font-light mb-6 text-muted-foreground animate-fade-in" style={{animationDelay: '0.3s'}}>
             Sr. Software Architect
           </h2>
 
           {/* Tagline */}
-          <div className="mb-8 space-y-2">
-            <p className="text-xl md:text-2xl font-medium text-primary">
+          <div className="mb-8 space-y-2 animate-fade-in" style={{animationDelay: '0.5s'}}>
+            <p className="text-xl md:text-2xl font-medium text-primary text-shimmer">
               Love to code.
             </p>
-            <p className="text-lg md:text-xl text-foreground/80">
+            <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{animationDelay: '0.7s'}}>
               Degree don't define skills.
             </p>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.9s'}}>
               Self taught Computer Programmer, Motivated and Dedicated to Computer and Science, 
               Code Enthusiasts, Philanthropist, Tech Junkie and Gymnast.
             </p>
           </div>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{animationDelay: '1.1s'}}>
             <Button 
               size="lg" 
               className="group bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
@@ -91,8 +91,8 @@ const HeroSection = () => {
           </div>
 
           {/* Featured Projects */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '1.3s'}}>
+            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow">
               <h3 className="font-semibold text-primary mb-2 flex items-center">
                 <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 YACS
@@ -102,7 +102,7 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover:scale-105">
+            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow">
               <h3 className="font-semibold text-secondary mb-2 flex items-center">
                 <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 react-read-otp
