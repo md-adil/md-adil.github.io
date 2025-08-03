@@ -29,7 +29,7 @@ const contactInfo = [
   {
     icon: MapPin,
     label: "Location",
-    value: "New Delhi, Delhi, India",
+    value: "Pune, Maharashtra, India",
     href: "#",
     color: "text-accent"
   }
