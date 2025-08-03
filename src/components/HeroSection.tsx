@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Github, Mail, Download, ExternalLink } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import heroImage from "@/assets/hero-bg-cyberpunk.jpg";
 import profileImage from "@/assets/adil-portrait.jpg";
 
 const HeroSection = () => {
@@ -53,11 +53,11 @@ const HeroSection = () => {
               Love to code.
             </p>
             <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{animationDelay: '0.7s'}}>
-              Degree don't define skills.
+              Degrees don't define skills.
             </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.9s'}}>
-              Self taught Computer Programmer, Motivated and Dedicated to Computer and Science, 
-              Code Enthusiasts, Philanthropist, Tech Junkie and Gymnast.
+              Self-taught Computer Programmer, Motivated and Dedicated to Computer Science, 
+              Code Enthusiast, Philanthropist, Tech Junkie and Gymnast.
             </p>
           </div>
 
@@ -91,8 +91,9 @@ const HeroSection = () => {
           </div>
 
           {/* Featured Projects */}
-          <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto animate-fade-in" style={{animationDelay: '1.3s'}}>
-            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow">
+          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in" style={{animationDelay: '1.3s'}}>
+            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
               <h3 className="font-semibold text-primary mb-2 flex items-center">
                 <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 YACS
@@ -102,13 +103,25 @@ const HeroSection = () => {
               </p>
             </div>
             
-            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow">
+            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
               <h3 className="font-semibold text-secondary mb-2 flex items-center">
                 <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 react-read-otp
               </h3>
               <p className="text-sm text-muted-foreground">
                 1.2k+ weekly downloads React & TypeScript package
+              </p>
+            </div>
+
+            <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden">
+              <div className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+              <h3 className="font-semibold text-accent mb-2 flex items-center">
+                <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
+                Innovation Hub
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                Building the future of web development
               </p>
             </div>
           </div>
