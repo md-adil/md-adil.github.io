@@ -10,10 +10,7 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold gradient-text">Adil</h3>
-            <p className="text-muted-foreground">
-              Sr. Software Architect passionate about building amazing digital
-              experiences and contributing to open source.
-            </p>
+            <p className="text-muted-foreground">Sr. Software Architect passionate about building amazing digital experiences and contributing to open source.</p>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/md-adil/"
@@ -42,11 +39,7 @@ export function Footer() {
               >
                 <X className="h-5 w-5" />
               </a>
-              <a
-                href="mailto:adil.sudo@gmail.com"
-                className="text-foreground hover:text-secondary transition-colors duration-300 hover:scale-110 transform"
-                aria-label="Email"
-              >
+              <a href="mailto:adil.sudo@gmail.com" className="text-foreground hover:text-secondary transition-colors duration-300 hover:scale-110 transform" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </a>
               <a
@@ -63,16 +56,10 @@ export function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">
-              Quick Links
-            </h4>
+            <h4 className="text-lg font-semibold text-foreground">Quick Links</h4>
             <div className="space-y-2">
               {["Home", "Skills", "Experience", "Contact"].map((item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="block text-muted-foreground hover:text-primary transition-colors duration-300"
-                >
+                <a key={item} href={`#${item.toLowerCase()}`} className="block text-muted-foreground hover:text-primary transition-colors duration-300">
                   {item}
                 </a>
               ))}
@@ -81,9 +68,7 @@ export function Footer() {
 
           {/* Featured Projects */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">
-              Featured Projects
-            </h4>
+            <h4 className="text-lg font-semibold text-foreground">Featured Projects</h4>
             <div className="space-y-3">
               <a
                 href="https://www.npmjs.com/package/react-read-otp"
@@ -99,7 +84,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-secondary transition-colors duration-300"
               >
-                ebx - Event Bus Library
+                ebx - A Tool for Building and Running TypeScript Code
               </a>
               <a
                 href="https://github.com/md-adil/truecaller-php-sdk"
@@ -116,17 +101,11 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-primary/10">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-sm">
-              © {currentYear} Adil. All rights reserved.
-            </p>
+            <p className="text-muted-foreground text-sm">© {currentYear} Adil. All rights reserved.</p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Built with</span>
-              <Heart className="h-4 w-4 text-red-500" />
-              <span>using React & TypeScript</span>
+              <span>Built with Typescript, Next.js, Tailwind and ShadCN</span>
             </div>
-            <p className="text-muted-foreground text-sm">
-              "Degree don't define skills"
-            </p>
+            <p className="text-muted-foreground text-sm">"Degree don't define skills"</p>
           </div>
         </div>
       </div>
