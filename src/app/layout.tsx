@@ -9,8 +9,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
-  description:
-    "Sr. Software Architect specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. 15+ years experience in PHP, Laravel, Node.js, Go, and microservices architecture. Creator of react-read-otp (1.2k+ weekly downloads).",
+  description: `Sr. Software Architect specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. ${experienceYears} years experience in PHP, Laravel, Node.js, Go, and microservices architecture. Creator of react-read-otp (1.2k+ weekly downloads).`,
   keywords: [
     "Software Architect",
     "Backend Developer",
@@ -31,11 +30,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Adil", url: "https://github.com/md-adil" }],
   creator: "Adil",
   icons: {
-    icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' },
-      { url: '/icon', type: 'image/png' },
-    ],
-    apple: '/apple-icon',
+    icon: "/favicon.svg",
   },
   openGraph: {
     title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
