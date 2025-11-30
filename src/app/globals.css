@@ -6,84 +6,15 @@
 
 @layer base {
   :root {
-    /* Dark theme base */
-    --background: 220 27% 8%;
-    --foreground: 210 20% 98%;
-
-    --card: 220 27% 12%;
-    --card-foreground: 210 20% 98%;
-
-    --popover: 220 27% 12%;
-    --popover-foreground: 210 20% 98%;
-
-    /* Professional emerald green primary */
-    --primary: 160 84% 39%;
-    --primary-foreground: 0 0% 100%;
-    --primary-glow: 160 84% 49%;
-
-    /* Professional blue secondary */
-    --secondary: 217 91% 55%;
-    --secondary-foreground: 0 0% 100%;
-
-    --muted: 220 20% 15%;
-    --muted-foreground: 215 15% 65%;
-
-    /* Professional amber/gold accent */
-    --accent: 43 96% 56%;
-    --accent-foreground: 0 0% 0%;
-
-    /* Professional purple/violet quaternary */
-    --quaternary: 271 91% 65%;
-    --quaternary-foreground: 0 0% 100%;
-
-    --destructive: 0 75% 60%;
-    --destructive-foreground: 210 20% 98%;
-
-    --border: 220 20% 20%;
-    --input: 220 20% 18%;
-    --ring: 195 100% 50%;
-
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
-    --gradient-hero: linear-gradient(135deg, hsl(var(--primary) / 0.1), hsl(var(--secondary) / 0.1));
-    --gradient-card: linear-gradient(145deg, hsl(var(--card)), hsl(var(--muted)));
-    --gradient-glow: radial-gradient(circle at center, hsl(var(--primary) / 0.3), transparent 70%);
-    
-    --shadow-glow: 0 0 50px hsl(var(--primary) / 0.3);
-    --shadow-neon: 0 0 20px hsl(var(--accent) / 0.4);
+    /* Custom design tokens for effects */
+    --shadow-glow: 0 0 50px hsl(160 84% 39% / 0.3);
+    --shadow-neon: 0 0 20px hsl(43 96% 56% / 0.4);
     --shadow-card: 0 8px 32px hsl(220 27% 8% / 0.4);
-    
+
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .light {
-    /* Light theme overrides */
-    --background: 0 0% 100%;
-    --foreground: 220 27% 8%;
-    --card: 0 0% 100%;
-    --card-foreground: 220 27% 8%;
-    --primary-foreground: 0 0% 100%;
-    --secondary-foreground: 0 0% 100%;
-    --accent-foreground: 0 0% 100%;
   }
 }
 
@@ -103,11 +34,7 @@
 
   /* Utility classes */
   .gradient-text {
-    color: hsl(var(--primary));
-  }
-
-  .text-quaternary {
-    color: hsl(var(--quaternary));
+    @apply text-primary;
   }
 
   .glass-effect {
@@ -156,8 +83,7 @@
 
   /* Text animations */
   .text-shimmer {
-    color: hsl(var(--primary));
-    font-weight: 600;
+    @apply text-primary font-semibold;
   }
 
   /* Custom scrollbar */
@@ -166,15 +92,14 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: hsl(var(--muted));
+    @apply bg-muted;
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 4px;
+    @apply bg-primary rounded;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary-glow));
+    background: hsl(160 84% 49%); /* primary-glow */
   }
 }
