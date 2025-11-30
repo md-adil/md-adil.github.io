@@ -131,14 +131,6 @@ const featuredProjects = [
     github: "https://github.com/md-adil/ebx",
   },
   {
-    name: "ebx",
-    description: "Lightweight event bus library for JavaScript applications",
-    tech: ["JavaScript", "TypeScript", "Events"],
-    type: "NPM Package",
-    status: "Published on NPM",
-    icon: Zap,
-  },
-  {
     name: "truecaller-php-sdk",
     description: "Truecaller authentication SDK for PHP & Laravel developers",
     tech: ["PHP", "Laravel", "OAuth"],
