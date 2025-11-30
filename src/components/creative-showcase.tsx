@@ -1,6 +1,6 @@
 import { Code2, Lightbulb, Rocket, Coffee, Heart, Trophy } from "lucide-react";
 
-export const CreativeShowcase = () => {
+export function CreativeShowcase() {
   const passions = [
     {
       icon: Code2,
@@ -155,4 +155,4 @@ export const CreativeShowcase = () => {
       </div>
     </section>
   );
-};
+}

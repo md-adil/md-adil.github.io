@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -9,6 +11,8 @@ import {
   Download,
   MessageCircle,
   Globe,
+  Linkedin,
+  X,
 } from "lucide-react";
 
 const contactInfo = [
@@ -43,6 +47,18 @@ const socialLinks = [
     color: "text-foreground",
   },
   {
+    icon: Linkedin,
+    label: "LinkedIn",
+    href: "https://www.linkedin.com/in/md-adil",
+    color: "text-blue-500",
+  },
+  {
+    icon: X,
+    label: "Twitter / X",
+    href: "https://twitter.com/_MdAdil",
+    color: "text-sky-500",
+  },
+  {
     icon: Globe,
     label: "NPM Profile",
     href: "https://www.npmjs.com/~adil.sudo",
@@ -50,21 +66,21 @@ const socialLinks = [
   },
   {
     icon: ExternalLink,
-    label: "Company Website",
+    label: "Company",
     href: "https://www.bajajfinservhealth.in/",
     color: "text-secondary",
   },
   {
     icon: MessageCircle,
-    label: "Live Chat",
-    href: "https://yacs.in/@admin",
+    label: "YACS Chat",
+    href: "https://yacs.in/@/admin",
     color: "text-accent",
   },
 ];
 
 const languages = ["English", "Hindi", "Urdu"];
 
-export const ContactSection = () => {
+export function ContactSection() {
   return (
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -151,7 +167,10 @@ export const ContactSection = () => {
                   Quick Actions
                 </h3>
                 <div className="space-y-4">
-                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+                  <Button
+                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    onClick={() => window.open("/resume.pdf", "_blank")}
+                  >
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
                   </Button>
@@ -159,6 +178,9 @@ export const ContactSection = () => {
                   <Button
                     variant="outline"
                     className="w-full glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary transition-all duration-300"
+                    onClick={() =>
+                      (window.location.href = "mailto:adil.sudo@gmail.com")
+                    }
                   >
                     <Mail className="mr-2 h-4 w-4" />
                     Send Email
@@ -167,6 +189,9 @@ export const ContactSection = () => {
                   <Button
                     variant="outline"
                     className="w-full glass-effect hover:bg-white/10 border-accent/50 hover:border-accent text-foreground hover:text-accent transition-all duration-300"
+                    onClick={() =>
+                      window.open("https://yacs.in/@/admin", "_blank")
+                    }
                   >
                     <MessageCircle className="mr-2 h-4 w-4" />
                     Start Chat
@@ -210,4 +235,4 @@ export const ContactSection = () => {
       </div>
     </section>
   );
-};
+}
