@@ -112,6 +112,27 @@ const philosophy = [
 
 const featuredProjects = [
   {
+    name: "YACS (Yet another chatting software)",
+    description: "Talk to anyone without sharing contacts - A lockdown project",
+    tech: ["React", "TypeScript", "Web RTC", "Websocket", "Node", "Mongo", "Protobuf"],
+    type: "PWA",
+    // status: "1.2k+ downloads/week",
+    icon: Code2,
+    link: "https://yacs.in",
+    // github: "https://github.com/md-adil/react-read-otp",
+  },
+  {
+    name: "MinimaJS",
+    description:
+      "MinimaJS is a cutting-edge Node.js framework meticulously designed to empower developers to construct contemporary web applications with exceptional efficiency and elegance.",
+    tech: ["TypeScript", "Node", "Function Programming"],
+    type: "NPM Package",
+    status: "Published on NPM",
+    icon: Code2,
+    link: "https://minima-js.github.io",
+    github: "https://github.com/minima-js/minimajs",
+  },
+  {
     name: "react-read-otp",
     description: "Auto-read OTP React hook with 1.2k+ weekly downloads",
     tech: ["React", "TypeScript", "WebOTP API"],
@@ -124,7 +145,7 @@ const featuredProjects = [
   {
     name: "ebx",
     description: "A Tool for Building and Running TypeScript Code",
-    tech: ["JavaScript", "TypeScript", "Events"],
+    tech: ["JavaScript", "TypeScript", "ESM"],
     type: "NPM Package",
     status: "Published on NPM",
     icon: Zap,

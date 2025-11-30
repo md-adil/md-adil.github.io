@@ -144,111 +144,6 @@ export function ExperienceSection() {
           </div>
         </div>
 
-        {/* Experience Cards */}
-        <div className="relative mb-20">
-          {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block"></div>
-
-          <div className="space-y-12">
-            {experiences.map((exp) => (
-              <div key={exp.company} className="relative animate-fade-in">
-                {/* Timeline dot */}
-                <div
-                  className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg hidden md:block animate-pulse-glow ${
-                    exp.type === "current" ? "bg-primary" : "bg-secondary"
-                  }`}
-                ></div>
-
-                <Card
-                  className={`ml-0 md:ml-16 glass-effect transition-all duration-500 hover-scale hover-glow group ${
-                    exp.type === "current" ? "border-primary/40 hover:border-primary" : "border-secondary/20 hover:border-secondary/40"
-                  }`}
-                >
-                  <CardHeader className="pb-4">
-                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <div className={`w-3 h-3 rounded-full ${exp.type === "current" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
-                          <Badge
-                            variant={exp.type === "current" ? "default" : "outline"}
-                            className={`text-xs ${exp.type === "current" ? "bg-primary text-primary-foreground" : "border-muted-foreground/30"}`}
-                          >
-                            {exp.type === "current" ? "Current Role" : "Previous Role"}
-                          </Badge>
-                        </div>
-
-                        <CardTitle className={`text-2xl font-bold mb-2 ${exp.type === "current" ? "text-primary" : "text-foreground"} group-hover:text-primary transition-colors`}>
-                          {exp.title}
-                        </CardTitle>
-
-                        <div className="flex items-center gap-2 text-lg font-semibold text-secondary mb-2">
-                          <Building2 className="h-5 w-5" />
-                          {exp.company}
-                        </div>
-
-                        <div className="flex items-center gap-2 text-muted-foreground">
-                          <Calendar className="h-4 w-4" />
-                          {exp.period}
-                        </div>
-                      </div>
-                    </div>
-                  </CardHeader>
-
-                  <CardContent className="space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
-
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {/* Responsibilities */}
-                      <div>
-                        <h5 className="font-semibold text-foreground mb-3 flex items-center">
-                          <Briefcase className="h-4 w-4 mr-2 text-primary" />
-                          Key Responsibilities
-                        </h5>
-                        <div className="space-y-2">
-                          {exp.responsibilities.map((responsibility) => (
-                            <div key={responsibility} className="flex items-center gap-2">
-                              <ChevronRight className="h-3 w-3 text-accent" />
-                              <span className="text-sm text-muted-foreground">{responsibility}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-
-                      {/* Achievements */}
-                      <div>
-                        <h5 className="font-semibold text-foreground mb-3 flex items-center">
-                          <Award className="h-4 w-4 mr-2 text-secondary" />
-                          Key Achievements
-                        </h5>
-                        <div className="space-y-2">
-                          {exp.achievements.map((achievement) => (
-                            <div key={achievement} className="flex items-center gap-2">
-                              <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                              <span className="text-sm text-muted-foreground">{achievement}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Technologies */}
-                    <div>
-                      <h5 className="font-semibold text-foreground mb-3">Technologies Used</h5>
-                      <div className="flex flex-wrap gap-2">
-                        {exp.technologies.map((tech, idx) => (
-                          <Badge key={tech} variant="outline" className="text-xs border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-300 hover-scale">
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div>
-            ))}
-          </div>
-        </div>
-
         {/* Case Studies Section */}
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Selected Case Studies</h3>
@@ -420,6 +315,111 @@ export function ExperienceSection() {
           </div>
         </div>
 
+        {/* Experience Cards */}
+        <div className="relative mb-20">
+          {/* Timeline line */}
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block"></div>
+
+          <div className="space-y-12">
+            {experiences.map((exp) => (
+              <div key={exp.company} className="relative animate-fade-in">
+                {/* Timeline dot */}
+                <div
+                  className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg hidden md:block animate-pulse-glow ${
+                    exp.type === "current" ? "bg-primary" : "bg-secondary"
+                  }`}
+                ></div>
+
+                <Card
+                  className={`ml-0 md:ml-16 glass-effect transition-all duration-500 hover-scale hover-glow group ${
+                    exp.type === "current" ? "border-primary/40 hover:border-primary" : "border-secondary/20 hover:border-secondary/40"
+                  }`}
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <div className={`w-3 h-3 rounded-full ${exp.type === "current" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
+                          <Badge
+                            variant={exp.type === "current" ? "default" : "outline"}
+                            className={`text-xs ${exp.type === "current" ? "bg-primary text-primary-foreground" : "border-muted-foreground/30"}`}
+                          >
+                            {exp.type === "current" ? "Current Role" : "Previous Role"}
+                          </Badge>
+                        </div>
+
+                        <CardTitle className={`text-2xl font-bold mb-2 ${exp.type === "current" ? "text-primary" : "text-foreground"} group-hover:text-primary transition-colors`}>
+                          {exp.title}
+                        </CardTitle>
+
+                        <div className="flex items-center gap-2 text-lg font-semibold text-secondary mb-2">
+                          <Building2 className="h-5 w-5" />
+                          {exp.company}
+                        </div>
+
+                        <div className="flex items-center gap-2 text-muted-foreground">
+                          <Calendar className="h-4 w-4" />
+                          {exp.period}
+                        </div>
+                      </div>
+                    </div>
+                  </CardHeader>
+
+                  <CardContent className="space-y-6">
+                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {/* Responsibilities */}
+                      <div>
+                        <h5 className="font-semibold text-foreground mb-3 flex items-center">
+                          <Briefcase className="h-4 w-4 mr-2 text-primary" />
+                          Key Responsibilities
+                        </h5>
+                        <div className="space-y-2">
+                          {exp.responsibilities.map((responsibility) => (
+                            <div key={responsibility} className="flex items-center gap-2">
+                              <ChevronRight className="h-3 w-3 text-accent" />
+                              <span className="text-sm text-muted-foreground">{responsibility}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Achievements */}
+                      <div>
+                        <h5 className="font-semibold text-foreground mb-3 flex items-center">
+                          <Award className="h-4 w-4 mr-2 text-secondary" />
+                          Key Achievements
+                        </h5>
+                        <div className="space-y-2">
+                          {exp.achievements.map((achievement) => (
+                            <div key={achievement} className="flex items-center gap-2">
+                              <div className="w-2 h-2 bg-secondary rounded-full"></div>
+                              <span className="text-sm text-muted-foreground">{achievement}</span>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Technologies */}
+                    <div>
+                      <h5 className="font-semibold text-foreground mb-3">Technologies Used</h5>
+                      <div className="flex flex-wrap gap-2">
+                        {exp.technologies.map((tech, idx) => (
+                          <Badge key={tech} variant="outline" className="text-xs border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-300 hover-scale">
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Education Section */}
         <div className="animate-fade-in" style={{ animationDelay: "1s" }}>
           <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Education & Learning Philosophy</h3>
@@ -475,7 +475,7 @@ export function ExperienceSection() {
                   "The best architecture is the one that solves today's problems while anticipating tomorrow's challenges."
                 </p>
                 <p className="text-lg text-muted-foreground mb-4">Balancing pragmatism with vision in every system design.</p>
-                <footer className="text-sm text-accent font-medium">— Architecting scalable solutions since 2014</footer>
+                <footer className="text-sm text-accent font-medium">— Architecting scalable solutions since {experienceSince}</footer>
               </blockquote>
             </CardContent>
           </Card>

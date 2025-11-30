@@ -46,16 +46,36 @@ export function HeroSection() {
           {/* Name & Title */}
           <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">Hi, I&apos;m Adil</h1>
 
-          <h2 className="text-2xl md:text-4xl font-light mb-6 text-muted-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Sr. Software Architect @ Bajaj Finserv Health
+          <h2 className="text-2xl md:text-3xl font-light mb-6 text-muted-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
+            Sr. Software Architect | Cloud & DevOps Engineer | System Designer | Open Source Contributor.
           </h2>
           <div className="mb-8 space-y-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            <p className="text-xl md:text-2xl font-medium text-primary text-shimmer">Building scalable health-tech solutions for 1M+ users</p>
+            {/* <p className="text-xl md:text-2xl font-medium text-primary text-shimmer">Building scalable health-tech solutions for 1M+ users</p> */}
             <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              {experienceYears} years building backend systems, cloud infrastructure, and DevOps platforms
+              I build scalable architectures: microservices, Kubernetes platforms, GitOps pipelines, and real-time systems for high-traffic environments.&nbsp;
+              {experienceYears} years across backend engineering, cloud infra, performance optimization, and developer tooling.
             </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.9s" }}>
-              Creator of react-read-otp (1.2k+ weekly downloads), ebx, material-ui-react-form, react-use-listener • Open Source Contributor
+              Creator of{" "}
+              <a target="gh-page" href="https://minima-js.github.io/">
+                minima-js
+              </a>
+              ,{" "}
+              <a target="npmjs" href="https://www.npmjs.com/package/react-read-otp">
+                react-read-otp (1.2k+ weekly downloads)
+              </a>
+              ,{" "}
+              <a target="npmjs" href="https://www.npmjs.com/package/ebx">
+                ebx
+              </a>
+              ,{" "}
+              <a target="npmjs" href="https://www.npmjs.com/package/material-ui-react-form">
+                material-ui-react-form
+              </a>
+              ,{" "}
+              <a target="npmjs" href="https://www.npmjs.com/package/react-use-listener">
+                react-use-listener
+              </a>
             </p>
           </div>
 
@@ -67,7 +87,7 @@ export function HeroSection() {
               onClick={() => window.open("https://github.com/md-adil/", "_blank")}
             >
               <Github className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              View My Work
+              Explore 97+ Repositories
             </Button>
 
             <Button
@@ -97,7 +117,7 @@ export function HeroSection() {
           </div>
 
           {/* Featured Projects */}
-          <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "1.3s" }}>
+          {/* <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "1.3s" }}>
             <a
               href="https://yacs.in/"
               target="_blank"
@@ -139,7 +159,7 @@ export function HeroSection() {
               </h3>
               <p className="text-sm text-muted-foreground">Explore 97+ repositories on GitHub</p>
             </a>
-          </div>
+          </div> */}
         </div>
       </div>
 
