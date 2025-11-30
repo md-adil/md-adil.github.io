@@ -182,15 +182,15 @@ export function ExperienceSection() {
             </Card>
 
             {/* Case Study 2: Microservices Migration */}
-            <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale hover-glow">
+            <Card className="glass-effect border-quaternary/20 hover:border-quaternary/40 transition-all duration-300 hover-scale hover-glow">
               <CardHeader>
                 <div className="flex items-center gap-3 mb-2">
-                  <div className="w-3 h-3 rounded-full bg-secondary"></div>
-                  <Badge variant="outline" className="text-xs border-secondary/30">
+                  <div className="w-3 h-3 rounded-full bg-quaternary"></div>
+                  <Badge variant="outline" className="text-xs border-quaternary/30">
                     Architecture
                   </Badge>
                 </div>
-                <CardTitle className="text-xl font-bold text-secondary">Microservices Migration</CardTitle>
+                <CardTitle className="text-xl font-bold text-quaternary">Microservices Migration</CardTitle>
                 <p className="text-xs text-muted-foreground mt-2">Laravel → Node.js + Go | 87% faster, 4× delivery speed</p>
               </CardHeader>
               <CardContent className="space-y-3">

@@ -33,7 +33,7 @@ const primarySkills = [
     title: "Databases & Scalability",
     icon: Database,
     skills: ["MySQL", "MongoDB", "Redis", "Database Design", "Query Optimization", "Caching Strategies", "High Availability"],
-    color: "text-primary",
+    color: "text-quaternary",
     delay: "0.4s",
     featured: true,
   },

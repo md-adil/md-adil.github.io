@@ -20,16 +20,20 @@
     --primary-foreground: 0 0% 100%;
     --primary-glow: 160 84% 49%;
 
-    /* Professional teal secondary */
-    --secondary: 173 80% 40%;
+    /* Professional blue secondary */
+    --secondary: 217 91% 55%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 20% 15%;
     --muted-foreground: 215 15% 65%;
 
-    /* Professional cyan accent */
-    --accent: 189 94% 43%;
-    --accent-foreground: 0 0% 100%;
+    /* Professional amber/gold accent */
+    --accent: 43 96% 56%;
+    --accent-foreground: 0 0% 0%;
+
+    /* Professional purple/violet quaternary */
+    --quaternary: 271 91% 65%;
+    --quaternary-foreground: 0 0% 100%;
 
     --destructive: 0 75% 60%;
     --destructive-foreground: 210 20% 98%;
@@ -99,6 +103,10 @@
   /* Utility classes */
   .gradient-text {
     color: hsl(var(--primary));
+  }
+
+  .text-quaternary {
+    color: hsl(var(--quaternary));
   }
 
   .glass-effect {
