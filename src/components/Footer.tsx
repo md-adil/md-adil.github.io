@@ -1,6 +1,6 @@
 import { Github, Mail, ExternalLink, Heart } from "lucide-react";
 
-const Footer = () => {
+export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -11,8 +11,8 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold gradient-text">Adil</h3>
             <p className="text-muted-foreground">
-              Sr. Software Architect passionate about building amazing digital experiences 
-              and contributing to open source.
+              Sr. Software Architect passionate about building amazing digital
+              experiences and contributing to open source.
             </p>
             <div className="flex space-x-4">
               <a
@@ -42,7 +42,9 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Quick Links</h4>
+            <h4 className="text-lg font-semibold text-foreground">
+              Quick Links
+            </h4>
             <div className="space-y-2">
               {["Home", "Skills", "Experience", "Contact"].map((item) => (
                 <a
@@ -58,7 +60,9 @@ const Footer = () => {
 
           {/* Featured Projects */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Featured Projects</h4>
+            <h4 className="text-lg font-semibold text-foreground">
+              Featured Projects
+            </h4>
             <div className="space-y-3">
               <a
                 href="https://yacs.in/"
@@ -108,5 +112,3 @@ const Footer = () => {
     </footer>
   );
 };
-
-export default Footer;

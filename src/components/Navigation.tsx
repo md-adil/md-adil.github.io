@@ -1,8 +1,10 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Github, Mail } from "lucide-react";
 
-const Navigation = () => {
+export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -32,8 +34,8 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? "glass-effect backdrop-blur-lg border-b border-primary/20" 
+      isScrolled
+        ? "glass-effect backdrop-blur-lg border-b border-primary/20"
         : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6">
@@ -128,6 +130,4 @@ const Navigation = () => {
       </div>
     </nav>
   );
-};
-
-export default Navigation;
+}

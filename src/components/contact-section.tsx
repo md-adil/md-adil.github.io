@@ -1,14 +1,14 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Github, 
-  ExternalLink, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  ExternalLink,
   Download,
   MessageCircle,
-  Globe
+  Globe,
 } from "lucide-react";
 
 const contactInfo = [
@@ -17,22 +17,22 @@ const contactInfo = [
     label: "Phone",
     value: "+91 98 18 128797",
     href: "tel:+919818128797",
-    color: "text-primary"
+    color: "text-primary",
   },
   {
     icon: Mail,
-    label: "Email", 
+    label: "Email",
     value: "adil.sudo@gmail.com",
     href: "mailto:adil.sudo@gmail.com",
-    color: "text-secondary"
+    color: "text-secondary",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Pune, Maharashtra, India",
     href: "#",
-    color: "text-accent"
-  }
+    color: "text-accent",
+  },
 ];
 
 const socialLinks = [
@@ -40,31 +40,31 @@ const socialLinks = [
     icon: Github,
     label: "GitHub",
     href: "https://github.com/md-adil/",
-    color: "text-foreground"
+    color: "text-foreground",
   },
   {
     icon: Globe,
-    label: "NPM Profile", 
+    label: "NPM Profile",
     href: "https://www.npmjs.com/~adil.sudo",
-    color: "text-primary"
+    color: "text-primary",
   },
   {
     icon: ExternalLink,
     label: "Company Website",
     href: "https://www.bajajfinservhealth.in/",
-    color: "text-secondary"
+    color: "text-secondary",
   },
   {
     icon: MessageCircle,
     label: "Live Chat",
     href: "https://yacs.in/@admin",
-    color: "text-accent"
-  }
+    color: "text-accent",
+  },
 ];
 
 const languages = ["English", "Hindi", "Urdu"];
 
-const ContactSection = () => {
+export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 relative">
       <div className="container mx-auto px-6">
@@ -73,7 +73,8 @@ const ContactSection = () => {
             Let's Connect
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Always enjoy connecting with new people and discussing exciting technologies
+            Always enjoy connecting with new people and discussing exciting
+            technologies
           </p>
         </div>
 
@@ -93,11 +94,15 @@ const ContactSection = () => {
                       href={contact.href}
                       className="flex items-center gap-4 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-all duration-300 group hover:scale-105"
                     >
-                      <div className={`p-3 rounded-full ${contact.color} bg-current/10`}>
+                      <div
+                        className={`p-3 rounded-full ${contact.color} bg-current/10`}
+                      >
                         <contact.icon className="h-5 w-5" />
                       </div>
                       <div>
-                        <p className="text-sm text-muted-foreground">{contact.label}</p>
+                        <p className="text-sm text-muted-foreground">
+                          {contact.label}
+                        </p>
                         <p className="font-medium text-foreground group-hover:text-primary transition-colors">
                           {contact.value}
                         </p>
@@ -124,7 +129,9 @@ const ContactSection = () => {
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 p-4 rounded-lg bg-muted/30 hover:bg-muted/50 transition-all duration-300 group hover:scale-105"
                     >
-                      <link.icon className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`} />
+                      <link.icon
+                        className={`h-5 w-5 ${link.color} group-hover:scale-110 transition-transform`}
+                      />
                       <span className="font-medium text-foreground group-hover:text-primary transition-colors">
                         {link.label}
                       </span>
@@ -144,22 +151,20 @@ const ContactSection = () => {
                   Quick Actions
                 </h3>
                 <div className="space-y-4">
-                  <Button 
-                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-                  >
+                  <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
                     <Download className="mr-2 h-4 w-4" />
                     Download Resume
                   </Button>
-                  
-                  <Button 
+
+                  <Button
                     variant="outline"
                     className="w-full glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary transition-all duration-300"
                   >
                     <Mail className="mr-2 h-4 w-4" />
                     Send Email
                   </Button>
-                  
-                  <Button 
+
+                  <Button
                     variant="outline"
                     className="w-full glass-effect hover:bg-white/10 border-accent/50 hover:border-accent text-foreground hover:text-accent transition-all duration-300"
                   >
@@ -173,7 +178,9 @@ const ContactSection = () => {
             {/* Languages */}
             <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-6 text-primary">Languages</h3>
+                <h3 className="text-2xl font-bold mb-6 text-primary">
+                  Languages
+                </h3>
                 <div className="space-y-3">
                   {languages.map((language, index) => (
                     <div key={language} className="flex items-center gap-3">
@@ -204,5 +211,3 @@ const ContactSection = () => {
     </section>
   );
 };
-
-export default ContactSection;

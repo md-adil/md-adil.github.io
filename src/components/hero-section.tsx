@@ -1,14 +1,13 @@
 import { Button } from "@/components/ui/button";
 import { Github, Mail, Download, ExternalLink } from "lucide-react";
-import heroImage from "@/assets/hero-bg-cyberpunk.jpg";
-import profileImage from "@/assets/adil-portrait.jpg";
+import Image from "next/image";
 
-const HeroSection = () => {
+export function HeroSection() {
   return (
-    <section 
+    <section
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       style={{
-        backgroundImage: `url(${heroImage})`,
+        backgroundImage: `url(/images/hero-bg-cyberpunk.jpg)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundAttachment: "fixed"
@@ -16,7 +15,7 @@ const HeroSection = () => {
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
-      
+
       {/* Animated background elements */}
       <div className="absolute inset-0 opacity-30">
         <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-float"></div>
@@ -29,10 +28,13 @@ const HeroSection = () => {
           {/* Profile Image */}
           <div className="mb-8 relative inline-block">
             <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl animate-pulse-glow">
-              <img 
-                src={profileImage} 
-                alt="Adil's Profile" 
+              <Image
+                src="/images/adil-portrait.jpg"
+                alt="Adil's Profile"
+                width={160}
+                height={160}
                 className="w-full h-full object-cover"
+                priority
               />
             </div>
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
@@ -42,7 +44,7 @@ const HeroSection = () => {
           <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">
             Hi, I am Adil
           </h1>
-          
+
           <h2 className="text-2xl md:text-4xl font-light mb-6 text-muted-foreground animate-fade-in" style={{animationDelay: '0.3s'}}>
             Sr. Software Architect
           </h2>
@@ -53,35 +55,35 @@ const HeroSection = () => {
               Love to code.
             </p>
             <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{animationDelay: '0.7s'}}>
-              Degrees don't define skills.
+              Degrees don&apos;t define skills.
             </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{animationDelay: '0.9s'}}>
-              Self-taught Computer Programmer, Motivated and Dedicated to Computer Science, 
+              Self-taught Computer Programmer, Motivated and Dedicated to Computer Science,
               Code Enthusiast, Philanthropist, Tech Junkie and Gymnast.
             </p>
           </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{animationDelay: '1.1s'}}>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="group bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
             >
               <Github className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
               View My Work
             </Button>
-            
-            <Button 
-              variant="outline" 
+
+            <Button
+              variant="outline"
               size="lg"
               className="group glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary transition-all duration-300"
             >
               <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
               Download Resume
             </Button>
-            
-            <Button 
-              variant="outline" 
+
+            <Button
+              variant="outline"
               size="lg"
               className="group glass-effect hover:bg-white/10 border-accent/50 hover:border-accent text-foreground hover:text-accent transition-all duration-300"
             >
@@ -102,7 +104,7 @@ const HeroSection = () => {
                 Talk to anyone without sharing contacts - A lockdown project
               </p>
             </div>
-            
+
             <div className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden">
               <div className="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
               <h3 className="font-semibold text-secondary mb-2 flex items-center">
@@ -136,6 +138,5 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+}
 
-export default HeroSection;
