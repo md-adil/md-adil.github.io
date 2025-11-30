@@ -1,21 +1,32 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  Building2,
-  Calendar,
-  MapPin,
-  ExternalLink,
-  Briefcase,
-  TrendingUp,
-  Zap,
-  Users,
-  Code,
-  Award,
-  ChevronRight,
-} from "lucide-react";
+import { Building2, Calendar, MapPin, Briefcase, TrendingUp, Zap, Users, Code, Award, ChevronRight } from "lucide-react";
+import { experienceYears } from "@/config";
 
 const experiences = [
+  {
+    title: "Independent Consulting & Architecture Work",
+    company: "Freelance",
+    period: "2022 - Present",
+    description:
+      "Providing specialized consulting and architecture services to EdTech, Media Streaming, and Enterprise SaaS clients. Delivering end-to-end solutions from infrastructure design to production deployment.",
+    responsibilities: [
+      "Designed and implemented full DevOps pipeline with Jenkins, Kubernetes, and GitOps",
+      "Migrated monolithic Laravel application to microservices (Node.js + Go + Laravel Octane)",
+      "Designed infrastructure from scratch: Kubernetes, Terraform, CI/CD, observability stack",
+      "Built complete real-time live streaming platform from zero",
+      "Set coding guidelines and engineering standards for entire tech teams",
+    ],
+    type: "current",
+    achievements: [
+      "Deployed full observability using Grafana, ELK, Loki, Tempo",
+      "Implemented performance optimization using Laravel Octane (Swoole)",
+      "Successfully migrated legacy monolith to modern microservices architecture",
+      "Built production-grade streaming platform with real-time capabilities",
+      "Established DevOps best practices and CI/CD pipelines",
+    ],
+    technologies: ["Kubernetes", "Terraform", "Jenkins", "GitOps", "Laravel Octane", "Swoole", "Node.js", "Go", "Grafana", "ELK Stack", "Loki", "Tempo", "Docker"],
+  },
   {
     title: "Sr. Software Architect (Promoted from Sr. Software Engineer)",
     company: "Bajaj Finserv Health",
@@ -37,27 +48,13 @@ const experiences = [
       "Implemented CI/CD reducing deployment time by 75%",
       "Promoted to Sr. Architect within 15 months",
     ],
-    technologies: [
-      "React",
-      "Next.js",
-      "Node.js",
-      "TypeScript",
-      "PHP",
-      "Laravel",
-      "Azure",
-      "Kubernetes",
-      "MongoDB",
-      "MySQL",
-      "Redis",
-      "Docker",
-    ],
+    technologies: ["React", "Next.js", "Node.js", "TypeScript", "PHP", "Laravel", "Azure", "Kubernetes", "MongoDB", "MySQL", "Redis", "Docker"],
   },
   {
     title: "Director & Tech Lead",
     company: "Bigly Technology Pvt. Ltd.",
     period: "March 2017 - October 2020",
-    description:
-      "Co-founded and leading India's premier e-commerce enablement platform for online sellers. Managing complete technology stack and business operations.",
+    description: "Co-founded and leading India's premier e-commerce enablement platform for online sellers. Managing complete technology stack and business operations.",
     responsibilities: [
       "Strategic planning & business development",
       "Team management & hiring",
@@ -78,21 +75,10 @@ const experiences = [
     title: "Lead Software Engineer",
     company: "BigRadar",
     period: "April 2017 - October 2020",
-    description:
-      "Single-handedly built and maintained a modern real-time chat platform serving thousands of concurrent users",
-    responsibilities: [
-      "Full-stack development (solo)",
-      "Product architecture & design",
-      "Infrastructure & DevOps",
-      "Performance monitoring & optimization",
-    ],
+    description: "Single-handedly built and maintained a modern real-time chat platform serving thousands of concurrent users",
+    responsibilities: ["Full-stack development (solo)", "Product architecture & design", "Infrastructure & DevOps", "Performance monitoring & optimization"],
     type: "previous",
-    achievements: [
-      "Built entire platform independently",
-      "Achieved 99.9% uptime SLA",
-      "Served 10k+ concurrent users",
-      "Real-time messaging with Socket.IO",
-    ],
+    achievements: ["Built entire platform independently", "Achieved 99.9% uptime SLA", "Served 10k+ concurrent users", "Real-time messaging with Socket.IO"],
     technologies: ["Socket.IO", "React", "Node.js", "Redis", "MongoDB"],
   },
 ];
@@ -111,8 +97,7 @@ const education = [
     degree: "Self-Taught Software Engineering",
     institution: "School of Internet",
     period: "2009 - Present",
-    description:
-      "Continuous learning through online resources, documentation, and hands-on projects",
+    description: "Continuous learning through online resources, documentation, and hands-on projects",
     skills: ["Problem Solving", "Research", "Self-Motivation", "Adaptability"],
     type: "ongoing",
   },
@@ -120,8 +105,7 @@ const education = [
     degree: "Bachelor of Commerce",
     institution: "University of Delhi",
     period: "2009 - 2013",
-    description:
-      "Foundation in business principles while pursuing passion for programming",
+    description: "Foundation in business principles while pursuing passion for programming",
     skills: ["Business Acumen", "Analytical Thinking", "Communication"],
     type: "completed",
   },
@@ -133,43 +117,28 @@ export function ExperienceSection() {
       {/* Background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-secondary/30 rounded-full blur-3xl animate-float"></div>
-        <div
-          className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float"
-          style={{ animationDelay: "4s" }}
-        ></div>
+        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }}></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text animate-gradient">
-            Professional Journey
-          </h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text animate-gradient">Professional Journey</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            8+ years of building scalable solutions, leading teams, and creating
-            impact in the tech industry
+            {experienceYears} years of building scalable solutions, leading teams, and creating impact in the tech industry
           </p>
         </div>
 
         {/* Career Timeline */}
         <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12 text-shimmer">
-            Career Milestones
-          </h3>
+          <h3 className="text-3xl font-bold text-center mb-12 text-shimmer">Career Milestones</h3>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {milestones.map((milestone, index) => (
-              <div
-                key={milestone.year}
-                className="stagger-item flex flex-col items-center text-center group hover-scale"
-              >
+              <div key={milestone.year} className="stagger-item flex flex-col items-center text-center group hover-scale">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
                   <milestone.icon className="h-8 w-8 text-white" />
                 </div>
-                <div className="text-lg font-bold text-primary mb-1">
-                  {milestone.year}
-                </div>
-                <div className="text-sm text-muted-foreground max-w-24 leading-tight">
-                  {milestone.event}
-                </div>
+                <div className="text-lg font-bold text-primary mb-1">{milestone.year}</div>
+                <div className="text-sm text-muted-foreground max-w-24 leading-tight">{milestone.event}</div>
               </div>
             ))}
           </div>
@@ -181,61 +150,34 @@ export function ExperienceSection() {
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block"></div>
 
           <div className="space-y-12">
-            {experiences.map((exp, index) => (
-              <div
-                key={index}
-                className="relative animate-fade-in"
-                style={{ animationDelay: `${index * 0.2}s` }}
-              >
+            {experiences.map((exp) => (
+              <div key={exp.company} className="relative animate-fade-in">
                 {/* Timeline dot */}
                 <div
                   className={`absolute left-6 w-4 h-4 rounded-full border-4 border-background shadow-lg hidden md:block animate-pulse-glow ${
                     exp.type === "current" ? "bg-primary" : "bg-secondary"
                   }`}
-                  style={{ animationDelay: `${index * 0.3}s` }}
                 ></div>
 
                 <Card
                   className={`ml-0 md:ml-16 glass-effect transition-all duration-500 hover-scale hover-glow group ${
-                    exp.type === "current"
-                      ? "border-primary/40 hover:border-primary"
-                      : "border-secondary/20 hover:border-secondary/40"
+                    exp.type === "current" ? "border-primary/40 hover:border-primary" : "border-secondary/20 hover:border-secondary/40"
                   }`}
                 >
                   <CardHeader className="pb-4">
                     <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <div
-                            className={`w-3 h-3 rounded-full ${
-                              exp.type === "current"
-                                ? "bg-primary animate-pulse"
-                                : "bg-secondary"
-                            }`}
-                          ></div>
+                          <div className={`w-3 h-3 rounded-full ${exp.type === "current" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
                           <Badge
-                            variant={
-                              exp.type === "current" ? "default" : "outline"
-                            }
-                            className={`text-xs ${
-                              exp.type === "current"
-                                ? "bg-primary text-primary-foreground"
-                                : "border-muted-foreground/30"
-                            }`}
+                            variant={exp.type === "current" ? "default" : "outline"}
+                            className={`text-xs ${exp.type === "current" ? "bg-primary text-primary-foreground" : "border-muted-foreground/30"}`}
                           >
-                            {exp.type === "current"
-                              ? "Current Role"
-                              : "Previous Role"}
+                            {exp.type === "current" ? "Current Role" : "Previous Role"}
                           </Badge>
                         </div>
 
-                        <CardTitle
-                          className={`text-2xl font-bold mb-2 ${
-                            exp.type === "current"
-                              ? "text-primary"
-                              : "text-foreground"
-                          } group-hover:text-primary transition-colors`}
-                        >
+                        <CardTitle className={`text-2xl font-bold mb-2 ${exp.type === "current" ? "text-primary" : "text-foreground"} group-hover:text-primary transition-colors`}>
                           {exp.title}
                         </CardTitle>
 
@@ -253,9 +195,7 @@ export function ExperienceSection() {
                   </CardHeader>
 
                   <CardContent className="space-y-6">
-                    <p className="text-muted-foreground leading-relaxed">
-                      {exp.description}
-                    </p>
+                    <p className="text-muted-foreground leading-relaxed">{exp.description}</p>
 
                     <div className="grid md:grid-cols-2 gap-6">
                       {/* Responsibilities */}
@@ -268,9 +208,7 @@ export function ExperienceSection() {
                           {exp.responsibilities.map((responsibility, idx) => (
                             <div key={idx} className="flex items-center gap-2">
                               <ChevronRight className="h-3 w-3 text-accent" />
-                              <span className="text-sm text-muted-foreground">
-                                {responsibility}
-                              </span>
+                              <span className="text-sm text-muted-foreground">{responsibility}</span>
                             </div>
                           ))}
                         </div>
@@ -286,9 +224,7 @@ export function ExperienceSection() {
                           {exp.achievements.map((achievement, idx) => (
                             <div key={idx} className="flex items-center gap-2">
                               <div className="w-2 h-2 bg-secondary rounded-full"></div>
-                              <span className="text-sm text-muted-foreground">
-                                {achievement}
-                              </span>
+                              <span className="text-sm text-muted-foreground">{achievement}</span>
                             </div>
                           ))}
                         </div>
@@ -297,16 +233,10 @@ export function ExperienceSection() {
 
                     {/* Technologies */}
                     <div>
-                      <h5 className="font-semibold text-foreground mb-3">
-                        Technologies Used
-                      </h5>
+                      <h5 className="font-semibold text-foreground mb-3">Technologies Used</h5>
                       <div className="flex flex-wrap gap-2">
                         {exp.technologies.map((tech, idx) => (
-                          <Badge
-                            key={tech}
-                            variant="outline"
-                            className="text-xs border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-300 hover-scale"
-                          >
+                          <Badge key={tech} variant="outline" className="text-xs border-accent/30 hover:border-accent hover:bg-accent/10 transition-all duration-300 hover-scale">
                             {tech}
                           </Badge>
                         ))}
@@ -319,44 +249,196 @@ export function ExperienceSection() {
           </div>
         </div>
 
+        {/* Case Studies Section */}
+        <div className="mb-20">
+          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Selected Case Studies</h3>
+          <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">Real-world impact across performance, architecture, and infrastructure projects</p>
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Case Study 1: Laravel Octane Performance */}
+            <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300 hover-scale hover-glow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                  <Badge variant="outline" className="text-xs border-primary/30">
+                    Performance
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-primary">PHP-FPM → Laravel Octane (Swoole)</CardTitle>
+                <p className="text-xs text-muted-foreground mt-2">85% performance improvement, 5× concurrency</p>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
+                  <p className="text-xs text-muted-foreground">Slow responses (800ms), poor concurrency, high CPU usage under load</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
+                  <ul className="text-xs text-muted-foreground space-y-0.5">
+                    <li>• Replaced PHP-FPM with Laravel Octane + Swoole</li>
+                    <li>• Process-level caching & coroutine execution</li>
+                    <li>• Optimized DB queries & connection pooling</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
+                  <p className="text-xs text-muted-foreground">Response time: 800ms → 40–60ms | 5× concurrency | 30–40% cost savings</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 2: Microservices Migration */}
+            <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale hover-glow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-secondary"></div>
+                  <Badge variant="outline" className="text-xs border-secondary/30">
+                    Architecture
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-secondary">Microservices Migration</CardTitle>
+                <p className="text-xs text-muted-foreground mt-2">Laravel → Node.js + Go | 87% faster, 4× delivery speed</p>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
+                  <p className="text-xs text-muted-foreground">Monolithic app with 2–3s latency, poor scaling, rising infra costs</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
+                  <ul className="text-xs text-muted-foreground space-y-0.5">
+                    <li>• Domain-driven microservices architecture</li>
+                    <li>• High-traffic modules rebuilt in Node.js + Go</li>
+                    <li>• Kafka/Redis event-driven communication</li>
+                    <li>• Containerized with Docker + Kubernetes</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
+                  <p className="text-xs text-muted-foreground">Response: 250ms → 35ms | Releases: monthly → daily | 60% fewer incidents</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 3: DevOps Platform */}
+            <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 hover-scale hover-glow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-accent"></div>
+                  <Badge variant="outline" className="text-xs border-accent/30">
+                    DevOps
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-accent">DevOps Pipeline + Kubernetes Platform</CardTitle>
+                <p className="text-xs text-muted-foreground mt-2">Built from zero | 99% deployment friction reduction</p>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
+                  <p className="text-xs text-muted-foreground">No CI/CD, manual deployments (45 mins), zero observability</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
+                  <ul className="text-xs text-muted-foreground space-y-0.5">
+                    <li>• Built HA Kubernetes cluster</li>
+                    <li>• CI/CD with Jenkins + GitHub Actions</li>
+                    <li>• GitOps with ArgoCD, IaC via Terraform</li>
+                    <li>• Full observability: Grafana + ELK + Tempo</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
+                  <p className="text-xs text-muted-foreground">Deployments: 45 mins → &lt;2 mins | 40% cloud cost savings | 99.9% SLO</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 4: Capsule Design System */}
+            <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300 hover-scale hover-glow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-primary"></div>
+                  <Badge variant="outline" className="text-xs border-primary/30">
+                    Bajaj Finserv Health
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-primary">Capsule Design System</CardTitle>
+                <p className="text-xs text-muted-foreground mt-2">React + Storybook | 99% Lighthouse Score</p>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
+                  <p className="text-xs text-muted-foreground">Inconsistent UI, slow development, visual drift, poor Lighthouse scores</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
+                  <ul className="text-xs text-muted-foreground space-y-0.5">
+                    <li>• Built scalable design system (React + Storybook)</li>
+                    <li>• Unified tokens, reusable hooks/utilities</li>
+                    <li>• A11Y-first component design</li>
+                    <li>• Performance-optimized bundles</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
+                  <p className="text-xs text-muted-foreground">UI speed: 2–3× faster | 50–70% dev time reduction | Adopted by 10+ apps</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Case Study 5: ArgoCD GitOps */}
+            <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale hover-glow">
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className="w-3 h-3 rounded-full bg-secondary"></div>
+                  <Badge variant="outline" className="text-xs border-secondary/30">
+                    Bajaj Finserv Health
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-bold text-secondary">ArgoCD GitOps for 600+ Microservices</CardTitle>
+                <p className="text-xs text-muted-foreground mt-2">Zero drift | 70% manual overhead reduction</p>
+              </CardHeader>
+              <CardContent className="space-y-3">
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
+                  <p className="text-xs text-muted-foreground">600+ services deployed manually, frequent mismatches, slow rollbacks</p>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
+                  <ul className="text-xs text-muted-foreground space-y-0.5">
+                    <li>• GitOps platform with ArgoCD (Git = source of truth)</li>
+                    <li>• Custom Azure DevOps Task for sync automation</li>
+                    <li>• Auto-sync, self-heal, drift detection policies</li>
+                    <li>• RBAC + SSO for multi-team access</li>
+                  </ul>
+                </div>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
+                  <p className="text-xs text-muted-foreground">Instant rollbacks | Zero drift | 70% less overhead | 2× faster releases</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
         {/* Education Section */}
         <div className="animate-fade-in" style={{ animationDelay: "1s" }}>
-          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">
-            Education & Learning Philosophy
-          </h3>
+          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Education & Learning Philosophy</h3>
           <div className="grid md:grid-cols-2 gap-8">
             {education.map((edu, index) => (
               <Card
                 key={edu.degree}
                 className={`glass-effect transition-all duration-300 hover-scale hover-glow ${
-                  edu.type === "ongoing"
-                    ? "border-primary/30 hover:border-primary/50"
-                    : "border-secondary/20 hover:border-secondary/40"
+                  edu.type === "ongoing" ? "border-primary/30 hover:border-primary/50" : "border-secondary/20 hover:border-secondary/40"
                 }`}
               >
                 <CardHeader>
                   <div className="flex items-center gap-3 mb-2">
-                    <div
-                      className={`w-3 h-3 rounded-full ${
-                        edu.type === "ongoing"
-                          ? "bg-primary animate-pulse"
-                          : "bg-secondary"
-                      }`}
-                    ></div>
-                    <Badge
-                      variant={edu.type === "ongoing" ? "default" : "outline"}
-                      className="text-xs"
-                    >
+                    <div className={`w-3 h-3 rounded-full ${edu.type === "ongoing" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
+                    <Badge variant={edu.type === "ongoing" ? "default" : "outline"} className="text-xs">
                       {edu.type === "ongoing" ? "Ongoing" : "Completed"}
                     </Badge>
                   </div>
-                  <CardTitle
-                    className={`text-xl font-bold ${
-                      edu.type === "ongoing" ? "text-primary" : "text-secondary"
-                    }`}
-                  >
-                    {edu.degree}
-                  </CardTitle>
+                  <CardTitle className={`text-xl font-bold ${edu.type === "ongoing" ? "text-primary" : "text-secondary"}`}>{edu.degree}</CardTitle>
                   <div className="flex items-center gap-2 text-muted-foreground">
                     <MapPin className="h-4 w-4" />
                     {edu.institution}
@@ -367,20 +449,12 @@ export function ExperienceSection() {
                   </div>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {edu.description}
-                  </p>
+                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{edu.description}</p>
                   <div>
-                    <h5 className="font-semibold text-foreground mb-3">
-                      Skills Developed
-                    </h5>
+                    <h5 className="font-semibold text-foreground mb-3">Skills Developed</h5>
                     <div className="flex flex-wrap gap-2">
                       {edu.skills.map((skill) => (
-                        <Badge
-                          key={skill}
-                          variant="outline"
-                          className="text-xs border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-colors"
-                        >
+                        <Badge key={skill} variant="outline" className="text-xs border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-colors">
                           {skill}
                         </Badge>
                       ))}
@@ -393,23 +467,13 @@ export function ExperienceSection() {
         </div>
 
         {/* Quote Section */}
-        <div
-          className="mt-16 text-center animate-fade-in"
-          style={{ animationDelay: "1.2s" }}
-        >
+        <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
           <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 max-w-4xl mx-auto hover-glow">
             <CardContent className="p-8">
               <blockquote className="text-center">
-                <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">
-                  "Teaching yourself how to code isn't something everybody is
-                  doing."
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">
-                  It requires lots of dedication and motivation.
-                </p>
-                <footer className="text-sm text-accent font-medium">
-                  — A self-taught developer's journey since 2009
-                </footer>
+                <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">"Teaching yourself how to code isn't something everybody is doing."</p>
+                <p className="text-lg text-muted-foreground mb-4">It requires lots of dedication and motivation.</p>
+                <footer className="text-sm text-accent font-medium">— A self-taught developer's journey since 2009</footer>
               </blockquote>
             </CardContent>
           </Card>
