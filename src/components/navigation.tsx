@@ -71,7 +71,7 @@ export function Navigation() {
             </Button>
             <Button
               size="sm"
-              className="bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground"
               onClick={() => scrollToSection('#contact')}
             >
               <Mail className="h-4 w-4 mr-2" />
@@ -121,7 +121,7 @@ export function Navigation() {
                 </Button>
                 <Button
                   size="sm"
-                  className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                   onClick={() => scrollToSection('#contact')}
                 >
                   <Mail className="h-4 w-4 mr-2" />

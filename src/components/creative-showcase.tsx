@@ -86,7 +86,7 @@ export function CreativeShowcase() {
                 key={index}
                 className="stagger-item group glass-effect rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover-scale hover-glow relative overflow-hidden"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-full"></div>
+                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
                 <IconComponent
                   className={`h-12 w-12 ${passion.color} mb-4 group-hover:scale-110 transition-transform duration-300`}
                 />

@@ -1,4 +1,4 @@
-import { Github, Mail, ExternalLink, Heart, Linkedin, X } from "lucide-react";
+import { Github, Mail, ExternalLink, Linkedin, X } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -103,7 +103,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-muted-foreground text-sm">© {currentYear} Adil. All rights reserved.</p>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Built with TypeScript, Next.js, Tailwind and shadcn/ui</span>
+              <span>Built with TypeScript, Next.js, Tailwind and Shadcn/UI</span>
             </div>
             <p className="text-muted-foreground text-sm">Backend • Cloud • DevOps</p>
           </div>

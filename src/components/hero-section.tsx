@@ -44,9 +44,9 @@ export function HeroSection() {
           </div>
 
           {/* Name & Title */}
-          <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">Hi, I&apos;m Adil</h1>
+          {/* <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">Hi, I&apos;m Adil</h1> */}
 
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-muted-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
+          <h2 className="text-2xl md:text-3xl font-light mb-6 text-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
             Sr. Software Architect | Cloud & DevOps Engineer | System Designer | Open Source Contributor.
           </h2>
           <div className="mb-8 space-y-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
@@ -83,7 +83,7 @@ export function HeroSection() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{ animationDelay: "1.1s" }}>
             <Button
               size="lg"
-              className="group bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               onClick={() => window.open("https://github.com/md-adil/", "_blank")}
             >
               <Github className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />

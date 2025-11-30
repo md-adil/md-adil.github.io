@@ -100,7 +100,7 @@ export function ContactSection() {
             <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-primary flex items-center">
-                  <div className="w-2 h-8 bg-gradient-to-b from-primary to-secondary rounded-full mr-3"></div>
+                  <div className="w-2 h-8 bg-primary rounded-full mr-3"></div>
                   Contact Information
                 </h3>
                 <div className="grid md:grid-cols-2 gap-6">
@@ -133,7 +133,7 @@ export function ContactSection() {
             <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-secondary flex items-center">
-                  <div className="w-2 h-8 bg-gradient-to-b from-secondary to-accent rounded-full mr-3"></div>
+                  <div className="w-2 h-8 bg-secondary rounded-full mr-3"></div>
                   Find Me Online
                 </h3>
                 <div className="grid grid-cols-2 gap-4">
@@ -163,12 +163,12 @@ export function ContactSection() {
             <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-6 text-accent flex items-center">
-                  <div className="w-2 h-8 bg-gradient-to-b from-accent to-primary rounded-full mr-3"></div>
+                  <div className="w-2 h-8 bg-accent rounded-full mr-3"></div>
                   Quick Actions
                 </h3>
                 <div className="space-y-4">
                   <Button
-                    className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                     onClick={() => window.open("/resume.pdf", "_blank")}
                   >
                     <Download className="mr-2 h-4 w-4" />

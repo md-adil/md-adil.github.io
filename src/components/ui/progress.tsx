@@ -24,7 +24,7 @@ const Progress = React.forwardRef<
       className={cn(
         "h-full w-full flex-1 transition-all",
         variant === "default" && "bg-primary",
-        variant === "neon" && "bg-gradient-to-r from-primary to-secondary animate-gradient shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
+        variant === "neon" && "bg-primary shadow-[0_0_20px_hsl(var(--primary)/0.5)]"
       )}
       style={{ transform: `translateX(-${100 - (value || 0)}%)` }}
     />

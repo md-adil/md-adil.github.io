@@ -157,9 +157,9 @@ const featuredProjects = [
     description: "Truecaller authentication SDK for PHP & Laravel developers",
     tech: ["PHP", "Laravel", "OAuth"],
     type: "SDK Library",
-    status: "Active Development",
+    status: "Installs 2589",
     icon: Globe,
-    link: "https://github.com/md-adil/truecaller-php-sdk",
+    link: "https://packagist.org/packages/md-adil/truecaller-php-sdk",
     github: "https://github.com/md-adil/truecaller-php-sdk",
   },
 ];
@@ -188,8 +188,8 @@ export function SkillsSection() {
             {philosophy.map((item, index) => (
               <div key={index} className="stagger-item glass-effect rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover-lift group">
                 <div className="text-center">
-                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center group-hover:animate-wiggle">
-                    <item.icon className="h-8 w-8 text-white" />
+                  <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center group-hover:animate-wiggle">
+                    <item.icon className="h-8 w-8 text-primary-foreground" />
                   </div>
                   <h4 className="text-xl font-bold mb-2 gradient-text">{item.quote}</h4>
                   <p className="text-sm text-muted-foreground">{item.description}</p>
@@ -211,8 +211,8 @@ export function SkillsSection() {
               >
                 <CardHeader>
                   <CardTitle className={`text-2xl font-bold ${category.color} flex items-center`}>
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-primary to-secondary flex items-center justify-center mr-4 group-hover:animate-bounce-in">
-                      <category.icon className="h-6 w-6 text-white" />
+                    <div className="w-12 h-12 rounded-xl bg-primary flex items-center justify-center mr-4 group-hover:animate-bounce-in">
+                      <category.icon className="h-6 w-6 text-primary-foreground" />
                     </div>
                     {category.title}
                   </CardTitle>
@@ -244,8 +244,8 @@ export function SkillsSection() {
               <Card key={category.title} className="glass-effect border-muted/20 hover:border-muted/40 transition-all duration-300 hover-scale group">
                 <CardHeader>
                   <CardTitle className={`text-lg font-semibold ${category.color} flex items-center`}>
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-r from-muted to-muted-foreground/20 flex items-center justify-center mr-3">
-                      <category.icon className="h-5 w-5 text-white" />
+                    <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mr-3">
+                      <category.icon className="h-5 w-5 text-muted-foreground" />
                     </div>
                     {category.title}
                   </CardTitle>
@@ -270,8 +270,8 @@ export function SkillsSection() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {achievements.map((achievement, index) => (
               <div key={achievement.title} className="stagger-item text-center p-6 glass-effect rounded-2xl hover:bg-white/10 transition-all duration-300 hover-lift group">
-                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center group-hover:animate-pulse-glow`}>
-                  <achievement.icon className="h-8 w-8 text-white" />
+                <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center group-hover:animate-pulse-glow`}>
+                  <achievement.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <div className={`text-3xl font-bold mb-2 ${achievement.color}`}>{achievement.stat}</div>
                 <h4 className="font-semibold text-foreground mb-1">{achievement.title}</h4>
@@ -290,8 +290,8 @@ export function SkillsSection() {
                 <Card className="stagger-item glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale group hover-glow h-full cursor-pointer">
                   <CardHeader>
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-r from-secondary to-accent flex items-center justify-center group-hover:animate-wiggle">
-                        <project.icon className="h-6 w-6 text-white" />
+                      <div className="w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:animate-wiggle">
+                        <project.icon className="h-6 w-6 text-secondary-foreground" />
                       </div>
                       <Badge variant="outline" className="text-xs border-accent/30 hover:border-accent">
                         {project.type}

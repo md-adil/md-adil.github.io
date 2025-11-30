@@ -16,21 +16,21 @@
     --popover: 220 27% 12%;
     --popover-foreground: 210 20% 98%;
 
-    /* Cyber blue primary */
-    --primary: 195 100% 50%;
-    --primary-foreground: 220 27% 8%;
-    --primary-glow: 195 100% 65%;
+    /* Professional emerald green primary */
+    --primary: 160 84% 39%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 160 84% 49%;
 
-    /* Electric purple secondary */
-    --secondary: 270 100% 60%;
-    --secondary-foreground: 210 20% 98%;
+    /* Professional teal secondary */
+    --secondary: 173 80% 40%;
+    --secondary-foreground: 0 0% 100%;
 
     --muted: 220 20% 15%;
     --muted-foreground: 215 15% 65%;
 
-    /* Neon accent */
-    --accent: 165 100% 50%;
-    --accent-foreground: 220 27% 8%;
+    /* Professional cyan accent */
+    --accent: 189 94% 43%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 75% 60%;
     --destructive-foreground: 210 20% 98%;
@@ -99,10 +99,7 @@
 
   /* Utility classes */
   .gradient-text {
-    background: var(--gradient-primary);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: hsl(var(--primary));
   }
 
   .glass-effect {
@@ -151,15 +148,8 @@
 
   /* Text animations */
   .text-shimmer {
-    background: linear-gradient(90deg, 
-      hsl(var(--muted-foreground)) 0%, 
-      hsl(var(--primary)) 50%, 
-      hsl(var(--muted-foreground)) 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    animation: gradient-shift 2s ease-in-out infinite;
+    color: hsl(var(--primary));
+    font-weight: 600;
   }
 
   /* Custom scrollbar */

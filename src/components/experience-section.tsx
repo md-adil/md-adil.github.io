@@ -134,8 +134,8 @@ export function ExperienceSection() {
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
             {milestones.map((milestone) => (
               <div key={milestone.year} className="stagger-item flex flex-col items-center text-center group hover-scale">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
-                  <milestone.icon className="h-8 w-8 text-white" />
+                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
+                  <milestone.icon className="h-8 w-8 text-primary-foreground" />
                 </div>
                 <div className="text-lg font-bold text-primary mb-1">{milestone.year}</div>
                 <div className="text-sm text-muted-foreground max-w-24 leading-tight">{milestone.event}</div>
@@ -318,7 +318,7 @@ export function ExperienceSection() {
         {/* Experience Cards */}
         <div className="relative mb-20">
           {/* Timeline line */}
-          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary via-secondary to-accent hidden md:block"></div>
+          <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary hidden md:block"></div>
 
           <div className="space-y-12">
             {experiences.map((exp) => (
