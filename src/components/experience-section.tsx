@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar, MapPin, Briefcase, TrendingUp, Zap, Users, Code, Award, ChevronRight } from "lucide-react";
 import { experienceSince, experienceYears, learningSince } from "@/config";
+import { Section, SubSection } from "@/components/ui/section";
 
 const experiences = [
   {
@@ -113,38 +114,29 @@ const education = [
 
 export function ExperienceSection() {
   return (
-    <section id="experience" className="py-20 relative overflow-hidden">
-      {/* Background elements */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/3 right-1/4 w-64 h-64 bg-secondary/30 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-1/3 left-1/4 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }}></div>
-      </div>
-
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 gradient-text animate-gradient">Professional Journey</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            {experienceYears} years of building scalable solutions, leading teams, and creating impact in the tech industry
-          </p>
-        </div>
-
-        {/* Career Timeline */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-center mb-12 text-shimmer">Career Milestones</h3>
-          <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            {milestones.map((milestone) => (
-              <div key={milestone.year} className="stagger-item flex flex-col items-center text-center group hover-scale">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
-                  <milestone.icon className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <div className="text-lg font-bold text-primary mb-1">{milestone.year}</div>
-                <div className="text-sm text-muted-foreground max-w-24 leading-tight">{milestone.event}</div>
+    <Section
+      id="experience"
+      title="Professional Journey"
+      subtitle={`${experienceYears} years of building scalable solutions, leading teams, and creating impact in the tech industry`}
+    >
+      {/* Career Timeline */}
+      <SubSection title="Career Milestones">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8">
+          {milestones.map((milestone) => (
+            <div key={milestone.year} className="stagger-item flex flex-col items-center text-center group hover-scale">
+              <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
+                <milestone.icon className="h-8 w-8 text-primary-foreground" />
               </div>
-            ))}
-          </div>
+              <div className="text-lg font-bold text-secondary mb-1">{milestone.year}</div>
+              <div className="text-sm text-muted-foreground max-w-24 leading-tight">{milestone.event}</div>
+            </div>
+          ))}
         </div>
-        {/* Experience Cards */}
-        <div className="relative mb-20">
+      </SubSection>
+
+      {/* Experience Cards */}
+      <SubSection title="Work Experience">
+        <div className="relative">
           {/* Timeline line */}
           <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-primary hidden md:block"></div>
           <div className="space-y-12">
@@ -176,7 +168,7 @@ export function ExperienceSection() {
                         <CardTitle className={`text-2xl font-bold mb-2 ${exp.type === "current" ? "text-primary" : "text-foreground"} group-hover:text-primary transition-colors`}>
                           {exp.title}
                         </CardTitle>
-                        <div className="flex items-center gap-2 text-lg font-semibold text-secondary mb-2">
+                        <div className="flex items-center gap-2 text-lg font-semibold text-accent mb-2">
                           <Building2 className="h-5 w-5" />
                           {exp.company}
                         </div>
@@ -243,68 +235,67 @@ export function ExperienceSection() {
             ))}
           </div>
         </div>
+      </SubSection>
 
-        {/* Education Section */}
-        <div className="animate-fade-in" style={{ animationDelay: "1s" }}>
-          <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Education & Learning Philosophy</h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {education.map((edu) => (
-              <Card
-                key={edu.degree}
-                className={`glass-effect transition-all duration-300 hover-scale hover-glow ${
-                  edu.type === "ongoing" ? "border-primary/30 hover:border-primary/50" : "border-secondary/20 hover:border-secondary/40"
-                }`}
-              >
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className={`w-3 h-3 rounded-full ${edu.type === "ongoing" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
-                    <Badge variant={edu.type === "ongoing" ? "default" : "outline"} className="text-xs">
-                      {edu.type === "ongoing" ? "Ongoing" : "Completed"}
-                    </Badge>
+      {/* Education Section */}
+      <SubSection title="Education & Learning Philosophy">
+        <div className="grid md:grid-cols-2 gap-8">
+          {education.map((edu) => (
+            <Card
+              key={edu.degree}
+              className={`glass-effect transition-all duration-300 hover-scale hover-glow ${
+                edu.type === "ongoing" ? "border-primary/30 hover:border-primary/50" : "border-secondary/20 hover:border-secondary/40"
+              }`}
+            >
+              <CardHeader>
+                <div className="flex items-center gap-3 mb-2">
+                  <div className={`w-3 h-3 rounded-full ${edu.type === "ongoing" ? "bg-primary animate-pulse" : "bg-secondary"}`}></div>
+                  <Badge variant={edu.type === "ongoing" ? "default" : "outline"} className="text-xs">
+                    {edu.type === "ongoing" ? "Ongoing" : "Completed"}
+                  </Badge>
+                </div>
+                <CardTitle className={`text-xl font-bold ${edu.type === "ongoing" ? "text-primary" : "text-secondary"}`}>{edu.degree}</CardTitle>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <MapPin className="h-4 w-4" />
+                  {edu.institution}
+                </div>
+                <div className="flex items-center gap-2 text-muted-foreground">
+                  <Calendar className="h-4 w-4" />
+                  {edu.period}
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{edu.description}</p>
+                <div>
+                  <h5 className="font-semibold text-foreground mb-3">Skills Developed</h5>
+                  <div className="flex flex-wrap gap-2">
+                    {edu.skills.map((skill) => (
+                      <Badge key={skill} variant="outline" className="text-xs border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-colors">
+                        {skill}
+                      </Badge>
+                    ))}
                   </div>
-                  <CardTitle className={`text-xl font-bold ${edu.type === "ongoing" ? "text-primary" : "text-secondary"}`}>{edu.degree}</CardTitle>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <MapPin className="h-4 w-4" />
-                    {edu.institution}
-                  </div>
-                  <div className="flex items-center gap-2 text-muted-foreground">
-                    <Calendar className="h-4 w-4" />
-                    {edu.period}
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">{edu.description}</p>
-                  <div>
-                    <h5 className="font-semibold text-foreground mb-3">Skills Developed</h5>
-                    <div className="flex flex-wrap gap-2">
-                      {edu.skills.map((skill) => (
-                        <Badge key={skill} variant="outline" className="text-xs border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-colors">
-                          {skill}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
         </div>
+      </SubSection>
 
-        {/* Quote Section */}
-        <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
-          <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 max-w-4xl mx-auto hover-glow">
-            <CardContent className="p-8">
-              <blockquote className="text-center">
-                <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">
-                  "The best architecture is the one that solves today's problems while anticipating tomorrow's challenges."
-                </p>
-                <p className="text-lg text-muted-foreground mb-4">Balancing pragmatism with vision in every system design.</p>
-                <footer className="text-sm text-accent font-medium">— Architecting scalable solutions since {experienceSince}</footer>
-              </blockquote>
-            </CardContent>
-          </Card>
-        </div>
+      {/* Quote Section */}
+      <div className="mt-16 text-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
+        <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 max-w-4xl mx-auto hover-glow">
+          <CardContent className="p-8">
+            <blockquote className="text-center">
+              <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">
+                "The best architecture is the one that solves today's problems while anticipating tomorrow's challenges."
+              </p>
+              <p className="text-lg text-muted-foreground mb-4">Balancing pragmatism with vision in every system design.</p>
+              <footer className="text-sm text-accent font-medium">— Architecting scalable solutions since {experienceSince}</footer>
+            </blockquote>
+          </CardContent>
+        </Card>
       </div>
-    </section>
+    </Section>
   );
 }
