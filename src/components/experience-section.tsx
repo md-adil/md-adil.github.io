@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Building2, Calendar, MapPin, Briefcase, TrendingUp, Zap, Users, Code, Award, ChevronRight } from "lucide-react";
-import { experienceYears } from "@/config";
+import { experienceSince, experienceYears, learningSince } from "@/config";
 
 const experiences = [
   {
@@ -38,7 +38,7 @@ const experiences = [
       "Performance optimization & scalability",
       "Security & compliance",
       "Azure DevOps, Kubernetes & Docker orchestration",
-      "Leading and mentoring team of 15+ engineers",
+      `Leading and mentoring team of ${experienceYears} engineers`,
     ],
     type: "current",
     achievements: [
@@ -84,8 +84,8 @@ const experiences = [
 ];
 
 const milestones = [
-  { year: "2009", event: "Started self-learning programming", icon: Code },
-  { year: "2014", event: "First professional developer role", icon: Briefcase },
+  { year: learningSince, event: "Started self-learning programming", icon: Code },
+  { year: experienceSince, event: "First professional developer role", icon: Briefcase },
   { year: "2017", event: "Founded Bigly Technology", icon: TrendingUp },
   { year: "2020", event: "Created YACS during lockdown", icon: Zap },
   { year: "2022", event: "Promoted to Sr. Architect", icon: Award },
@@ -96,7 +96,7 @@ const education = [
   {
     degree: "Self-Taught Software Engineering",
     institution: "School of Internet",
-    period: "2009 - Present",
+    period: `${learningSince} - Present`,
     description: "Continuous learning through online resources, documentation, and hands-on projects",
     skills: ["Problem Solving", "Research", "Self-Motivation", "Adaptability"],
     type: "ongoing",
@@ -132,7 +132,7 @@ export function ExperienceSection() {
         <div className="mb-20">
           <h3 className="text-3xl font-bold text-center mb-12 text-shimmer">Career Milestones</h3>
           <div className="flex flex-wrap justify-center gap-4 md:gap-8">
-            {milestones.map((milestone, index) => (
+            {milestones.map((milestone) => (
               <div key={milestone.year} className="stagger-item flex flex-col items-center text-center group hover-scale">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-primary to-secondary flex items-center justify-center mb-3 group-hover:animate-bounce-in">
                   <milestone.icon className="h-8 w-8 text-white" />
@@ -205,8 +205,8 @@ export function ExperienceSection() {
                           Key Responsibilities
                         </h5>
                         <div className="space-y-2">
-                          {exp.responsibilities.map((responsibility, idx) => (
-                            <div key={idx} className="flex items-center gap-2">
+                          {exp.responsibilities.map((responsibility) => (
+                            <div key={responsibility} className="flex items-center gap-2">
                               <ChevronRight className="h-3 w-3 text-accent" />
                               <span className="text-sm text-muted-foreground">{responsibility}</span>
                             </div>
@@ -221,8 +221,8 @@ export function ExperienceSection() {
                           Key Achievements
                         </h5>
                         <div className="space-y-2">
-                          {exp.achievements.map((achievement, idx) => (
-                            <div key={idx} className="flex items-center gap-2">
+                          {exp.achievements.map((achievement) => (
+                            <div key={achievement} className="flex items-center gap-2">
                               <div className="w-2 h-2 bg-secondary rounded-full"></div>
                               <span className="text-sm text-muted-foreground">{achievement}</span>
                             </div>
@@ -424,7 +424,7 @@ export function ExperienceSection() {
         <div className="animate-fade-in" style={{ animationDelay: "1s" }}>
           <h3 className="text-3xl font-bold text-center mb-12 gradient-text">Education & Learning Philosophy</h3>
           <div className="grid md:grid-cols-2 gap-8">
-            {education.map((edu, index) => (
+            {education.map((edu) => (
               <Card
                 key={edu.degree}
                 className={`glass-effect transition-all duration-300 hover-scale hover-glow ${
@@ -471,9 +471,11 @@ export function ExperienceSection() {
           <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 max-w-4xl mx-auto hover-glow">
             <CardContent className="p-8">
               <blockquote className="text-center">
-                <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">"Teaching yourself how to code isn't something everybody is doing."</p>
-                <p className="text-lg text-muted-foreground mb-4">It requires lots of dedication and motivation.</p>
-                <footer className="text-sm text-accent font-medium">— A self-taught developer's journey since 2009</footer>
+                <p className="text-2xl md:text-3xl font-bold gradient-text mb-4">
+                  "The best architecture is the one that solves today's problems while anticipating tomorrow's challenges."
+                </p>
+                <p className="text-lg text-muted-foreground mb-4">Balancing pragmatism with vision in every system design.</p>
+                <footer className="text-sm text-accent font-medium">— Architecting scalable solutions since 2014</footer>
               </blockquote>
             </CardContent>
           </Card>

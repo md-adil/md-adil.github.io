@@ -3,7 +3,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import { domain } from "@/config";
+import { domain, experienceYears } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     site: "@_MdAdil",
     creator: "@_MdAdil",
     title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
-    description: "Specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. 15+ years experience.",
+    description: `Specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. ${experienceYears} years experience.`,
     images: [`${domain}/images/adil-portrait.jpg`],
   },
   robots: {

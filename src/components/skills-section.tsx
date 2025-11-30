@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Code2, Database, Cloud, Smartphone, Globe, Zap, Rocket, Star, Heart, Coffee, Download, Users, Award, Network, ExternalLink } from "lucide-react";
+import { experienceYears, learningSince } from "@/config";
 
 // Primary expertise - what defines the role
 const primarySkills = [
@@ -78,8 +79,8 @@ const achievements = [
   {
     icon: Coffee,
     title: "Years Experience",
-    description: "Self-taught since 2009",
-    stat: "15+",
+    description: `Self-taught since ${learningSince}`,
+    stat: experienceYears,
     color: "text-accent",
   },
   {
@@ -93,18 +94,18 @@ const achievements = [
 
 const philosophy = [
   {
-    quote: "Love to code.",
-    description: "Passion drives perfection in every line of code",
+    quote: "Code with purpose.",
+    description: "Building solutions that create real-world impact",
     icon: Heart,
   },
   {
-    quote: "Degree don't define skills.",
-    description: "Self-taught excellence through dedication and continuous learning",
+    quote: "Architect for scale.",
+    description: "Design systems that grow with your business",
     icon: Award,
   },
   {
-    quote: "Always learning, always growing.",
-    description: "Embracing new technologies and connecting with people",
+    quote: "Optimize relentlessly.",
+    description: "Performance and efficiency in every decision",
     icon: Star,
   },
 ];
@@ -300,36 +301,36 @@ export function SkillsSection() {
           </div>
         </div>
 
-        {/* Fun Facts */}
+        {/* Key Highlights */}
         <div className="text-center glass-effect rounded-2xl p-8 max-w-4xl mx-auto animate-bounce-in">
-          <h3 className="text-2xl font-bold mb-6 gradient-text">Did You Know?</h3>
+          <h3 className="text-2xl font-bold mb-6 gradient-text">Beyond the Code</h3>
           <div className="grid md:grid-cols-2 gap-6 text-left">
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-muted-foreground">Self-taught since 2009 - "School of Internet" graduate</span>
+                <span className="text-muted-foreground">Reduced deployment time from 45 mins to &lt;2 mins</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-                <span className="text-muted-foreground">Philanthropist, Tech Junkie, and Gymnast</span>
+                <span className="text-muted-foreground">Architect for 600+ microservices at scale</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-                <span className="text-muted-foreground">Built songspk-dl CLI tool entirely in PHP</span>
+                <span className="text-muted-foreground">85% performance improvement with Laravel Octane</span>
               </div>
             </div>
             <div className="space-y-3">
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: "1.5s" }}></div>
-                <span className="text-muted-foreground">Speaks English, Hindi, and Urdu</span>
+                <span className="text-muted-foreground">Open source creator: 1.2k+ weekly NPM downloads</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "2s" }}></div>
-                <span className="text-muted-foreground">Created YACS during lockdown to help people connect</span>
+                <span className="text-muted-foreground">Philanthropist, Tech Advocate, and Fitness Enthusiast</span>
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: "2.5s" }}></div>
-                <span className="text-muted-foreground">TypeScript advocate - "thinks TypeScript first"</span>
+                <span className="text-muted-foreground">Multilingual: English, Hindi, and Urdu</span>
               </div>
             </div>
           </div>

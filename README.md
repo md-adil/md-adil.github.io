@@ -65,7 +65,7 @@ npm start
 - **Email:** adil.sudo@gmail.com
 - **GitHub:** [@md-adil](https://github.com/md-adil)
 - **LinkedIn:** [linkedin.com/in/md-adil](https://www.linkedin.com/in/md-adil)
-- **Twitter:** [@_MdAdil](https://twitter.com/_MdAdil)
+- **Twitter:** [@\_MdAdil](https://twitter.com/_MdAdil)
 - **NPM:** [@adil.sudo](https://www.npmjs.com/~adil.sudo)
 
 ## License
@@ -73,5 +73,3 @@ npm start
 © 2025 Md Adil. All rights reserved.
 
 ---
-
-*"Degree don't define skills" - A self-taught developer's journey since 2009*
