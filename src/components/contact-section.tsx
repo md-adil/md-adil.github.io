@@ -217,15 +217,15 @@ export function ContactSection() {
               </CardContent>
             </Card>
 
-            {/* Philosophy */}
+            {/* Quote */}
             <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300">
               <CardContent className="p-6">
                 <blockquote className="text-center">
                   <p className="text-lg font-medium text-secondary mb-2">
-                    "Degree don't define skills"
+                    "Code is poetry written in logic"
                   </p>
                   <p className="text-sm text-muted-foreground">
-                    Always learning, always growing
+                    Building systems that scale, perform, and deliver
                   </p>
                 </blockquote>
               </CardContent>

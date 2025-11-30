@@ -52,11 +52,10 @@ export function HeroSection() {
           <div className="mb-8 space-y-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
             <p className="text-xl md:text-2xl font-medium text-primary text-shimmer">Building scalable health-tech solutions for 1M+ users</p>
             <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              Self-taught developer since 2014 | {experienceYears} years of experience
+              {experienceYears} years building backend systems, cloud infrastructure, and DevOps platforms
             </p>
             <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.9s" }}>
-              Passionate about clean code, TypeScript, and open source. Creator of react-read-otp (1.2k+ weekly downloads) and YACS. Director @ Bigly Technology. Philanthropist,
-              Tech Junkie, and Gymnast.
+              Creator of react-read-otp (1.2k+ weekly downloads), ebx, material-ui-react-form, react-use-listener • Open Source Contributor
             </p>
           </div>
 
