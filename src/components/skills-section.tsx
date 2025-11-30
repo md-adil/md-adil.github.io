@@ -14,6 +14,7 @@ import {
   Download,
   Users,
   Award,
+  Network,
 } from "lucide-react";
 
 const skillCategories = [
@@ -64,6 +65,20 @@ const skillCategories = [
     delay: "0.3s",
   },
   {
+    title: "AI & Integration",
+    icon: Network,
+    skills: [
+      "MCP Servers",
+      "Claude Agent SDK",
+      "AI Integration",
+      "Socket.IO",
+      "WebSockets",
+      "Real-time Systems",
+    ],
+    color: "text-secondary",
+    delay: "0.4s",
+  },
+  {
     title: "Mobile & IoT",
     icon: Smartphone,
     skills: [
@@ -71,40 +86,40 @@ const skillCategories = [
       "IoT Development",
       "FreeRTOS",
       "Embedded Systems",
-      "Socket.IO",
+      "Hardware Integration",
     ],
     color: "text-primary",
-    delay: "0.4s",
+    delay: "0.5s",
   },
 ];
 
 const achievements = [
   {
     icon: Download,
-    title: "1.2k+ Weekly Downloads",
-    description: "react-read-otp NPM package",
-    stat: "1,200+",
+    title: "NPM Downloads",
+    description: "Weekly downloads across packages",
+    stat: "1.2k+",
     color: "text-primary",
   },
   {
     icon: Users,
-    title: "Open Source Projects",
-    description: "Contributing to developer community",
-    stat: "10+",
+    title: "GitHub Repositories",
+    description: "Open source contributions",
+    stat: "97",
     color: "text-secondary",
   },
   {
     icon: Coffee,
-    title: "Years of Experience",
-    description: "Building scalable solutions",
-    stat: "8+",
+    title: "Years Experience",
+    description: "Self-taught since 2009",
+    stat: "15+",
     color: "text-accent",
   },
   {
     icon: Rocket,
-    title: "Projects Delivered",
-    description: "From startups to enterprise",
-    stat: "50+",
+    title: "Users Impacted",
+    description: "Across all platforms",
+    stat: "1M+",
     color: "text-primary",
   },
 ];
@@ -130,32 +145,32 @@ const philosophy = [
 
 const featuredProjects = [
   {
-    name: "YACS",
-    description: "Anonymous chat platform - Connect without sharing contacts",
-    tech: ["React", "Node.js", "Socket.IO", "MongoDB"],
-    type: "Web Application",
-    status: "Live",
-    icon: Zap,
-  },
-  {
     name: "react-read-otp",
-    description: "Popular React OTP input component for TypeScript",
-    tech: ["React", "TypeScript", "NPM"],
-    type: "Open Source",
+    description: "Auto-read OTP React hook with 1.2k+ weekly downloads",
+    tech: ["React", "TypeScript", "WebOTP API"],
+    type: "NPM Package",
     status: "1.2k+ downloads/week",
     icon: Code2,
   },
   {
+    name: "ebx",
+    description: "Lightweight event bus library for JavaScript applications",
+    tech: ["JavaScript", "TypeScript", "Events"],
+    type: "NPM Package",
+    status: "Published on NPM",
+    icon: Zap,
+  },
+  {
     name: "truecaller-php-sdk",
-    description: "Unofficial Truecaller authentication SDK for PHP & Laravel",
-    tech: ["PHP", "Laravel", "API Integration"],
-    type: "SDK",
-    status: "Active",
+    description: "Truecaller authentication SDK for PHP & Laravel developers",
+    tech: ["PHP", "Laravel", "OAuth"],
+    type: "SDK Library",
+    status: "Active Development",
     icon: Globe,
   },
 ];
 
-export const SkillsSection = () => {
+export function SkillsSection() {
   return (
     <section id="skills" className="py-20 relative overflow-hidden">
       {/* Animated background elements */}
@@ -393,4 +408,4 @@ export const SkillsSection = () => {
       </div>
     </section>
   );
-};
+}

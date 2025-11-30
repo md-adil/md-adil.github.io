@@ -64,6 +64,7 @@ export function Navigation() {
               variant="outline"
               size="sm"
               className="glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary"
+              onClick={() => window.open('https://github.com/md-adil/', '_blank')}
             >
               <Github className="h-4 w-4 mr-2" />
               GitHub
@@ -71,6 +72,7 @@ export function Navigation() {
             <Button
               size="sm"
               className="bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white"
+              onClick={() => scrollToSection('#contact')}
             >
               <Mail className="h-4 w-4 mr-2" />
               Contact
@@ -112,6 +114,7 @@ export function Navigation() {
                   variant="outline"
                   size="sm"
                   className="w-full glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary"
+                  onClick={() => window.open('https://github.com/md-adil/', '_blank')}
                 >
                   <Github className="h-4 w-4 mr-2" />
                   GitHub
@@ -119,6 +122,7 @@ export function Navigation() {
                 <Button
                   size="sm"
                   className="w-full bg-gradient-to-r from-primary to-secondary hover:from-primary-glow hover:to-secondary text-white"
+                  onClick={() => scrollToSection('#contact')}
                 >
                   <Mail className="h-4 w-4 mr-2" />
                   Contact

@@ -1,6 +1,6 @@
-import { Github, Mail, ExternalLink, Heart } from "lucide-react";
+import { Github, Mail, ExternalLink, Heart, Linkedin, X } from "lucide-react";
 
-export const Footer = () => {
+export function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -20,12 +20,32 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
+                aria-label="GitHub"
               >
                 <Github className="h-5 w-5" />
               </a>
               <a
+                href="https://www.linkedin.com/in/md-adil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-blue-500 transition-colors duration-300 hover:scale-110 transform"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="h-5 w-5" />
+              </a>
+              <a
+                href="https://twitter.com/_MdAdil"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-foreground hover:text-sky-500 transition-colors duration-300 hover:scale-110 transform"
+                aria-label="Twitter / X"
+              >
+                <X className="h-5 w-5" />
+              </a>
+              <a
                 href="mailto:adil.sudo@gmail.com"
                 className="text-foreground hover:text-secondary transition-colors duration-300 hover:scale-110 transform"
+                aria-label="Email"
               >
                 <Mail className="h-5 w-5" />
               </a>
@@ -34,6 +54,7 @@ export const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-foreground hover:text-accent transition-colors duration-300 hover:scale-110 transform"
+                aria-label="NPM"
               >
                 <ExternalLink className="h-5 w-5" />
               </a>
@@ -65,28 +86,28 @@ export const Footer = () => {
             </h4>
             <div className="space-y-3">
               <a
-                href="https://yacs.in/"
+                href="https://www.npmjs.com/package/react-read-otp"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-primary transition-colors duration-300"
               >
-                YACS - Anonymous Chat Platform
+                react-read-otp - Auto OTP Reader
               </a>
               <a
-                href="https://www.npmjs.com/package/react-read-otp"
+                href="https://www.npmjs.com/package/ebx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-secondary transition-colors duration-300"
               >
-                react-read-otp - NPM Package
+                ebx - Event Bus Library
               </a>
               <a
-                href="https://github.com/md-adil/embedded-ip-cpp"
+                href="https://github.com/md-adil/truecaller-php-sdk"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block text-muted-foreground hover:text-accent transition-colors duration-300"
               >
-                embedded-ip-cpp - IoT Tools
+                truecaller-php-sdk - Auth SDK
               </a>
             </div>
           </div>
@@ -111,4 +132,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
