@@ -30,10 +30,16 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Adil", url: "https://github.com/md-adil" }],
   creator: "Adil",
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/icon', type: 'image/png' },
+    ],
+    apple: '/apple-icon',
+  },
   openGraph: {
     title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
-    description:
-      "Sr. Software Architect specializing in scalable backend systems, cloud infrastructure, and DevOps. Expert in Laravel, Node.js, Kubernetes, and microservices. 15+ years experience.",
+    description: `Sr. Software Architect specializing in scalable backend systems, cloud infrastructure, and DevOps. Expert in Laravel, Node.js, Kubernetes, and microservices. ${experienceYears} years experience.`,
     type: "website",
     url: domain,
     siteName: "Adil - Software Architect Portfolio",
