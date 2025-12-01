@@ -1,175 +1,63 @@
-import { Badge } from "./ui/badge";
-import { Card, CardHeader, CardContent, CardTitle } from "./ui/card";
-import { Section } from "./ui/section";
+"use client";
+
+import { CheckCircle2 } from "lucide-react";
+import { caseStudies, SectionId } from "@/data/portfolio-data";
+import { SectionHeading } from "./section-heading";
 
 export function CaseStudies() {
   return (
-    <Section id="case-studies" title="Selected Case Studies" subtitle="Real-world impact across performance, architecture, and infrastructure projects">
-      <div className="grid md:grid-cols-2 gap-8">
-        {/* Case Study 1: Laravel Octane Performance */}
-        <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300 hover-scale hover-glow">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full bg-secondary"></div>
-              <Badge variant="outline" className="text-xs border-secondary/30">
-                Performance
-              </Badge>
-            </div>
-            <CardTitle className="text-xl font-bold text-secondary">PHP-FPM → Laravel Octane (Swoole)</CardTitle>
-            <p className="text-xs text-muted-foreground mt-2">85% performance improvement, 5× concurrency</p>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
-              <p className="text-xs text-muted-foreground">Slow responses (800ms), poor concurrency, high CPU usage under load</p>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
-              <ul className="text-xs text-muted-foreground space-y-0.5">
-                <li>• Replaced PHP-FPM with Laravel Octane + Swoole</li>
-                <li>• Process-level caching & coroutine execution</li>
-                <li>• Optimized DB queries & connection pooling</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
-              <p className="text-xs text-muted-foreground">Response time: 800ms → 40–60ms | 5× concurrency | 30–40% cost savings</p>
-            </div>
-          </CardContent>
-        </Card>
+    <section id={SectionId.CASE_STUDIES} className="py-24 bg-white">
+      <div className="container mx-auto px-6 md:px-12">
+        <SectionHeading title="Case Studies" subtitle="Deep dives into complex system challenges and delivered solutions." />
 
-        {/* Case Study 2: Microservices Migration */}
-        <Card className="glass-effect border-quaternary/20 hover:border-quaternary/40 transition-all duration-300 hover-scale hover-glow">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full bg-secondary"></div>
-              <Badge variant="outline" className="text-xs border-quaternary/30">
-                Architecture
-              </Badge>
-            </div>
-            <CardTitle className="text-xl font-bold text-secondary">Microservices Migration</CardTitle>
-            <p className="text-xs text-muted-foreground mt-2">Laravel → Node.js + Go | 87% faster, 4× delivery speed</p>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
-              <p className="text-xs text-muted-foreground">Monolithic app with 2–3s latency, poor scaling, rising infra costs</p>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
-              <ul className="text-xs text-muted-foreground space-y-0.5">
-                <li>• Domain-driven microservices architecture</li>
-                <li>• High-traffic modules rebuilt in Node.js + Go</li>
-                <li>• Kafka/Redis event-driven communication</li>
-                <li>• Containerized with Docker + Kubernetes</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
-              <p className="text-xs text-muted-foreground">Response: 250ms → 35ms | Releases: monthly → daily | 60% fewer incidents</p>
-            </div>
-          </CardContent>
-        </Card>
+        <div className="space-y-16">
+          {caseStudies.map((study) => (
+            <div key={study.id} className="flex flex-col lg:flex-row gap-8 lg:gap-16 border-t border-slate-100 pt-12 first:border-0 first:pt-0">
+              {/* Left Column: Context */}
+              <div className="lg:w-1/3">
+                <h3 className="text-2xl font-serif font-bold text-slate-900 mb-2">{study.title}</h3>
+                <p className="text-blue-600 font-medium mb-6">{study.client}</p>
 
-        {/* Case Study 3: DevOps Platform */}
-        <Card className="glass-effect border-accent/20 hover:border-accent/40 transition-all duration-300 hover-scale hover-glow">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full bg-secondary"></div>
-              <Badge variant="outline" className="text-xs border-secondary/30">
-                DevOps
-              </Badge>
-            </div>
-            <CardTitle className="text-xl font-bold text-secondary">DevOps Pipeline + Kubernetes Platform</CardTitle>
-            <p className="text-xs text-muted-foreground mt-2">Built from zero | 99% deployment friction reduction</p>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
-              <p className="text-xs text-muted-foreground">No CI/CD, manual deployments (45 mins), zero observability</p>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
-              <ul className="text-xs text-muted-foreground space-y-0.5">
-                <li>• Built HA Kubernetes cluster</li>
-                <li>• CI/CD with Jenkins + GitHub Actions</li>
-                <li>• GitOps with ArgoCD, IaC via Terraform</li>
-                <li>• Full observability: Grafana + ELK + Tempo</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
-              <p className="text-xs text-muted-foreground">Deployments: 45 mins → &lt;2 mins | 40% cloud cost savings | 99.9% SLO</p>
-            </div>
-          </CardContent>
-        </Card>
+                <div className="mb-6">
+                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Tech Stack</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {study.techStack.map((tech, i) => (
+                      <span key={i} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold">
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
 
-        {/* Case Study 4: Capsule Design System */}
-        <Card className="glass-effect border-primary/20 hover:border-primary/40 transition-all duration-300 hover-scale hover-glow">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full bg-secondary"></div>
-              <Badge variant="outline" className="text-xs border-secondary/30">
-                Bajaj Finserv Health
-              </Badge>
-            </div>
-            <CardTitle className="text-xl font-bold text-secondary">Capsule Design System</CardTitle>
-            <p className="text-xs text-muted-foreground mt-2">React + Storybook | 99% Lighthouse Score</p>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
-              <p className="text-xs text-muted-foreground">Inconsistent UI, slow development, visual drift, poor Lighthouse scores</p>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
-              <ul className="text-xs text-muted-foreground space-y-0.5">
-                <li>• Built scalable design system (React + Storybook)</li>
-                <li>• Unified tokens, reusable hooks/utilities</li>
-                <li>• A11Y-first component design</li>
-                <li>• Performance-optimized bundles</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
-              <p className="text-xs text-muted-foreground">UI speed: 2–3× faster | 50–70% dev time reduction | Adopted by 10+ apps</p>
-            </div>
-          </CardContent>
-        </Card>
+              {/* Right Column: Details */}
+              <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="bg-slate-50 p-6 rounded border border-slate-100">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-3 flex items-center gap-2">The Challenge</h4>
+                  <p className="text-slate-600 leading-relaxed text-sm">{study.challenge}</p>
+                </div>
 
-        {/* Case Study 5: ArgoCD GitOps */}
-        <Card className="glass-effect border-secondary/20 hover:border-secondary/40 transition-all duration-300 hover-scale hover-glow">
-          <CardHeader>
-            <div className="flex items-center gap-3 mb-2">
-              <div className="w-3 h-3 rounded-full bg-secondary"></div>
-              <Badge variant="outline" className="text-xs border-secondary/30">
-                Bajaj Finserv Health
-              </Badge>
+                <div className="bg-slate-50 p-6 rounded border border-slate-100">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-3 flex items-center gap-2">The Solution</h4>
+                  <p className="text-slate-600 leading-relaxed text-sm">{study.solution}</p>
+                </div>
+
+                <div className="md:col-span-2">
+                  <h4 className="text-sm font-bold text-slate-900 uppercase tracking-widest mb-4">Key Outcomes</h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    {study.results.map((result, rIdx) => (
+                      <div key={rIdx} className="flex items-start gap-3">
+                        <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
+                        <span className="text-slate-700 text-sm font-medium">{result}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
             </div>
-            <CardTitle className="text-xl font-bold text-secondary">ArgoCD GitOps for 600+ Microservices</CardTitle>
-            <p className="text-xs text-muted-foreground mt-2">Zero drift | 70% manual overhead reduction</p>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Problem</h5>
-              <p className="text-xs text-muted-foreground">600+ services deployed manually, frequent mismatches, slow rollbacks</p>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Solution</h5>
-              <ul className="text-xs text-muted-foreground space-y-0.5">
-                <li>• GitOps platform with ArgoCD (Git = source of truth)</li>
-                <li>• Custom Azure DevOps Task for sync automation</li>
-                <li>• Auto-sync, self-heal, drift detection policies</li>
-                <li>• RBAC + SSO for multi-team access</li>
-              </ul>
-            </div>
-            <div>
-              <h5 className="font-semibold text-foreground mb-1 text-sm">Impact</h5>
-              <p className="text-xs text-muted-foreground">Instant rollbacks | Zero drift | 70% less overhead | 2× faster releases</p>
-            </div>
-          </CardContent>
-        </Card>
+          ))}
+        </div>
       </div>
-    </Section>
+    </section>
   );
 }

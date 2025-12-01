@@ -1,247 +1,59 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Code2, Database, Cloud, Smartphone, Globe, Zap, Rocket, Star, Heart, Coffee, Download, Users, Award, Network } from "lucide-react";
-import { experienceYears, learningSince } from "@/config";
-import { Section, SubSection } from "@/components/ui/section";
+"use client";
 
-// Primary expertise - what defines the role
-const primarySkills = [
-  {
-    title: "Backend & Microservices",
-    icon: Code2,
-    skills: ["PHP", "Laravel", "Laravel Octane", "Node.js", "Express.js", "Go", "RESTful APIs", "GraphQL", "Microservices Architecture"],
-    delay: "0.1s",
-    featured: true,
-  },
-  {
-    title: "Cloud & Infrastructure",
-    icon: Cloud,
-    skills: ["Kubernetes", "Docker", "Terraform", "Azure", "AWS", "CI/CD", "GitOps", "Jenkins"],
-    delay: "0.2s",
-    featured: true,
-  },
-  {
-    title: "DevOps & Observability",
-    icon: Network,
-    skills: ["DevOps", "Grafana", "ELK Stack", "Loki", "Tempo", "Monitoring", "Performance Optimization", "System Design"],
-
-    delay: "0.3s",
-    featured: true,
-  },
-  {
-    title: "Databases & Scalability",
-    icon: Database,
-    skills: ["MySQL", "MongoDB", "Redis", "Database Design", "Query Optimization", "Caching Strategies", "High Availability"],
-    delay: "0.4s",
-    featured: true,
-  },
-];
-
-// Additional skills - breadth of knowledge
-const additionalSkills = [
-  {
-    title: "Frontend Development",
-    icon: Globe,
-    skills: ["TypeScript", "React", "Next.js", "Vue.js", "Tailwind CSS"],
-    color: "text-secondary",
-  },
-  {
-    title: "Real-time & Integration",
-    icon: Zap,
-    skills: ["Socket.IO", "WebSockets", "Real-time Systems", "Live Streaming", "AI Integration"],
-    color: "text-accent",
-  },
-  {
-    title: "Mobile & Emerging Tech",
-    icon: Smartphone,
-    skills: ["React Native", "IoT Development", "Embedded Systems"],
-    color: "text-primary",
-  },
-];
-
-const achievements = [
-  {
-    icon: Download,
-    title: "NPM Downloads",
-    description: "Weekly downloads across packages",
-    stat: "1.2k+",
-    color: "text-primary",
-  },
-  {
-    icon: Users,
-    title: "GitHub Repositories",
-    description: "Open source contributions",
-    stat: "97",
-    color: "text-secondary",
-  },
-  {
-    icon: Coffee,
-    title: "Years Experience",
-    description: `Self-taught since ${learningSince}`,
-    stat: experienceYears,
-    color: "text-accent",
-  },
-  {
-    icon: Rocket,
-    title: "Users Impacted",
-    description: "Across all platforms",
-    stat: "1M+",
-    color: "text-primary",
-  },
-];
-
-const philosophy = [
-  {
-    quote: "Code with purpose.",
-    description: "Building solutions that create real-world impact",
-    icon: Heart,
-  },
-  {
-    quote: "Architect for scale.",
-    description: "Design systems that grow with your business",
-    icon: Award,
-  },
-  {
-    quote: "Optimize relentlessly.",
-    description: "Performance and efficiency in every decision",
-    icon: Star,
-  },
-];
+import { Terminal, Globe, Cpu, Layout, GitBranch, Server, Database, Shield } from 'lucide-react';
+import { SectionId, PORTFOLIO_DATA } from '@/data/portfolio-data';
+import { SectionHeading } from './section-heading';
 
 export function SkillsSection() {
+  const getIcon = (category: string) => {
+    const lower = category.toLowerCase();
+    if (lower.includes('orchestration') || lower.includes('container')) return <Cpu className="w-6 h-6" />;
+    if (lower.includes('infrastructure') || lower.includes('cloud')) return <Globe className="w-6 h-6" />;
+    if (lower.includes('stack') || lower.includes('web') || lower.includes('frontend') || lower.includes('full')) return <Layout className="w-6 h-6" />;
+    if (lower.includes('observability') || lower.includes('devops')) return <Terminal className="w-6 h-6" />;
+    if (lower.includes('ci/cd')) return <GitBranch className="w-6 h-6" />;
+    if (lower.includes('data') || lower.includes('database')) return <Database className="w-6 h-6" />;
+    if (lower.includes('security')) return <Shield className="w-6 h-6" />;
+    return <Server className="w-6 h-6" />;
+  };
+
   return (
-    <Section id="skills" title="Skills & Expertise" subtitle="Specialized in building scalable backend systems, cloud infrastructure, and high-performance applications">
-      {/* Philosophy Cards */}
-      <SubSection title="Development Philosophy">
-        <div className="grid md:grid-cols-3 gap-6">
-          {philosophy.map((item, index) => (
-            <div key={index} className="stagger-item glass-effect rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover-lift group">
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-secondary flex items-center justify-center group-hover:animate-wiggle">
-                  <item.icon className="h-8 w-8 text-primary-foreground" />
-                </div>
-                <h4 className="text-xl font-bold mb-2 text-secondary gradient-text">{item.quote}</h4>
-                <p className="text-sm text-muted-foreground">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </SubSection>
+    <section id={SectionId.SKILLS} className="py-24 bg-slate-50">
+      <div className="container mx-auto px-6 md:px-12">
+        <SectionHeading
+          title="Technical Expertise"
+          subtitle="A comprehensive toolkit for building scalable, resilient systems."
+        />
 
-      {/* Primary Skills - Core Expertise */}
-      <SubSection title="Core Expertise">
-        <div className="grid lg:grid-cols-2 gap-8">
-          {primarySkills.map((category) => (
-            <Card
-              key={category.title}
-              className="glass-effect border-primary/30 hover:border-primary/50 transition-all duration-300 hover-scale group shadow-lg"
-              style={{ animationDelay: category.delay }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {PORTFOLIO_DATA.skills.map((category, idx) => (
+            <div
+              key={idx}
+              className="bg-white p-8 rounded-none border-l-4 border-slate-200 hover:border-blue-600 shadow-sm transition-all duration-300 group"
             >
-              <CardHeader>
-                <CardTitle className={`text-2xl font-bold text-secondary flex items-center`}>
-                  <div className={`w-12 h-12 rounded-xl bg-secondary flex items-center justify-center mr-4 group-hover:animate-bounce-in`}>
-                    <category.icon className={`h-6 w-6 text-white`} />
-                  </div>
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill, skillIndex) => (
-                    <Badge
-                      key={skill}
-                      variant="outline"
-                      className="text-sm py-2 px-3 border-primary/30 hover:border-primary hover:bg-primary/10 transition-all duration-300 hover-scale cursor-default"
-                      style={{ animationDelay: `${skillIndex * 0.1}s` }}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
+              <div className="flex items-center gap-4 mb-8">
+                <div className="p-3 bg-slate-50 rounded-full text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors border border-slate-100">
+                  {getIcon(category.category)}
                 </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </SubSection>
-
-      {/* Additional Skills - Supporting Technologies */}
-      <SubSection muted title="Additional Skills">
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {additionalSkills.map((category, index) => (
-            <Card key={category.title} className="glass-effect border-muted/20 hover:border-muted/40 transition-all duration-300 hover-scale group">
-              <CardHeader>
-                <CardTitle className={`text-lg font-semibold ${category.color} flex items-center`}>
-                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center mr-3">
-                    <category.icon className="h-5 w-5 text-muted-foreground" />
-                  </div>
-                  {category.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {category.skills.map((skill) => (
-                    <Badge key={skill} variant="outline" className="text-xs py-1 px-2 border-muted/30 hover:border-muted hover:bg-muted/10 transition-all duration-300">
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </SubSection>
-
-      {/* Achievements Stats */}
-      <SubSection title="Achievements & Impact">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          {achievements.map((achievement, index) => (
-            <div key={achievement.title} className="stagger-item text-center p-6 glass-effect rounded-2xl hover:bg-white/10 transition-all duration-300 hover-lift group">
-              <div className={`w-16 h-16 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center group-hover:animate-pulse-glow`}>
-                <achievement.icon className="h-8 w-8 text-primary-foreground" />
+                <h3 className="text-xl font-serif font-bold text-slate-900">
+                  {category.category}
+                </h3>
               </div>
-              <div className={`text-3xl font-bold mb-2 ${achievement.color}`}>{achievement.stat}</div>
-              <h4 className="font-semibold text-foreground mb-1">{achievement.title}</h4>
-              <p className="text-xs text-muted-foreground">{achievement.description}</p>
+
+              <div className="flex flex-wrap gap-3">
+                {category.skills.map((skill, sIdx) => (
+                  <span
+                    key={sIdx}
+                    className="px-4 py-2 bg-slate-50 text-slate-700 text-sm font-medium border border-slate-100 group-hover:border-slate-200 group-hover:bg-slate-100 transition-colors cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
-      </SubSection>
-
-      {/* Key Highlights */}
-      <SubSection title="Beyond the Code">
-        <div className="text-center glass-effect rounded-2xl p-8 max-w-4xl mx-auto animate-bounce-in">
-          <div className="grid md:grid-cols-2 gap-6 text-left">
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                <span className="text-muted-foreground">Reduced deployment time from 45 mins to &lt;2 mins</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-                <span className="text-muted-foreground">Architect for 600+ microservices at scale</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-                <span className="text-muted-foreground">85% performance improvement with Laravel Octane</span>
-              </div>
-            </div>
-            <div className="space-y-3">
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: "1.5s" }}></div>
-                <span className="text-muted-foreground">Open source creator: 1.2k+ weekly NPM downloads</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "2s" }}></div>
-                <span className="text-muted-foreground">Philanthropist, Tech Advocate, and Fitness Enthusiast</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-accent rounded-full animate-pulse" style={{ animationDelay: "2.5s" }}></div>
-                <span className="text-muted-foreground">Multilingual: English, Hindi, and Urdu</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SubSection>
-    </Section>
+      </div>
+    </section>
   );
 }

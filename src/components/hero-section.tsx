@@ -1,173 +1,95 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { experienceYears } from "@/config";
-import { Github, Mail, Download, ExternalLink } from "lucide-react";
-import Image from "next/image";
+import { ArrowRight, ChevronDown, Server, Users, Clock } from "lucide-react";
+import { PORTFOLIO_DATA, SectionId } from "@/data/portfolio-data";
 
 export function HeroSection() {
   return (
-    <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      style={{
-        backgroundImage: `url(/images/hero-bg-cyberpunk.jpg)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundAttachment: "fixed",
-      }}
-    >
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-background/80 backdrop-blur-sm"></div>
+    <section id={SectionId.HERO} className="min-h-screen flex items-center pt-20 bg-slate-50 relative overflow-hidden">
+      {/* Background Pattern - Dot Grid */}
+      <div className="absolute inset-0 z-0 opacity-[0.03]" style={{ backgroundImage: "radial-gradient(#0f172a 1px, transparent 1px)", backgroundSize: "32px 32px" }}></div>
 
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-primary/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-48 h-48 bg-secondary/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }}></div>
-        <div className="absolute top-1/2 right-1/3 w-24 h-24 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: "4s" }}></div>
-      </div>
+      {/* Abstract decorative shapes */}
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-slate-100/50 -skew-x-12 transform translate-x-1/3 z-0"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-blue-50/50 skew-y-12 transform -translate-x-20 z-0"></div>
 
-      <div className="relative z-10 container mx-auto px-6 text-center">
-        <div className="max-w-4xl mx-auto">
-          {/* Profile Image */}
-          <div className="mb-8 relative inline-block">
-            <div className="w-40 h-40 mx-auto rounded-full overflow-hidden border-4 border-primary/50 shadow-2xl animate-pulse-glow">
-              <Image
-                src="/images/adil-portrait.jpg"
-                alt="Adil - Sr. Software Architect specializing in Backend Development, Cloud Infrastructure, and DevOps"
-                width={160}
-                height={160}
-                className="w-full h-full object-cover"
-                priority
-              />
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
+        <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+          {/* Left Column: Text Content */}
+          <div className="lg:w-1/2">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-100 text-blue-700 text-sm font-bold tracking-wide animate-in fade-in slide-in-from-bottom-4 duration-700">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+              </span>
+              Available for Hire
             </div>
-            <div className="absolute -top-2 -right-2 w-6 h-6 bg-accent rounded-full animate-pulse"></div>
+
+            <h1 className="text-4xl py-4 md:text-5xl font-serif font-bold text-slate-900 leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
+              Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Backbone</span> of Modern Enterprise.
+            </h1>
+
+            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">{PORTFOLIO_DATA.tagline}</p>
+
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a
+                href="#case-studies"
+                className="px-8 py-4 bg-slate-900 text-white font-medium rounded hover:bg-slate-800 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl hover:-translate-y-1"
+              >
+                View Case Studies <ArrowRight size={18} />
+              </a>
+              <a
+                href="#contact"
+                className="px-8 py-4 bg-white border border-slate-200 text-slate-900 font-medium rounded hover:bg-slate-50 transition-all flex items-center justify-center hover:-translate-y-1"
+              >
+                Contact Me
+              </a>
+            </div>
           </div>
 
-          {/* Name & Title */}
-          {/* <h1 className="text-6xl md:text-8xl font-bold mb-4 gradient-text animate-gradient animate-bounce-in">Hi, I&apos;m Adil</h1> */}
+          {/* Right Column: Visual Stats Cards */}
+          <div className="lg:w-1/2 w-full relative">
+            {/* Decorative background circle */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-white/40 rounded-full blur-3xl -z-10"></div>
 
-          <h2 className="text-2xl md:text-3xl font-light mb-6 text-foreground animate-fade-in" style={{ animationDelay: "0.3s" }}>
-            Sr. Software Architect | Cloud & DevOps Engineer | System Designer | Open Source Contributor.
-          </h2>
-          <div className="mb-8 space-y-2 animate-fade-in" style={{ animationDelay: "0.5s" }}>
-            {/* <p className="text-xl md:text-2xl font-medium text-primary text-shimmer">Building scalable health-tech solutions for 1M+ users</p> */}
-            <p className="text-lg md:text-xl text-foreground/80 animate-fade-in" style={{ animationDelay: "0.7s" }}>
-              I build scalable architectures: microservices, Kubernetes platforms, GitOps pipelines, and real-time systems for high-traffic environments.&nbsp;
-              {experienceYears} years across backend engineering, cloud infra, performance optimization, and developer tooling.
-            </p>
-            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in" style={{ animationDelay: "0.9s" }}>
-              Creator of{" "}
-              <a target="gh-page" href="https://minima-js.github.io/">
-                minima-js
-              </a>
-              ,{" "}
-              <a target="npmjs" href="https://www.npmjs.com/package/react-read-otp">
-                react-read-otp (1.2k+ weekly downloads)
-              </a>
-              ,{" "}
-              <a target="npmjs" href="https://www.npmjs.com/package/ebx">
-                ebx
-              </a>
-              ,{" "}
-              <a target="npmjs" href="https://www.npmjs.com/package/material-ui-react-form">
-                material-ui-react-form
-              </a>
-              ,{" "}
-              <a target="npmjs" href="https://www.npmjs.com/package/react-use-listener">
-                react-use-listener
-              </a>
-            </p>
+            <div className="grid grid-cols-2 gap-8 relative">
+              {/* Card 1: Experience - Pushed down via margin for stagger effect */}
+              <div className="relative bg-white p-8 rounded-2xl shadow-xl border border-slate-100 lg:mt-12 hover:-translate-y-1 hover:z-10 transition-all duration-300">
+                <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
+                  <Clock size={24} />
+                </div>
+                <div className="text-4xl font-bold text-slate-900 mb-2">{PORTFOLIO_DATA.stats.years}</div>
+                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Experience</div>
+                <p className="text-sm text-slate-400 mt-2">Delivering scalable engineering solutions.</p>
+              </div>
+
+              {/* Card 2: Uptime (Dark themed) */}
+              <div className="relative bg-slate-900 p-8 rounded-2xl shadow-xl hover:-translate-y-1 hover:z-10 transition-all duration-300 text-white">
+                <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-4 text-blue-400">
+                  <Server size={24} />
+                </div>
+                <div className="text-4xl font-bold text-white mb-2">{PORTFOLIO_DATA.stats.uptime}</div>
+                <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">System Uptime</div>
+                <p className="text-sm text-slate-500 mt-2">Maintaining critical infrastructure stability.</p>
+              </div>
+
+              {/* Card 3: Users (Spans full width) */}
+              <div className="relative col-span-2 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 hover:-translate-y-1 hover:z-10 transition-all duration-300 flex items-center justify-between">
+                <div>
+                  <div className="text-4xl font-bold text-slate-900 mb-1">{PORTFOLIO_DATA.stats.users}</div>
+                  <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Users Served</div>
+                </div>
+                <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
+                  <Users size={32} />
+                </div>
+              </div>
+            </div>
           </div>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12 animate-scale-in" style={{ animationDelay: "1.1s" }}>
-            <Button
-              size="lg"
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-              onClick={() => window.open("https://github.com/md-adil/", "_blank")}
-            >
-              <Github className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-              Explore 97+ Repositories
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="group glass-effect hover:bg-white/10 border-primary/50 hover:border-primary text-foreground hover:text-primary transition-all duration-300"
-              onClick={() => window.open("/resume.pdf", "_blank")}
-            >
-              <Download className="mr-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-              Download Resume
-            </Button>
-
-            <Button
-              variant="outline"
-              size="lg"
-              className="group glass-effect hover:bg-white/10 border-accent/50 hover:border-accent text-foreground hover:text-accent transition-all duration-300"
-              onClick={() => {
-                const element = document.querySelector("#contact");
-                if (element) {
-                  element.scrollIntoView({ behavior: "smooth" });
-                }
-              }}
-            >
-              <Mail className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-              Get In Touch
-            </Button>
-          </div>
-
-          {/* Featured Projects */}
-          {/* <div className="grid md:grid-cols-3 gap-4 max-w-4xl mx-auto animate-fade-in" style={{ animationDelay: "1.3s" }}>
-            <a
-              href="https://yacs.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden cursor-pointer"
-            >
-              <div className="absolute top-2 right-2 w-2 h-2 bg-accent rounded-full animate-pulse"></div>
-              <h3 className="font-semibold text-primary mb-2 flex items-center">
-                <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                YACS
-              </h3>
-              <p className="text-sm text-muted-foreground">Talk to anyone without sharing contacts - A lockdown project</p>
-            </a>
-
-            <a
-              href="https://www.npmjs.com/package/react-read-otp"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden cursor-pointer"
-            >
-              <div className="absolute top-2 right-2 w-2 h-2 bg-secondary rounded-full animate-pulse" style={{ animationDelay: "0.5s" }}></div>
-              <h3 className="font-semibold text-secondary mb-2 flex items-center">
-                <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                react-read-otp
-              </h3>
-              <p className="text-sm text-muted-foreground">1.2k+ weekly downloads React & TypeScript package</p>
-            </a>
-
-            <a
-              href="https://github.com/md-adil/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-effect rounded-xl p-6 hover:bg-white/10 transition-all duration-300 group hover-scale hover-glow relative overflow-hidden cursor-pointer"
-            >
-              <div className="absolute top-2 right-2 w-2 h-2 bg-primary rounded-full animate-pulse" style={{ animationDelay: "1s" }}></div>
-              <h3 className="font-semibold text-accent mb-2 flex items-center">
-                <ExternalLink className="h-4 w-4 mr-2 group-hover:translate-x-1 transition-transform" />
-                More Projects
-              </h3>
-              <p className="text-sm text-muted-foreground">Explore 97+ repositories on GitHub</p>
-            </a>
-          </div> */}
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary/50 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-400">
+        <ChevronDown size={24} />
       </div>
     </section>
   );

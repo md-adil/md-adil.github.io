@@ -1,113 +1,14 @@
-import { Github, Mail, ExternalLink, Linkedin, X } from "lucide-react";
+"use client";
+
+import { PORTFOLIO_DATA } from '@/data/portfolio-data';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
-
   return (
-    <footer className="py-12 border-t border-primary/20 glass-effect">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
-          <div className="space-y-4">
-            <h3 className="text-2xl font-bold gradient-text">Adil</h3>
-            <p className="text-muted-foreground">Sr. Software Architect passionate about building amazing digital experiences and contributing to open source.</p>
-            <div className="flex space-x-4">
-              <a
-                href="https://github.com/md-adil/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-primary transition-colors duration-300 hover:scale-110 transform"
-                aria-label="GitHub"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/md-adil"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-blue-500 transition-colors duration-300 hover:scale-110 transform"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a
-                href="https://twitter.com/_MdAdil"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-sky-500 transition-colors duration-300 hover:scale-110 transform"
-                aria-label="Twitter / X"
-              >
-                <X className="h-5 w-5" />
-              </a>
-              <a href="mailto:adil.sudo@gmail.com" className="text-foreground hover:text-secondary transition-colors duration-300 hover:scale-110 transform" aria-label="Email">
-                <Mail className="h-5 w-5" />
-              </a>
-              <a
-                href="https://www.npmjs.com/~adil.sudo"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-foreground hover:text-accent transition-colors duration-300 hover:scale-110 transform"
-                aria-label="NPM"
-              >
-                <ExternalLink className="h-5 w-5" />
-              </a>
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Quick Links</h4>
-            <div className="space-y-2">
-              {["Home", "Skills", "Experience", "Contact"].map((item) => (
-                <a key={item} href={`#${item.toLowerCase()}`} className="block text-muted-foreground hover:text-primary transition-colors duration-300">
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-
-          {/* Featured Projects */}
-          <div className="space-y-4">
-            <h4 className="text-lg font-semibold text-foreground">Featured Projects</h4>
-            <div className="space-y-3">
-              <a
-                href="https://www.npmjs.com/package/react-read-otp"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-muted-foreground hover:text-primary transition-colors duration-300"
-              >
-                react-read-otp - Auto OTP Reader
-              </a>
-              <a
-                href="https://www.npmjs.com/package/ebx"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-muted-foreground hover:text-secondary transition-colors duration-300"
-              >
-                ebx - A Tool for Building and Running TypeScript Code
-              </a>
-              <a
-                href="https://github.com/md-adil/truecaller-php-sdk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-muted-foreground hover:text-accent transition-colors duration-300"
-              >
-                truecaller-php-sdk - Auth SDK
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-primary/10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            <p className="text-muted-foreground text-sm">© {currentYear} Adil. All rights reserved.</p>
-            <div className="flex items-center gap-2 text-sm text-muted-foreground">
-              <span>Built with TypeScript, Next.js, Tailwind and Shadcn/UI</span>
-            </div>
-            <p className="text-muted-foreground text-sm">Backend • Cloud • DevOps</p>
-          </div>
-        </div>
+    <footer className="py-6 bg-white border-t border-slate-100">
+      <div className="container mx-auto px-6 md:px-12 text-center">
+        <p className="text-sm text-slate-400">
+          © {new Date().getFullYear()} {PORTFOLIO_DATA.name}. All rights reserved.
+        </p>
       </div>
     </footer>
   );
