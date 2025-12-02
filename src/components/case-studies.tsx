@@ -1,7 +1,7 @@
 "use client";
 
 import { CheckCircle2 } from "lucide-react";
-import { caseStudies, SectionId } from "@/data/portfolio-data";
+import { caseStudies, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
 
 export function CaseStudies() {

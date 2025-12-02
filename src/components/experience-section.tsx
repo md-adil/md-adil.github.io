@@ -1,32 +1,24 @@
 "use client";
 
-import { Calendar, Briefcase } from 'lucide-react';
-import { SectionId, PORTFOLIO_DATA } from '@/data/portfolio-data';
-import { SectionHeading } from './section-heading';
+import { Calendar, Briefcase } from "lucide-react";
+import { experiences, SectionId } from "@/data";
+import { SectionHeading } from "./section-heading";
 
 export function ExperienceSection() {
   return (
     <section id={SectionId.EXPERIENCE} className="py-24 bg-white">
       <div className="container mx-auto px-6 md:px-12">
-        <SectionHeading
-          title="Professional Experience"
-          subtitle="A track record of delivering scalable solutions in complex environments."
-        />
+        <SectionHeading title="Professional Experience" subtitle="A track record of delivering scalable solutions in complex environments." />
 
         <div className="space-y-12">
-          {PORTFOLIO_DATA.experiences.map((exp) => (
-            <div
-              key={exp.id}
-              className="group relative border-l-2 border-slate-100 pl-8 md:pl-12 pb-2 last:pb-0"
-            >
+          {experiences.map((exp) => (
+            <div key={exp.id} className="group relative border-l-2 border-slate-100 pl-8 md:pl-12 pb-2 last:pb-0">
               {/* Timeline Dot */}
               <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-white border-4 border-slate-200 group-hover:border-blue-500 transition-colors"></div>
 
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-2xl font-serif font-bold text-slate-900 group-hover:text-blue-700 transition-colors">
-                    {exp.role}
-                  </h3>
+                  <h3 className="text-2xl font-serif font-bold text-slate-900 group-hover:text-blue-700 transition-colors">{exp.role}</h3>
                   <div className="text-lg text-slate-600 font-medium flex items-center gap-2 mt-1">
                     <Briefcase size={16} /> {exp.company}
                   </div>
@@ -37,9 +29,7 @@ export function ExperienceSection() {
                 </div>
               </div>
 
-              <p className="text-slate-600 mb-6 leading-relaxed text-lg max-w-4xl">
-                {exp.description}
-              </p>
+              <p className="text-slate-600 mb-6 leading-relaxed text-lg max-w-4xl">{exp.description}</p>
 
               <div className="space-y-3">
                 {exp.highlights.map((highlight, hIndex) => (

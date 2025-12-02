@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { Menu, X, Layers } from "lucide-react";
-import { SectionId, PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { personalInfo, SectionId } from "@/data";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -57,9 +57,9 @@ export function Navigation() {
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
           <Layers className="w-6 h-6 text-slate-900" />
-          <span className="text-xl font-serif font-bold text-slate-900 tracking-tight hidden sm:inline">{PORTFOLIO_DATA.name}</span>
+          <span className="text-xl font-serif font-bold text-slate-900 tracking-tight hidden sm:inline">{personalInfo.name}</span>
           <span className="text-xl font-serif font-bold text-slate-900 tracking-tight sm:hidden">
-            {PORTFOLIO_DATA.name
+            {personalInfo.name
               .split(" ")
               .map((n) => n[0])
               .join("")}
