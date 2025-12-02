@@ -3,12 +3,13 @@ import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { domain, experienceYears } from "@/config";
+import { personalInfo } from "@/data";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
-  description: `Sr. Software Architect specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. ${experienceYears} years experience in PHP, Laravel, Node.js, Go, and microservices architecture. Creator of react-read-otp (1.2k+ weekly downloads).`,
+  description: `Sr. Software Architect specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. ${personalInfo.stats.years} years experience in PHP, Laravel, Node.js, Go, and microservices architecture. Creator of react-read-otp (1.2k+ weekly downloads).`,
   keywords: [
     "Software Architect",
     "Backend Developer",
@@ -16,15 +17,29 @@ export const metadata: Metadata = {
     "Kubernetes",
     "Laravel",
     "Node.js",
+    "Go",
+    "Golang",
     "Microservices",
     "Cloud Infrastructure",
-    "Terraform",
+    "AWS",
+    "Azure",
     "PHP Developer",
     "TypeScript",
     "React",
     "GitOps",
     "ArgoCD",
+    "CI/CD",
+    "Docker",
+    "Jenkins",
+    "System Design",
     "Performance Optimization",
+    "Agentic AI",
+    "Technical Leadership",
+    "Grafana",
+    "ELK Stack",
+    "Laravel Octane",
+    "Swoole",
+    "Real-time Systems",
   ],
   authors: [{ name: "Adil", url: "https://github.com/md-adil" }],
   creator: "Adil",
@@ -32,14 +47,14 @@ export const metadata: Metadata = {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
-    description: `Sr. Software Architect specializing in scalable backend systems, cloud infrastructure, and DevOps. Expert in Laravel, Node.js, Kubernetes, and microservices. ${experienceYears} years experience.`,
+    title: "Adil — Senior Software Architect for Backend, Cloud & Kubernetes",
+    description: `Building scalable backend systems, cloud infrastructure, Kubernetes platforms, CI/CD pipelines, and microservices. Skilled in PHP, Laravel, Node.js, Go, Docker.`,
     type: "website",
     url: domain,
     siteName: "Adil - Software Architect Portfolio",
     images: [
       {
-        url: `${domain}/images/adil-portrait.jpg`,
+        url: `${domain}/images/portrait.png`,
         width: 1200,
         height: 630,
         alt: "Adil - Sr. Software Architect",
@@ -53,7 +68,7 @@ export const metadata: Metadata = {
     creator: "@_MdAdil",
     title: "Adil - Sr. Software Architect | Backend, Cloud & DevOps Expert",
     description: `Specializing in scalable backend systems, cloud infrastructure (Kubernetes, AWS, Azure), and DevOps. ${experienceYears} years experience.`,
-    images: [`${domain}/images/adil-portrait.jpg`],
+    images: [`${domain}/images/portrait.png`],
   },
   robots: {
     index: true,

@@ -2,7 +2,7 @@ import { Experience } from "./types";
 
 export const experiences: Experience[] = [
   {
-    id: "exp1",
+    id: "exp1-independent",
     role: "Independent Consulting & Architecture Work",
     company: "Freelance",
     period: "2022 - Present",
@@ -10,19 +10,16 @@ export const experiences: Experience[] = [
       "Providing specialized consulting and architecture services to EdTech, Media Streaming, and Enterprise SaaS clients. Delivering end-to-end solutions from infrastructure design to production deployment.",
     highlights: [
       "Designed and implemented full DevOps pipeline with Jenkins, Kubernetes, and GitOps",
-      "Migrated monolithic Laravel application to microservices (Node.js + Go + Laravel Octane)",
+      "Migrated monolithic Laravel application to microservices (Node.js + Go + Laravel Octane + Swoole)",
       "Designed infrastructure from scratch: Kubernetes, Terraform, CI/CD, observability stack",
-      "Built complete real-time live streaming platform from zero",
       "Set coding guidelines and engineering standards for entire tech teams",
       "Deployed full observability using Grafana, ELK, Loki, Tempo",
-      "Implemented performance optimization using Laravel Octane (Swoole)",
-      "Successfully migrated legacy monolith to modern microservices architecture",
       "Built production-grade streaming platform with real-time capabilities",
       "Established DevOps best practices and CI/CD pipelines",
     ],
   },
   {
-    id: "exp2",
+    id: "exp2-bajaj",
     role: "Sr. Software Architect (Promoted from Sr. Software Engineer)",
     company: "Bajaj Finserv Health",
     period: "October 2020 - Present",
@@ -31,14 +28,14 @@ export const experiences: Experience[] = [
     highlights: [
       "Implemented CI/CD reducing deployment time by 75%",
       "Promoted to Sr. Architect within 15 months",
+      "Leading squad of Smart Reports and OCR with Agentic AI",
       "Performance optimization & scalability",
       "Security & compliance",
       "Azure DevOps, Kubernetes & Docker orchestration",
-      "Leading and mentoring engineering teams",
     ],
   },
   {
-    id: "exp3",
+    id: "exp3-bigly",
     role: "Director & Tech Lead",
     company: "Bigly Technology Pvt. Ltd.",
     period: "March 2017 - October 2020",
@@ -56,7 +53,7 @@ export const experiences: Experience[] = [
     ],
   },
   {
-    id: "exp4",
+    id: "exp4-bigradar",
     role: "Lead Software Engineer",
     company: "BigRadar",
     period: "April 2017 - October 2020",
