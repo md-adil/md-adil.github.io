@@ -50,7 +50,7 @@ export const caseStudies: CaseStudy[] = [
       "Instant rollbacks with zero manual intervention",
       "Zero configuration drift across environments",
       "70% reduction in manual deployment overhead",
-      "2× faster release cycles",
+      // "2× faster release cycles",
     ],
     techStack: ["ArgoCD", "Kubernetes", "Azure DevOps", "GitOps", "Helm"],
   },

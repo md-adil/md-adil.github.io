@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Providers } from "./providers";
 import { domain, experienceYears } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -85,7 +84,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body className={inter.className}>
-        <Providers>{children}</Providers>
+        <>{children}</>
       </body>
     </html>
   );

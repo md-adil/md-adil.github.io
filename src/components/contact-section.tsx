@@ -1,7 +1,7 @@
 "use client";
 
 import { Mail, Linkedin, Github, Phone, MapPin, X as Twitter } from "lucide-react";
-import { SectionId, PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { SectionId } from "@/data";
 
 export function ContactSection() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight, ChevronDown, Server, Users, Clock } from "lucide-react";
-import { PORTFOLIO_DATA, SectionId } from "@/data/portfolio-data";
+import { personalInfo, SectionId } from "@/data";
 
 export function HeroSection() {
   return (
@@ -29,7 +29,7 @@ export function HeroSection() {
               Building the <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">Digital Backbone</span> of Modern Enterprise.
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">{PORTFOLIO_DATA.tagline}</p>
+            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">{personalInfo.tagline}</p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -58,8 +58,8 @@ export function HeroSection() {
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
                   <Clock size={24} />
                 </div>
-                <div className="text-4xl font-bold text-slate-900 mb-2">{PORTFOLIO_DATA.stats.years}</div>
-                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Experience</div>
+                <div className="text-4xl font-bold text-slate-900 mb-2">{personalInfo.stats.years} </div>
+                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Years Experience</div>
                 <p className="text-sm text-slate-400 mt-2">Delivering scalable engineering solutions.</p>
               </div>
 
@@ -68,7 +68,7 @@ export function HeroSection() {
                 <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-4 text-blue-400">
                   <Server size={24} />
                 </div>
-                <div className="text-4xl font-bold text-white mb-2">{PORTFOLIO_DATA.stats.uptime}</div>
+                <div className="text-4xl font-bold text-white mb-2">{personalInfo.stats.uptime}</div>
                 <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">System Uptime</div>
                 <p className="text-sm text-slate-500 mt-2">Maintaining critical infrastructure stability.</p>
               </div>
@@ -76,7 +76,7 @@ export function HeroSection() {
               {/* Card 3: Users (Spans full width) */}
               <div className="relative col-span-2 bg-white p-8 rounded-2xl shadow-xl border border-slate-100 hover:-translate-y-1 hover:z-10 transition-all duration-300 flex items-center justify-between">
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-1">{PORTFOLIO_DATA.stats.users}</div>
+                  <div className="text-4xl font-bold text-slate-900 mb-1">{personalInfo.stats.users}</div>
                   <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Users Served</div>
                 </div>
                 <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
