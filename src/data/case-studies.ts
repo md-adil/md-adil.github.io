@@ -8,22 +8,26 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "The platform was experiencing slow response times (800ms average), poor concurrency handling, and high CPU usage under load. Traditional PHP-FPM architecture couldn't handle the growing user base.",
     solution:
-      "Replaced PHP-FPM with Laravel Octane + Swoole for process-level caching and coroutine execution. Implemented connection pooling, optimized database queries, and introduced Redis caching strategies.",
-    results: ["Response time reduced from 800ms to 40-60ms (85% improvement)", "5× increase in concurrent request handling", "30-40% reduction in infrastructure costs"],
+      "Replaced PHP-FPM with Laravel Octane + Swoole for process-level caching and coroutine execution. Implemented connection pooling, optimized database queries.",
+    results: [
+      "Response time reduced from 800ms to 40-60ms (85% improvement)",
+      "5× increase in concurrent request handling",
+      "30-40% reduction in infrastructure costs",
+    ],
     techStack: ["Laravel Octane", "Swoole", "Redis", "MySQL", "PHP"],
   },
   {
     id: "cs2-microservices",
     title: "Monolith to Microservices Migration",
-    client: "EdTech Platforms",
+    client: "EdTech & SaaS Platforms",
     challenge:
-      "Legacy monolithic applications were causing deployment bottlenecks, scaling issues, and making it difficult to implement new features rapidly. Teams were blocked by inter-dependencies.",
+      "Legacy monolithic applications were causing deployment bottlenecks, scaling issues, and making it difficult to implement new features rapidly.",
     solution:
-      "Architected and executed strangler-fig migration pattern to decompose monolith into microservices. Implemented API gateway, and comprehensive observability stack using Kubernetes.",
+      "Architected and executed strangler-fig migration pattern to decompose monolith into microservices. Implemented comprehensive observability stack using Kubernetes.",
     results: [
-      "Deployment frequency increased from monthly to 15+ times daily",
-      "Reduced deployment time from 45 minutes to <2 minutes",
-      "Enabled independent team scaling and feature development",
+      "Improved fault isolation - failures in one service don't crash the entire system",
+      "Clear service ownership - teams have full autonomy over their services",
+      "Independent database scaling - each service can optimize its data storage",
     ],
     techStack: ["Kubernetes", "Docker", "Node.js", "Go", "Laravel", "Jenkins"],
   },
@@ -35,22 +39,32 @@ export const caseStudies: CaseStudy[] = [
       "Lack of visibility into distributed systems made debugging production issues extremely difficult. Mean time to resolution (MTTR) was over 4 hours for critical incidents.",
     solution:
       "Designed and deployed comprehensive observability stack with distributed tracing, centralized logging, and real-time metrics. Implemented Grafana dashboards, and ELK Stack for logs",
-    results: ["MTTR reduced from 4+ hours to <30 minutes", "99.99% system availability achieved", "Proactive issue detection before customer impact"],
-    techStack: ["Grafana", "ELK Stack", "Loki", "Tempo", "Prometheus", "Kubernetes"],
+    results: [
+      "MTTR reduced from 4+ hours to <30 minutes",
+      "99.99% system availability achieved",
+      "Proactive issue detection before customer impact",
+    ],
+    techStack: [
+      "Grafana",
+      "ELK Stack",
+      "Loki",
+      "Tempo",
+      "Prometheus",
+      "Kubernetes",
+    ],
   },
   {
     id: "cs4-argocd-gitops",
     title: "ArgoCD GitOps for 600+ Microservices",
     client: "Bajaj Finserv Health",
     challenge:
-      "Managing 600+ microservices with manual deployments was causing frequent environment mismatches, slow rollbacks, and significant operational overhead. Teams struggled with deployment consistency and drift detection.",
+      "Deploying 600+ microservices via Helm + Azure Pipelines had zero visibility, required manual rollbacks with Infra/Lens tools, and lost all deployment history if pipelines were deleted—making disaster recovery impossible.",
     solution:
-      "Implemented comprehensive GitOps platform using ArgoCD with Git as the single source of truth. Built custom Azure DevOps Task for sync automation, configured auto-sync and self-heal policies, and established RBAC with SSO for multi-team access.",
+      "Implemented ArgoCD GitOps with Git as single source of truth. Built custom Azure DevOps integration for CI triggers. Configured auto-sync, self-healing, and RBAC with SSO for secure multi-team access.",
     results: [
-      "Instant rollbacks with zero manual intervention",
-      "Zero configuration drift across environments",
-      "70% reduction in manual deployment overhead",
-      // "2× faster release cycles",
+      "Deployment history preserved in Git forever (disaster recovery ready)",
+      "Zero configuration drift with automated self-healing",
+      "No need for Infra/Lens - full visibility in ArgoCD UI",
     ],
     techStack: ["ArgoCD", "Kubernetes", "Azure DevOps", "GitOps", "Helm"],
   },
@@ -62,7 +76,18 @@ export const caseStudies: CaseStudy[] = [
       "Inconsistent UI components across applications, slow frontend development cycles, visual design drift, and poor Lighthouse performance scores were impacting user experience and developer productivity.",
     solution:
       "Built a scalable, production-ready design system using React and Storybook. Created unified design tokens, reusable hooks and utilities, accessibility-first component architecture, and performance-optimized bundle strategies.",
-    results: ["UI development speed increased 2-3×", "50-70% reduction in component development time", "Adopted by whole organization", "99% Lighthouse performance score"],
-    techStack: ["React", "Storybook", "TypeScript", "Emotion", "A11Y", "Performance Optimization"],
+    results: [
+      "UI development speed increased 2-3×",
+      "Adopted by whole organization",
+      "99% Lighthouse performance score",
+    ],
+    techStack: [
+      "React",
+      "Storybook",
+      "TypeScript",
+      "Emotion",
+      "A11Y",
+      "Performance Optimization",
+    ],
   },
 ];

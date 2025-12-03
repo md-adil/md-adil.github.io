@@ -42,23 +42,16 @@ export interface CaseStudy {
   techStack: string[];
 }
 
-export interface ChatMessage {
-  id: string;
-  role: 'user' | 'model';
-  text: string;
-  isThinking?: boolean;
-}
-
 export enum SectionId {
-  HERO = 'hero',
-  ABOUT = 'about',
-  EXPERIENCE = 'experience',
-  EDUCATION = 'education',
-  SKILLS = 'skills',
-  PROJECTS = 'projects',
-  CASE_STUDIES = 'case-studies',
-  OPEN_SOURCE = 'open-source',
-  CONTACT = 'contact'
+  HERO = "hero",
+  ABOUT = "about",
+  EXPERIENCE = "experience",
+  EDUCATION = "education",
+  SKILLS = "skills",
+  PROJECTS = "projects",
+  CASE_STUDIES = "case-studies",
+  OPEN_SOURCE = "open-source",
+  CONTACT = "contact",
 }
 
 export interface PersonalInfo {
