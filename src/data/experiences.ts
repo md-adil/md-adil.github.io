@@ -3,8 +3,8 @@ import { Experience } from "./types";
 export const experiences: Experience[] = [
   {
     id: "exp1-independent",
-    role: "Independent Consulting & Architecture Work",
-    company: "Freelance",
+    role: "Independent Consulting",
+    company: "Self-Employed",
     period: "2022 - Present",
     description:
       "Providing specialized consulting and architecture services to EdTech, Media Streaming, and Enterprise SaaS clients. Delivering end-to-end solutions from infrastructure design to production deployment.",
@@ -38,8 +38,7 @@ export const experiences: Experience[] = [
     role: "Director & Tech Lead",
     company: "Bigly Technology Pvt. Ltd.",
     period: "March 2017 - October 2020",
-    description:
-      "Co-founded and led e-commerce enablement platform for online sellers. Managing complete technology stack.",
+    description: "Co-founded and led e-commerce enablement platform for online sellers. Managing complete technology stack.",
     highlights: [
       "Grew company from 3 to 45+ team members",
       "Generated ₹1Cr+ in revenue",
@@ -56,13 +55,7 @@ export const experiences: Experience[] = [
     role: "Lead Software Engineer",
     company: "BigRadar",
     period: "April 2017 - October 2020",
-    description:
-      "Single-handedly built and maintained a modern real-time chat platform serving thousands of concurrent users.",
-    highlights: [
-      "Built entire platform independently",
-      "Real-time messaging with Socket.IO",
-      "Full-stack development (solo)",
-      "Product architecture & design",
-    ],
+    description: "Single-handedly built and maintained a modern real-time chat platform serving thousands of concurrent users.",
+    highlights: ["Built entire platform independently", "Real-time messaging with Socket.IO", "Full-stack development (solo)", "Product architecture & design"],
   },
 ];

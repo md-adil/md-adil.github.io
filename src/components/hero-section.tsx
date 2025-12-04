@@ -1,14 +1,11 @@
 "use client";
 
-import { ArrowRight, ChevronDown, Server, Users, Clock } from "lucide-react";
+import { ArrowRight, ChevronDown, Server, Users, Clock, FileUser } from "lucide-react";
 import { personalInfo, SectionId } from "@/data";
 
 export function HeroSection() {
   return (
-    <section
-      id={SectionId.HERO}
-      className="min-h-screen flex items-center pt-20 bg-slate-50 relative overflow-hidden"
-    >
+    <section id={SectionId.HERO} className="min-h-screen flex items-center pt-20 bg-slate-50 relative overflow-hidden">
       {/* Background Pattern - Dot Grid */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03]"
@@ -35,16 +32,10 @@ export function HeroSection() {
             </div>
 
             <h1 className="text-4xl py-4 md:text-5xl font-serif font-bold text-slate-900 leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">
-              Architecting{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">
-                scalable systems
-              </span>{" "}
-              and cloud-native platforms.
+              Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-600">scalable systems</span> and cloud-native platforms.
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">
-              {personalInfo.tagline}
-            </p>
+            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">{personalInfo.tagline}</p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <a
@@ -54,10 +45,12 @@ export function HeroSection() {
                 View Case Studies <ArrowRight size={18} />
               </a>
               <a
-                href="#contact"
+                href="/resume.pdf"
+                target="resume"
+                download="Resume - Adil.pdf"
                 className="px-8 py-4 bg-white border border-slate-200 text-slate-900 font-medium rounded hover:bg-slate-50 transition-all flex items-center justify-center hover:-translate-y-1"
               >
-                Contact Me
+                Download Resume &nbsp; <FileUser size={18} />
               </a>
             </div>
           </div>
@@ -73,15 +66,9 @@ export function HeroSection() {
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-blue-600">
                   <Clock size={24} />
                 </div>
-                <div className="text-4xl font-bold text-slate-900 mb-2">
-                  {personalInfo.stats.years}{" "}
-                </div>
-                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">
-                  Years Experience
-                </div>
-                <p className="text-sm text-slate-400 mt-2">
-                  Delivering scalable engineering solutions.
-                </p>
+                <div className="text-4xl font-bold text-slate-900 mb-2">{personalInfo.stats.years} </div>
+                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Years Experience</div>
+                <p className="text-sm text-slate-400 mt-2">Delivering scalable engineering solutions.</p>
               </div>
 
               {/* Card 2: Uptime (Dark themed) */}
@@ -89,26 +76,16 @@ export function HeroSection() {
                 <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-4 text-blue-400">
                   <Server size={24} />
                 </div>
-                <div className="text-4xl font-bold text-white mb-2">
-                  {personalInfo.stats.uptime}
-                </div>
-                <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">
-                  System Uptime
-                </div>
-                <p className="text-sm text-slate-500 mt-2">
-                  Maintaining critical infrastructure stability.
-                </p>
+                <div className="text-4xl font-bold text-white mb-2">{personalInfo.stats.uptime}</div>
+                <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">System Uptime</div>
+                <p className="text-sm text-slate-500 mt-2">Maintaining critical infrastructure stability.</p>
               </div>
 
               {/* Card 3: Users (Spans full width) */}
               <div className="relative mb-4 col-span-2 bg-white p-4 md:p-8 rounded-2xl shadow-xl border border-slate-100 hover:-translate-y-1 hover:z-10 transition-all duration-300 flex items-center justify-between">
                 <div>
-                  <div className="text-4xl font-bold text-slate-900 mb-1">
-                    {personalInfo.stats.users}
-                  </div>
-                  <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">
-                    Users Served
-                  </div>
+                  <div className="text-4xl font-bold text-slate-900 mb-1">{personalInfo.stats.users}</div>
+                  <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Users Served</div>
                 </div>
                 <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600">
                   <Users size={32} />

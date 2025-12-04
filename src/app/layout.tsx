@@ -55,8 +55,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${domain}/images/portrait.png`,
-        width: 1200,
-        height: 630,
+        width: 1080,
+        height: 720,
         alt: "Adil - Sr. Software Architect",
       },
     ],
