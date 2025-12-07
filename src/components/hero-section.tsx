@@ -28,7 +28,7 @@ export function HeroSection() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               </span>
-              Available for Hire
+              Exploring Innovative Teams
             </div>
 
             <h1 className="text-4xl py-4 md:text-5xl font-serif font-bold text-slate-900 leading-[1.1] animate-in fade-in slide-in-from-bottom-6 duration-700 delay-100">

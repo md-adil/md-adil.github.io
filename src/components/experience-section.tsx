@@ -39,6 +39,16 @@ export function ExperienceSection() {
                   </div>
                 ))}
               </div>
+
+              {exp.techStack.length > 0 && (
+                <div className="flex flex-wrap mt-4 gap-1.5">
+                  {exp.techStack.map((tech, tIndex) => (
+                    <span key={tIndex} className="px-2.5 py-0.5 bg-slate-50 text-slate-700 rounded-full text-sm border border-slate-200 hover:bg-slate-100 transition-colors">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
             </div>
           ))}
         </div>

@@ -3,53 +3,19 @@ import { SkillCategory } from "./types";
 export const skills: SkillCategory[] = [
   {
     category: "Backend & Microservices",
-    skills: [
-      "PHP",
-      "Laravel",
-      "Node.js",
-      "Nest.js",
-      "Python",
-      "Go",
-      "Microservices Architecture",
-    ],
+    skills: ["PHP", "Laravel", "Node.js", "Nest.js", "Python", "Go", "Microservices Architecture"],
   },
   {
     category: "Cloud & Infrastructure",
-    skills: [
-      "Kubernetes",
-      "Docker",
-      "Azure",
-      "AWS",
-      "Github Actions",
-      "GitOps",
-      "Jenkins",
-    ],
+    skills: ["Kubernetes", "Docker", "ArgoCD", "GitOps", "Azure", "AWS", "Github Actions"],
   },
   {
     category: "DevOps & Observability",
-    skills: [
-      "DevOps",
-      "Grafana",
-      "ELK Stack",
-      "Loki",
-      "Tempo",
-      "Prometheus",
-      "Performance Optimization",
-      "System Design",
-    ],
+    skills: ["DevOps", "Grafana", "ELK Stack", "Loki", "Tempo", "Prometheus", "Performance Optimization", "System Design"],
   },
   {
     category: "Databases & Scalability",
-    skills: [
-      "MySQL",
-      "MongoDB",
-      "Redis",
-      "Kafka",
-      "Database Design",
-      "Query Optimization",
-      "Caching Strategies",
-      "High Availability",
-    ],
+    skills: ["MySQL", "MongoDB", "Redis", "Kafka", "Database Design", "Query Optimization", "Caching Strategies", "High Availability"],
   },
   {
     category: "Frontend Development",
@@ -57,14 +23,6 @@ export const skills: SkillCategory[] = [
   },
   {
     category: "Real-time & Integration",
-    skills: [
-      "Socket.IO",
-      "WebSockets",
-      "Real-time Systems",
-      "Live Streaming",
-      "WebRTC",
-      "RTMP",
-      "HLS",
-    ],
+    skills: ["Socket.IO", "WebSockets", "Real-time Systems", "Live Streaming", "WebRTC", "RTMP", "HLS"],
   },
 ];

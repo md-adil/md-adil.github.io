@@ -17,6 +17,7 @@ export interface Experience {
   period: string;
   description: string;
   highlights: string[];
+  techStack: string[];
 }
 
 export interface SkillCategory {

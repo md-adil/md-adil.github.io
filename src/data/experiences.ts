@@ -6,8 +6,7 @@ export const experiences: Experience[] = [
     role: "Independent Consulting",
     company: "Self-Employed",
     period: "2022 - Present",
-    description:
-      "Providing specialized consulting and architecture services to EdTech, Media Streaming, and Enterprise SaaS clients. Delivering end-to-end solutions from infrastructure design to production deployment.",
+    description: "Providing specialized consulting and architecture services. Delivering end-to-end solutions from infrastructure design to production deployment.",
     highlights: [
       "Designed and implemented full DevOps pipeline with Jenkins, Kubernetes, and GitOps",
       "Migrated monolithic Laravel application to microservices (Node.js + Go + Laravel Octane + Swoole)",
@@ -17,21 +16,23 @@ export const experiences: Experience[] = [
       "Built production-grade streaming platform with real-time capabilities",
       "Established DevOps best practices and CI/CD pipelines",
     ],
+    techStack: ["K8s", "Jenkins", "Node.js", "Go", "Laravel", "Swoole", "Grafana", "Loki", "ELK"],
   },
   {
     id: "exp2-bajaj",
-    role: "Sr. Software Architect (Promoted from Sr. Software Engineer)",
+    role: "Sr. Software Architect",
     company: "Bajaj Finserv Health",
     period: "October 2020 - Present",
-    description:
-      "Leading architecture and engineering for India's fastest-growing health-tech platform. Promoted to Sr. Architect in January 2022 for exceptional performance and leadership.",
+    description: "Leading architecture and engineering health-tech platform.",
     highlights: [
-      "Implemented CI/CD reducing deployment time by 75%",
-      "Leading squad of Smart Reports and OCR with Agentic AI",
-      "Performance optimization & scalability",
-      "Security & compliance",
-      "Azure DevOps, Kubernetes & Docker orchestration",
+      "Led Smart Reports & OCR squads using Agentic AI to automate medical data extraction",
+      'Built "Capsule", the company-wide design language system, achieving 99% Lighthouse score.',
+      "Introduced ArgoCD GitOps, micro-frontends, and Next.js, modernizing frontend architecture.",
+      "Reduced deployment time by 80% and ACR size by 99%, achieving major cost optimization.",
+      "Designed reusable React components/hook library adopted across all teams.",
+      "Establishing coding guidelines and ensuring adherence to them throughout the organization.",
     ],
+    techStack: ["React", "Next.js", "TS", "ArgoCD", "K8s", "Docker", "Azure", "Node.js", "Microfrontends"],
   },
   {
     id: "exp3-bigly",
@@ -49,6 +50,7 @@ export const experiences: Experience[] = [
       "Technical architecture & sprint planning",
       "Product roadmap & feature development",
     ],
+    techStack: ["PHP", "Laravel", "MySQL", "Bootstrap"],
   },
   {
     id: "exp4-bigradar",
@@ -56,6 +58,12 @@ export const experiences: Experience[] = [
     company: "BigRadar",
     period: "April 2017 - October 2020",
     description: "Single-handedly built and maintained a modern real-time chat platform serving thousands of concurrent users.",
-    highlights: ["Built entire platform independently", "Real-time messaging with Socket.IO", "Full-stack development (solo)", "Product architecture & design"],
+    highlights: [
+      "Built full SaaS product end-to-end (architecture, backend, frontend, deployments).",
+      "Created custom MongoDB ORM, reducing repetitive code 40–50% and improving API consistency.",
+      "Optimized Express.js wrapper, cutting response latency 20–30%.",
+      "Shipped features rapidly with founders, improving release velocity and onboarding early customers.",
+    ],
+    techStack: ["Node.js", "Express.js", "MongoDB", "MySQL", "React", "WebSockets", "Redis"],
   },
 ];
