@@ -7,7 +7,7 @@ import { Button } from "./ui/button";
 
 export function HeroSection() {
   return (
-    <section id={SectionId.HERO} className="min-h-screen flex items-center pt-20 bg-slate-50 relative overflow-hidden">
+    <section id={SectionId.HERO} className="min-h-screen flex items-center pt-20 bg-slate-50 relative overflow-hidden" aria-label="Hero introduction">
       {/* Background Pattern - Dot Grid */}
       <div
         className="absolute inset-0 z-0 opacity-[0.03]"
@@ -18,8 +18,8 @@ export function HeroSection() {
       ></div>
 
       {/* Abstract decorative shapes */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-slate-100/50 -skew-x-12 transform translate-x-1/3 z-0"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-blue-50/50 skew-y-12 transform -translate-x-20 z-0"></div>
+      <div className="absolute top-0 right-0 w-2/3 h-full bg-slate-100/90 -skew-x-12 transform translate-x-1/3 z-0"></div>
+      <div className="absolute bottom-0 left-0 w-1/3 h-1/2 bg-blue-50/90 skew-y-12 transform -translate-x-20 z-0"></div>
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
@@ -37,7 +37,7 @@ export function HeroSection() {
               Architecting <span className="text-transparent bg-clip-text bg-gradient-to-r from-secondary to-indigo-600">scalable systems</span> and cloud-native platforms.
             </h1>
 
-            <p className="text-xl text-slate-600 leading-relaxed mb-10 font-light max-w-xl">{personalInfo.tagline}</p>
+            <p className="text-xl text-body leading-relaxed mb-10 font-light max-w-xl">{personalInfo.tagline}</p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild className="shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all px-8 py-4 h-auto">
@@ -59,31 +59,31 @@ export function HeroSection() {
               {/* Card 1: Experience - Pushed down via margin for stagger effect */}
               <div className="relative bg-white p-4 md:p-8  rounded-2xl shadow-xl border border-slate-100 lg:mt-12 hover:-translate-y-1 hover:z-10 transition-all duration-300">
                 <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center mb-4 text-secondary">
-                  <Clock size={24} />
+                  <Clock size={24} aria-hidden="true" />
                 </div>
                 <div className="text-4xl font-bold text-primary mb-2">{personalInfo.stats.years} </div>
-                <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Years Experience</div>
-                <p className="text-sm text-slate-400 mt-2">Delivering scalable engineering solutions.</p>
+                <div className="text-sm text-muted font-bold uppercase tracking-wider">Years Experience</div>
+                <p className="text-sm text-muted mt-2">Delivering scalable engineering solutions.</p>
               </div>
 
               {/* Card 2: Uptime (Dark themed) */}
               <div className="relative bg-primary p-4 md:p-8 rounded-2xl shadow-xl hover:-translate-y-1 hover:z-10 transition-all duration-300 text-white">
                 <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-4 text-blue-400">
-                  <Server size={24} />
+                  <Server size={24} aria-hidden="true" />
                 </div>
                 <div className="text-4xl font-bold text-white mb-2">{personalInfo.stats.uptime}</div>
-                <div className="text-sm text-slate-400 font-bold uppercase tracking-wider">System Uptime</div>
-                <p className="text-sm text-slate-500 mt-2">Maintaining critical infrastructure stability.</p>
+                <div className="text-sm text-muted font-bold uppercase tracking-wider">System Uptime</div>
+                <p className="text-sm text-muted mt-2">Maintaining critical infrastructure stability.</p>
               </div>
 
               {/* Card 3: Users (Spans full width) */}
               <div className="relative mb-4 col-span-2 bg-white p-4 md:p-8 rounded-2xl shadow-xl border border-slate-100 hover:-translate-y-1 hover:z-10 transition-all duration-300 flex items-center justify-between">
                 <div>
                   <div className="text-4xl font-bold text-primary mb-1">{personalInfo.stats.users}</div>
-                  <div className="text-sm text-slate-500 font-bold uppercase tracking-wider">Users Served</div>
+                  <div className="text-sm text-muted font-bold uppercase tracking-wider">Users Served</div>
                 </div>
                 <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-secondary">
-                  <Users size={32} />
+                  <Users size={32} aria-hidden="true" />
                 </div>
               </div>
             </div>
@@ -91,8 +91,8 @@ export function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-slate-400">
-        <ChevronDown size={24} />
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce text-muted">
+        <ChevronDown size={24} aria-hidden="true" />
       </div>
     </section>
   );

@@ -18,7 +18,7 @@ export function CaseStudies() {
                 <h3 className="text-2xl font-serif font-bold text-primary mb-2">{study.title}</h3>
                 <p className="text-secondary font-medium mb-6">{study.client}</p>
                 <div className="mb-6">
-                  <h4 className="text-sm font-bold text-slate-400 uppercase tracking-widest mb-3">Tech Stack</h4>
+                  <h4 className="text-sm font-bold text-muted uppercase tracking-widest mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {study.technologies.map((tech) => (
                       <span key={tech} className="px-2 py-1 bg-slate-100 text-slate-600 text-xs font-bold">
@@ -33,7 +33,7 @@ export function CaseStudies() {
               <div className="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="bg-slate-50 p-6 rounded border border-slate-100 hover:shadow-md hover:border-slate-200 transition-all">
                   <h4 className="text-sm font-bold text-primary uppercase tracking-widest mb-3 flex items-center gap-2">The Challenge</h4>
-                  <p className="text-slate-600 leading-relaxed text-sm">{study.challenge}</p>
+                  <p className="text-body leading-relaxed text-sm">{study.challenge}</p>
                 </div>
 
                 <div className="bg-slate-50 p-6 rounded border border-slate-100 hover:shadow-md hover:border-slate-200 transition-all">
@@ -47,7 +47,7 @@ export function CaseStudies() {
                     {study.results.map((result, rIdx) => (
                       <div key={rIdx} className="flex items-start gap-3">
                         <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-slate-700 text-sm font-medium">{result}</span>
+                        <span className="text-body text-sm font-medium">{result}</span>
                       </div>
                     ))}
                   </div>

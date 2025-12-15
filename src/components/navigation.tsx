@@ -39,7 +39,7 @@ export function Navigation() {
       <a
         href={`#${to}`}
         onClick={() => setMobileMenuOpen(false)}
-        className={`text-sm font-medium transition-all duration-200 whitespace-nowrap ${isActive ? "text-primary font-bold" : "text-slate-500 hover:text-primary"}`}
+        className={`text-sm font-medium transition-all duration-200 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm ${isActive ? "text-primary font-bold" : "text-muted hover:text-primary"}`}
       >
         {children}
       </a>
@@ -53,8 +53,8 @@ export function Navigation() {
       }`}
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
-        <a href="#" className="flex items-center gap-2">
-          <Layers className="w-6 h-6 text-primary" />
+        <a href="#hero" className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm" aria-label="Go to top">
+          <Layers className="w-6 h-6 text-primary" aria-hidden="true" />
           <span className="text-xl font-serif font-bold text-primary tracking-tight hidden sm:inline">{personalInfo.name}</span>
           <span className="text-xl font-serif font-bold text-primary tracking-tight sm:hidden">
             {personalInfo.name
@@ -78,7 +78,14 @@ export function Navigation() {
         </div>
 
         {/* Mobile Menu Toggle */}
-        <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <Button
+          variant="ghost"
+          size="icon"
+          className="lg:hidden"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={mobileMenuOpen}
+        >
           {mobileMenuOpen ? <X /> : <Menu />}
         </Button>
       </div>

@@ -72,7 +72,7 @@ export function CreativeShowcase() {
           <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
             Creative Mind
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-body max-w-3xl mx-auto">
             Where passion meets profession, and creativity fuels innovation
           </p>
         </div>
@@ -93,7 +93,7 @@ export function CreativeShowcase() {
                 <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
                   {passion.title}
                 </h3>
-                <p className="text-muted-foreground group-hover:text-foreground/80 transition-colors">
+                <p className="text-body group-hover:text-foreground/80 transition-colors">
                   {passion.description}
                 </p>
               </div>
@@ -148,7 +148,7 @@ export function CreativeShowcase() {
               <div className="text-2xl md:text-3xl font-bold text-primary mb-1 group-hover:text-secondary transition-colors">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">{stat.label}</div>
+              <div className="text-sm text-body">{stat.label}</div>
             </div>
           ))}
         </div>
