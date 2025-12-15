@@ -14,11 +14,11 @@ export function FeaturedProjects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group bg-white p-8 rounded-none border-l-4 border-slate-200 hover:border-blue-600 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border-t border-r border-b border-t-slate-100 border-r-slate-100 border-b-slate-100"
+              className="group bg-white p-8 rounded-none border-l-4 border-slate-200 hover:border-secondary shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full border-t border-r border-b border-t-slate-100 border-r-slate-100 border-b-slate-100"
             >
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-serif font-bold text-slate-900 group-hover:text-blue-700 transition-colors leading-tight">{project.title}</h3>
-                <ArrowUpRight className="text-slate-300 group-hover:text-blue-600 transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" size={24} />
+                <h3 className="text-2xl font-serif font-bold text-primary group-hover:text-blue-700 transition-colors leading-tight">{project.title}</h3>
+                <ArrowUpRight className="text-slate-300 group-hover:text-secondary transition-colors transform group-hover:translate-x-1 group-hover:-translate-y-1" size={24} />
               </div>
 
               <p className="text-slate-600 mb-8 leading-relaxed flex-grow">{project.description}</p>
@@ -34,7 +34,7 @@ export function FeaturedProjects() {
 
                 <div className="pt-6 border-t border-slate-50">
                   <p className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">Impact</p>
-                  <p className="text-xl font-bold text-slate-900">{project.metric}</p>
+                  <p className="text-xl font-bold text-primary">{project.metric}</p>
                 </div>
               </div>
             </div>

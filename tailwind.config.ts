@@ -1,13 +1,18 @@
 import type { Config } from "tailwindcss";
+import colors from "tailwindcss/colors";
 
 export default {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.tsx"],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primary: {
+          DEFAULT: colors.slate[900],
+          foreground: colors.white,
+        },
+        secondary: { DEFAULT: colors.blue[600] },
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;

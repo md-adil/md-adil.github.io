@@ -18,7 +18,7 @@ export function ExperienceSection() {
 
               <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-2xl font-serif font-bold text-slate-900 group-hover:text-blue-700 transition-colors">{exp.role}</h3>
+                  <h3 className="text-2xl font-serif font-bold text-primary group-hover:text-blue-700 transition-colors">{exp.role}</h3>
                   <div className="text-lg text-slate-600 font-medium flex items-center gap-2 mt-1">
                     <Briefcase size={16} /> {exp.company}
                   </div>
@@ -40,9 +40,9 @@ export function ExperienceSection() {
                 ))}
               </div>
 
-              {exp.techStack.length > 0 && (
+              {exp.technologies.length > 0 && (
                 <div className="flex flex-wrap mt-4 gap-1.5">
-                  {exp.techStack.map((tech, tIndex) => (
+                  {exp.technologies.map((tech, tIndex) => (
                     <span key={tIndex} className="px-2.5 py-0.5 bg-slate-50 text-slate-700 rounded-full text-sm border border-slate-200 hover:bg-slate-100 transition-colors">
                       {tech}
                     </span>

@@ -3,23 +3,24 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Layers } from "lucide-react";
 import { personalInfo, SectionId } from "@/data";
+import { Button } from "./ui/button";
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [activeSection, setActiveSection] = useState<SectionId>(SectionId.HERO);
+  const [activeSection, setActiveSection] = useState<string>("");
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      // Update active section
+      // Update active section based on scroll position
       const sections = Object.values(SectionId);
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
-          if (rect.top >= -100 && rect.top <= 400) {
+          if (rect.top >= -100 && rect.top <= 300) {
             setActiveSection(section);
             break;
           }
@@ -27,24 +28,21 @@ export function Navigation() {
       }
     };
 
+    handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (id: SectionId) => {
-    setMobileMenuOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
-
   const NavLink = ({ to, children }: { to: SectionId; children: React.ReactNode }) => {
     const isActive = activeSection === to;
     return (
-      <button
-        onClick={() => scrollToSection(to)}
-        className={`text-sm font-medium transition-all duration-200 whitespace-nowrap ${isActive ? "text-slate-900 font-bold" : "text-slate-500 hover:text-slate-900"}`}
+      <a
+        href={`#${to}`}
+        onClick={() => setMobileMenuOpen(false)}
+        className={`text-sm font-medium transition-all duration-200 whitespace-nowrap ${isActive ? "text-primary font-bold" : "text-slate-500 hover:text-primary"}`}
       >
         {children}
-      </button>
+      </a>
     );
   };
 
@@ -56,9 +54,9 @@ export function Navigation() {
     >
       <div className="container mx-auto px-6 md:px-12 flex justify-between items-center">
         <a href="#" className="flex items-center gap-2">
-          <Layers className="w-6 h-6 text-slate-900" />
-          <span className="text-xl font-serif font-bold text-slate-900 tracking-tight hidden sm:inline">{personalInfo.name}</span>
-          <span className="text-xl font-serif font-bold text-slate-900 tracking-tight sm:hidden">
+          <Layers className="w-6 h-6 text-primary" />
+          <span className="text-xl font-serif font-bold text-primary tracking-tight hidden sm:inline">{personalInfo.name}</span>
+          <span className="text-xl font-serif font-bold text-primary tracking-tight sm:hidden">
             {personalInfo.name
               .split(" ")
               .map((n) => n[0])
@@ -72,20 +70,17 @@ export function Navigation() {
           <NavLink to={SectionId.CASE_STUDIES}>Case Studies</NavLink>
           <NavLink to={SectionId.SKILLS}>Skills</NavLink>
           <NavLink to={SectionId.EXPERIENCE}>Experience</NavLink>
-          <NavLink to={SectionId.OPEN_SOURCE}>Open Source</NavLink>
+          <NavLink to={SectionId.PROJECTS}>Projects / Open Source</NavLink>
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
-          <button
-            onClick={() => scrollToSection(SectionId.CONTACT)}
-            className="px-5 py-2.5 bg-slate-900 text-white text-sm font-medium rounded hover:bg-slate-800 transition-colors shadow-lg hover:shadow-xl ml-2"
-          >
-            Contact
-          </button>
+          <Button asChild className="ml-2 shadow-lg hover:shadow-xl transition-all">
+            <a href={`#${SectionId.CONTACT}`}>Contact</a>
+          </Button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <button className="lg:hidden text-slate-900" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <Button variant="ghost" size="icon" className="lg:hidden" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
           {mobileMenuOpen ? <X /> : <Menu />}
-        </button>
+        </Button>
       </div>
 
       {/* Mobile Menu Overlay */}
@@ -96,7 +91,7 @@ export function Navigation() {
           <NavLink to={SectionId.SKILLS}>Skills</NavLink>
           <NavLink to={SectionId.EXPERIENCE}>Experience</NavLink>
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
-          <NavLink to={SectionId.OPEN_SOURCE}>Open Source</NavLink>
+          <NavLink to={SectionId.PROJECTS}>Projects / Open Source</NavLink>
           <NavLink to={SectionId.CONTACT}>Contact</NavLink>
         </div>
       )}

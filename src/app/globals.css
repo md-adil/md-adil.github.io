@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-white text-slate-900 overflow-x-hidden;
+    @apply bg-white text-primary overflow-x-hidden;
     font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   }
 

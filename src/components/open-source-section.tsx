@@ -1,8 +1,9 @@
 "use client";
 
 import { Package, Globe, Cpu, ExternalLink } from "lucide-react";
-import { openSourceProjects, SectionId } from "@/data";
+import { projects, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
+import { Button } from "./ui/button";
 
 // SVG for GitHub icon (since lucide's Github is deprecated)
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -20,17 +21,17 @@ export function OpenSourceSection() {
   };
 
   return (
-    <section id={SectionId.OPEN_SOURCE} className="py-24 bg-slate-50">
+    <section id={SectionId.PROJECTS} className="py-24 bg-slate-50">
       <div className="container mx-auto px-6 md:px-12">
         <SectionHeading title="Open Source & Personal Projects" subtitle="Building tools and applications to solve real-world developer problems." />
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {openSourceProjects.map((project) => (
+          {projects.map((project) => (
             <div key={project.id} className="bg-white p-6 rounded border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
               <div className="flex justify-between items-start mb-4">
                 <div className="flex items-center gap-3">
                   <div className="p-2 bg-slate-100 rounded text-slate-700">{getIcon(project.id)}</div>
-                  <h3 className="text-xl font-bold text-slate-900">{project.title}</h3>
+                  <h3 className="text-xl font-bold text-primary">{project.title}</h3>
                 </div>
                 <div className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wide rounded-full">{project.metric}</div>
               </div>
@@ -47,37 +48,28 @@ export function OpenSourceSection() {
 
               <div className="flex gap-3 mt-auto pt-4 border-t border-slate-100">
                 {project.link && (
-                  <a
-                    href={project.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-                  >
-                    <ExternalLink className="w-4 h-4" />
-                    <span>Website</span>
-                  </a>
+                  <Button variant="link" size="sm" asChild>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="w-4 h-4" />
+                      Website
+                    </a>
+                  </Button>
                 )}
                 {project.github && (
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                    <span>GitHub</span>
-                  </a>
+                  <Button variant="link" size="sm" asChild>
+                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                      <GithubIcon className="w-4 h-4" />
+                      GitHub
+                    </a>
+                  </Button>
                 )}
                 {project.npm && (
-                  <a
-                    href={project.npm}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-1.5 px-3 py-1.5 text-sm font-medium text-slate-700 hover:text-blue-600 transition-colors"
-                  >
-                    <Package className="w-4 h-4" />
-                    <span>NPM</span>
-                  </a>
+                  <Button variant="link" size="sm" asChild>
+                    <a href={project.npm} target="_blank" rel="noopener noreferrer">
+                      <Package className="w-4 h-4" />
+                      NPM
+                    </a>
+                  </Button>
                 )}
               </div>
             </div>

@@ -17,7 +17,7 @@ export interface Experience {
   period: string;
   description: string;
   highlights: string[];
-  techStack: string[];
+  technologies: string[];
 }
 
 export interface SkillCategory {
@@ -40,7 +40,7 @@ export interface CaseStudy {
   challenge: string;
   solution: string;
   results: string[];
-  techStack: string[];
+  technologies: string[];
 }
 
 export enum SectionId {
@@ -51,7 +51,6 @@ export enum SectionId {
   SKILLS = "skills",
   PROJECTS = "projects",
   CASE_STUDIES = "case-studies",
-  OPEN_SOURCE = "open-source",
   CONTACT = "contact",
 }
 

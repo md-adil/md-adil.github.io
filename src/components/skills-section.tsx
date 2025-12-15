@@ -3,6 +3,7 @@
 import { Terminal, Globe, Cpu, Layout, GitBranch, Server, Database, Shield } from "lucide-react";
 import { SectionId, skills } from "@/data";
 import { SectionHeading } from "./section-heading";
+import { Chip } from "./ui/chip";
 
 export function SkillsSection() {
   const getIcon = (category: string) => {
@@ -24,22 +25,17 @@ export function SkillsSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {skills.map((category, idx) => (
-            <div key={String(idx)} className="bg-white p-8 rounded-none border-l-4 border-slate-200 hover:border-blue-600 shadow-sm transition-all duration-300 group">
+            <div key={String(idx)} className="bg-white p-8 rounded-none border-l-4 border-slate-200 hover:border-secondary shadow-sm transition-all duration-300 group">
               <div className="flex items-center gap-4 mb-8">
-                <div className="p-3 bg-slate-50 rounded-full text-slate-600 group-hover:bg-blue-50 group-hover:text-blue-600 transition-colors border border-slate-100">
+                <div className="p-3 bg-slate-50 rounded-full text-slate-600 group-hover:bg-blue-50 group-hover:text-secondary transition-colors border border-slate-100">
                   {getIcon(category.category)}
                 </div>
-                <h3 className="text-xl font-serif font-bold text-slate-900">{category.category}</h3>
+                <h3 className="text-xl font-serif font-bold text-primary">{category.category}</h3>
               </div>
 
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-2">
                 {category.skills.map((skill, sIdx) => (
-                  <span
-                    key={sIdx}
-                    className="px-4 py-2 bg-slate-50 text-slate-700 text-sm font-medium border border-slate-100 group-hover:border-slate-200 group-hover:bg-slate-100 transition-colors cursor-default"
-                  >
-                    {skill}
-                  </span>
+                  <Chip key={sIdx}>{skill}</Chip>
                 ))}
               </div>
             </div>
