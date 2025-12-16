@@ -5,7 +5,7 @@ import { SkillsSection } from "@/components/skills-section";
 import { ExperienceSection } from "@/components/experience-section";
 import { EducationSection } from "@/components/education-section";
 import { CaseStudies } from "@/components/case-studies";
-import { OpenSourceSection } from "@/components/open-source-section";
+import { ProjectSection } from "@/components/projects";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 
@@ -25,7 +25,7 @@ export default function Home() {
         <CaseStudies />
         <SkillsSection />
         <ExperienceSection />
-        <OpenSourceSection />
+        <ProjectSection />
         <EducationSection />
         <ContactSection />
       </main>

@@ -4,6 +4,7 @@ import { Package, Globe, Cpu, ExternalLink } from "lucide-react";
 import { projects, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Button } from "./ui/button";
+import { Expandable } from "./ui/expandable";
 
 // SVG for GitHub icon (since lucide's Github is deprecated)
 const GithubIcon = ({ className }: { className?: string }) => (
@@ -12,7 +13,7 @@ const GithubIcon = ({ className }: { className?: string }) => (
   </svg>
 );
 
-export function OpenSourceSection() {
+export function ProjectSection() {
   const getIcon = (id: string) => {
     if (id.includes("os1")) return <Globe className="h-5 w-5" />;
     if (id.includes("os2")) return <Package className="h-5 w-5" />;
@@ -28,7 +29,12 @@ export function OpenSourceSection() {
           subtitle="Building tools and applications to solve real-world developer problems."
         />
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+        <Expandable
+          title="Projects"
+          count={4}
+          modalClassName="bg-slate-50"
+          className="grid grid-cols-1 gap-6 md:grid-cols-2"
+        >
           {projects.map((project) => (
             <div
               key={project.id}
@@ -85,7 +91,7 @@ export function OpenSourceSection() {
               </div>
             </div>
           ))}
-        </div>
+        </Expandable>
       </div>
     </section>
   );

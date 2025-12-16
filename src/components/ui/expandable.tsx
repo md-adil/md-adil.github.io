@@ -8,7 +8,7 @@ import { Modal } from "./modal";
 
 interface ExpandableProps {
   children: ReactElement<{ className?: string }>[];
-  initialCount?: number;
+  count?: number;
   className?: string;
   buttonClassName?: string;
   showMoreText?: string;
@@ -18,25 +18,22 @@ interface ExpandableProps {
 
 export function Expandable({
   children,
-  initialCount = 3,
+  count: count = 3,
   className = "",
   buttonClassName = "",
   showMoreText = "Show All",
-  title: modalTitle,
+  title,
   modalClassName,
 }: ExpandableProps) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Show button only if there are more items than initialCount
-  const shouldShowButton = children.length > initialCount;
+  const shouldShowButton = children.length > count || true;
 
   return (
     <>
-      {/* All items rendered for SEO, CSS controls visibility */}
       <div className={className}>
         {children.map((child, index) =>
           cloneElement(child, {
-            className: twMerge(child.props.className, index >= initialCount && "hidden"),
+            className: twMerge(child.props.className, index >= count && "hidden"),
             key: index,
           }),
         )}
@@ -48,7 +45,7 @@ export function Expandable({
           <Button
             onClick={() => setIsModalOpen(true)}
             variant="outline"
-            className={twMerge("group flex cursor-pointer items-center gap-2", buttonClassName)}
+            className={twMerge("group flex cursor-pointer items-center gap-2 bg-white", buttonClassName)}
             aria-label={showMoreText}
           >
             <span>{showMoreText}</span>
@@ -58,7 +55,7 @@ export function Expandable({
       )}
 
       {/* Modal with all items */}
-      <Modal open={isModalOpen} onOpenChange={setIsModalOpen} title={modalTitle} className={modalClassName}>
+      <Modal open={isModalOpen} onOpenChange={setIsModalOpen} title={title} className={modalClassName}>
         <div className={className}>{children}</div>
       </Modal>
     </>

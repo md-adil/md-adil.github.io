@@ -4,8 +4,10 @@ import { ArrowUpRight } from "lucide-react";
 import { projects, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Expandable } from "./ui/expandable";
+import { useId } from "react";
 
 export function FeaturedProjects() {
+  const uniqId = useId();
   return (
     <section id={SectionId.PROJECTS} className="bg-white py-24">
       <div className="container mx-auto px-6 md:px-12">
@@ -14,9 +16,14 @@ export function FeaturedProjects() {
           subtitle="Key projects that demonstrate capability in large-scale system architecture."
         />
 
-        <Expandable title="Projects" initialCount={4} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <Expandable
+          title="Projects"
+          count={4}
+          className="expandable grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3"
+        >
           {projects.map((project) => (
             <div
+              id={uniqId + project.id}
               key={project.id}
               className="group hover:border-secondary flex h-full flex-col rounded-none border-t border-r border-b border-l-4 border-slate-200 border-t-slate-100 border-r-slate-100 border-b-slate-100 bg-white p-8 shadow-xs transition-all duration-300 hover:shadow-xl"
             >

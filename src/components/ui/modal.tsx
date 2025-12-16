@@ -17,13 +17,10 @@ export function Modal({ open, onOpenChange, title, children, className }: ModalP
   return (
     <Dialog.Root open={open} onOpenChange={onOpenChange}>
       <Dialog.Portal>
-        {/* Backdrop with blur */}
         <Dialog.Overlay className="data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 fixed inset-0 z-50 bg-slate-900/40 backdrop-blur-sm" />
-
-        {/* Modal content */}
         <Dialog.Content
           className={twMerge(
-            "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-top-[2%] data-[state=open]:slide-in-from-top-[2%] fixed top-1/2 left-1/2 z-50 max-h-[90vh] w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-white shadow-2xl duration-300 sm:w-full sm:max-w-7xl",
+            "data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[state=closed]:slide-out-to-top-[2%] data-[state=open]:slide-in-from-top-[2%] fixed top-1/2 left-1/2 z-50 max-h-[90vh] w-[calc(100%-2rem)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-lg bg-white shadow-2xl duration-300 sm:max-w-7xl",
             className,
           )}
         >
@@ -34,7 +31,7 @@ export function Modal({ open, onOpenChange, title, children, className }: ModalP
               <Button
                 variant="ghost"
                 size="icon"
-                className="ml-auto aspect-square cursor-pointer rounded-full hover:bg-slate-100"
+                className="aspect-square cursor-pointer rounded-full hover:bg-slate-100 active:bg-slate-200"
                 aria-label="Close modal"
               >
                 <X size={20} />
