@@ -3,7 +3,7 @@
 import { Calendar, Briefcase } from "lucide-react";
 import { experiences, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
-import { ShowMore } from "./ui/show-more";
+import { Expandable } from "./ui/expandable";
 
 export function ExperienceSection() {
   return (
@@ -14,11 +14,11 @@ export function ExperienceSection() {
           subtitle="A track record of delivering scalable solutions in complex environments."
         />
 
-        <ShowMore initialCount={3} className="space-y-12 pl-3">
+        <Expandable title="Experiences" initialCount={3} className="space-y-12 pl-3">
           {experiences.map((exp) => (
             <div key={exp.id} className="group relative border-l-2 border-slate-100 pb-2 pl-8 last:pb-0 md:pl-12">
               {/* Timeline Dot */}
-              <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full border-4 border-slate-200 bg-white transition-colors group-hover:border-blue-500"></div>
+              <div className="absolute top-0 -left-2.25 h-4 w-4 rounded-full border-4 border-slate-200 bg-white transition-colors group-hover:border-blue-500"></div>
 
               <div className="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-start">
                 <div>
@@ -60,7 +60,7 @@ export function ExperienceSection() {
               )}
             </div>
           ))}
-        </ShowMore>
+        </Expandable>
       </div>
     </section>
   );

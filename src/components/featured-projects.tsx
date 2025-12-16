@@ -3,7 +3,7 @@
 import { ArrowUpRight } from "lucide-react";
 import { projects, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
-import { ShowMore } from "./ui/show-more";
+import { Expandable } from "./ui/expandable";
 
 export function FeaturedProjects() {
   return (
@@ -14,7 +14,7 @@ export function FeaturedProjects() {
           subtitle="Key projects that demonstrate capability in large-scale system architecture."
         />
 
-        <ShowMore initialCount={6} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <Expandable title="Projects" initialCount={4} className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
           {projects.map((project) => (
             <div
               key={project.id}
@@ -51,7 +51,7 @@ export function FeaturedProjects() {
               </div>
             </div>
           ))}
-        </ShowMore>
+        </Expandable>
       </div>
     </section>
   );

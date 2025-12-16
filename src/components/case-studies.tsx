@@ -3,7 +3,7 @@
 import { CheckCircle2 } from "lucide-react";
 import { caseStudies, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
-import { ShowMore } from "./ui/show-more";
+import { Expandable } from "./ui/expandable";
 import { useId } from "react";
 
 export function CaseStudies() {
@@ -16,7 +16,7 @@ export function CaseStudies() {
           subtitle="Deep dives into complex system challenges and delivered solutions."
         />
 
-        <ShowMore initialCount={3} className="space-y-16">
+        <Expandable title="Case Studies" initialCount={3} className="space-y-16">
           {caseStudies.map((study) => (
             <div
               id={id + study.id}
@@ -69,7 +69,7 @@ export function CaseStudies() {
               </div>
             </div>
           ))}
-        </ShowMore>
+        </Expandable>
       </div>
     </section>
   );
