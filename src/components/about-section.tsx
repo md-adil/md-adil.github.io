@@ -12,8 +12,8 @@ export function AboutSection() {
 
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
           <div>
-            <p className="mb-6 text-lg leading-relaxed text-body">{personalInfo.about}</p>
-            <p className="text-lg leading-relaxed text-body">
+            <p className="text-body mb-6 text-lg leading-relaxed">{personalInfo.about}</p>
+            <p className="text-body text-lg leading-relaxed">
               I believe great system design comes from understanding trade-offs — consistency, availability, partition
               tolerance — and choosing what matters most for the business.
             </p>
@@ -43,11 +43,11 @@ export function AboutSection() {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="rounded-lg border border-slate-100 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                className="rounded-lg border border-slate-100 bg-white p-6 shadow-xs transition-shadow hover:shadow-md"
               >
                 <item.icon className="mb-4 h-8 w-8 text-slate-800" />
-                <h3 className="mb-2 font-serif font-bold text-primary">{item.title}</h3>
-                <p className="text-sm text-muted">{item.desc}</p>
+                <h3 className="text-primary mb-2 font-serif font-bold">{item.title}</h3>
+                <p className="text-muted text-sm">{item.desc}</p>
               </div>
             ))}
           </div>

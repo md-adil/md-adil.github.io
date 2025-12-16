@@ -18,11 +18,11 @@ export function ExperienceSection() {
           {experiences.map((exp) => (
             <div key={exp.id} className="group relative border-l-2 border-slate-100 pb-2 pl-8 last:pb-0 md:pl-12">
               {/* Timeline Dot */}
-              <div className="absolute -left-[9px] top-0 h-4 w-4 rounded-full border-4 border-slate-200 bg-white transition-colors group-hover:border-blue-500"></div>
+              <div className="absolute top-0 -left-[9px] h-4 w-4 rounded-full border-4 border-slate-200 bg-white transition-colors group-hover:border-blue-500"></div>
 
               <div className="mb-4 flex flex-col justify-between gap-4 md:flex-row md:items-start">
                 <div>
-                  <h3 className="font-serif text-2xl font-bold text-primary transition-colors group-hover:text-blue-700">
+                  <h3 className="text-primary font-serif text-2xl font-bold transition-colors group-hover:text-blue-700">
                     {exp.role}
                   </h3>
                   <div className="mt-1 flex items-center gap-2 text-lg font-medium text-slate-600">
@@ -40,7 +40,7 @@ export function ExperienceSection() {
               <div className="space-y-3">
                 {exp.highlights.map((highlight, hIndex) => (
                   <div key={hIndex} className="flex items-start gap-3 text-slate-700">
-                    <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-500"></span>
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500"></span>
                     <span>{highlight}</span>
                   </div>
                 ))}

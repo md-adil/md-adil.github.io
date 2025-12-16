@@ -1,10 +1,48 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme {
+  --color-body: var(--color-slate-600);
+  --color-primary: var(--color-slate-900);
+  --color-primary-foreground: var(--color-white);
+  --color-secondary: var(--color-blue-600);
+  --color-secondary-foreground: var(--color-white);
+  --color-accent: var(--color-blue-100);
+  --color-accent-foreground: var(--color-slate-900);
+  --color-muted: var(--color-slate-500);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
+
+@utility transition-all {
+  /* Smooth transitions */
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+
+  /* Respect user motion preferences */
+}
 
 @layer base {
   body {
-    @apply overflow-x-hidden bg-white text-primary;
+    @apply text-primary overflow-x-hidden bg-white;
     font-family:
       system-ui,
       -apple-system,
@@ -29,14 +67,6 @@
 }
 
 @layer utilities {
-  /* Smooth transitions */
-  .transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 300ms;
-  }
-
-  /* Respect user motion preferences */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,

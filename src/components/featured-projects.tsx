@@ -18,26 +18,26 @@ export function FeaturedProjects() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="group flex h-full flex-col rounded-none border-b border-l-4 border-r border-t border-slate-200 border-b-slate-100 border-r-slate-100 border-t-slate-100 bg-white p-8 shadow-sm transition-all duration-300 hover:border-secondary hover:shadow-xl"
+              className="group hover:border-secondary flex h-full flex-col rounded-none border-t border-r border-b border-l-4 border-slate-200 border-t-slate-100 border-r-slate-100 border-b-slate-100 bg-white p-8 shadow-xs transition-all duration-300 hover:shadow-xl"
             >
               <div className="mb-6 flex items-start justify-between">
-                <h3 className="font-serif text-2xl font-bold leading-tight text-primary transition-colors group-hover:text-blue-700">
+                <h3 className="text-primary font-serif text-2xl leading-tight font-bold transition-colors group-hover:text-blue-700">
                   {project.title}
                 </h3>
                 <ArrowUpRight
-                  className="transform text-slate-300 transition-colors group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-secondary"
+                  className="group-hover:text-secondary transform text-slate-300 transition-colors group-hover:translate-x-1 group-hover:-translate-y-1"
                   size={24}
                 />
               </div>
 
-              <p className="mb-8 flex-grow leading-relaxed text-slate-600">{project.description}</p>
+              <p className="mb-8 grow leading-relaxed text-slate-600">{project.description}</p>
 
               <div className="mt-auto space-y-6">
                 <div className="flex flex-wrap gap-2">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
-                      className="border border-slate-100 bg-slate-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-slate-600"
+                      className="border border-slate-100 bg-slate-50 px-3 py-1 text-xs font-bold tracking-wide text-slate-600 uppercase"
                     >
                       {tech}
                     </span>
@@ -45,8 +45,8 @@ export function FeaturedProjects() {
                 </div>
 
                 <div className="border-t border-slate-50 pt-6">
-                  <p className="mb-1 text-xs font-bold uppercase tracking-widest text-slate-400">Impact</p>
-                  <p className="text-xl font-bold text-primary">{project.metric}</p>
+                  <p className="mb-1 text-xs font-bold tracking-widest text-slate-400 uppercase">Impact</p>
+                  <p className="text-primary text-xl font-bold">{project.metric}</p>
                 </div>
               </div>
             </div>

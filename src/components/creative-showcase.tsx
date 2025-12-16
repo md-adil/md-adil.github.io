@@ -59,18 +59,18 @@ export function CreativeShowcase() {
     <section className="relative overflow-hidden py-20">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
-        <div className="animate-float absolute left-10 top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl"></div>
+        <div className="animate-float bg-primary/10 absolute top-20 left-10 h-64 w-64 rounded-full blur-3xl"></div>
         <div
-          className="animate-float absolute bottom-20 right-10 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"
+          className="animate-float bg-secondary/10 absolute right-10 bottom-20 h-80 w-80 rounded-full blur-3xl"
           style={{ animationDelay: "3s" }}
         ></div>
       </div>
 
-      <div className="container relative z-10 mx-auto px-6">
+      <div className="relative z-10 container mx-auto px-6">
         {/* Section Header */}
         <div className="mb-16 text-center">
           <h2 className="gradient-text mb-6 text-4xl font-bold md:text-6xl">Creative Mind</h2>
-          <p className="mx-auto max-w-3xl text-xl text-body">
+          <p className="text-body mx-auto max-w-3xl text-xl">
             Where passion meets profession, and creativity fuels innovation
           </p>
         </div>
@@ -84,11 +84,11 @@ export function CreativeShowcase() {
                 key={index}
                 className="stagger-item glass-effect hover-scale hover-glow group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 hover:bg-white/10"
               >
-                <div className="absolute right-0 top-0 h-20 w-20 rounded-bl-full bg-primary/10"></div>
+                <div className="bg-primary/10 absolute top-0 right-0 h-20 w-20 rounded-bl-full"></div>
                 <IconComponent
                   className={`h-12 w-12 ${passion.color} mb-4 transition-transform duration-300 group-hover:scale-110`}
                 />
-                <h3 className="text-foreground mb-3 text-xl font-semibold transition-colors group-hover:text-primary">
+                <h3 className="text-foreground group-hover:text-primary mb-3 text-xl font-semibold transition-colors">
                   {passion.title}
                 </h3>
                 <p className="group-hover:text-foreground/80 text-body transition-colors">{passion.description}</p>
@@ -107,10 +107,10 @@ export function CreativeShowcase() {
                 className="glass-effect animate-fade-in relative rounded-xl p-6 transition-all duration-300 hover:bg-white/5"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="absolute left-4 top-4 font-serif text-6xl text-primary/20">"</div>
+                <div className="text-primary/20 absolute top-4 left-4 font-serif text-6xl">"</div>
                 <blockquote className="relative z-10 pt-8">
-                  <p className="text-foreground/90 mb-4 italic leading-relaxed">{quote.text}</p>
-                  <cite className="text-sm font-medium text-primary">— {quote.author}</cite>
+                  <p className="text-foreground/90 mb-4 leading-relaxed italic">{quote.text}</p>
+                  <cite className="text-primary text-sm font-medium">— {quote.author}</cite>
                 </blockquote>
               </div>
             ))}
@@ -131,10 +131,10 @@ export function CreativeShowcase() {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="mb-2 text-4xl transition-transform duration-300 group-hover:scale-125">{stat.icon}</div>
-              <div className="mb-1 text-2xl font-bold text-primary transition-colors group-hover:text-secondary md:text-3xl">
+              <div className="text-primary group-hover:text-secondary mb-1 text-2xl font-bold transition-colors md:text-3xl">
                 {stat.number}
               </div>
-              <div className="text-sm text-body">{stat.label}</div>
+              <div className="text-body text-sm">{stat.label}</div>
             </div>
           ))}
         </div>

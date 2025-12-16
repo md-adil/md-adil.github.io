@@ -15,7 +15,7 @@ function SocialIcon({ href, name, icon }: SocialIconProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+      className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
     >
       {icon} {name}
     </a>
@@ -33,13 +33,13 @@ export function ContactSection() {
         <div className="mb-12 flex flex-wrap justify-center gap-6">
           <a
             href="mailto:adil.sudo@gmail.com"
-            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           >
             <Mail size={20} aria-hidden="true" /> adil.sudo@gmail.com
           </a>
           <a
             href="tel:+919818128797"
-            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           >
             <Phone size={20} aria-hidden="true" /> +91 98 18 128797
           </a>
@@ -47,7 +47,7 @@ export function ContactSection() {
             href="https://linkedin.com/in/md-adil"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           >
             <Linkedin size={20} aria-hidden="true" /> LinkedIn
           </a>
@@ -55,7 +55,7 @@ export function ContactSection() {
             href="https://github.com/md-adil"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           >
             <Github size={20} aria-hidden="true" /> GitHub
           </a>
@@ -66,7 +66,7 @@ export function ContactSection() {
           />
           <SocialIcon href="https://yacs.in/@/admin" icon={<ChatIcon size={20} aria-hidden="true" />} name="Chat" />
         </div>
-        <p className="text-sm text-muted">
+        <p className="text-muted text-sm">
           <MapPin size={14} className="mr-1 inline" aria-hidden="true" />
           Pune Maharashtra, India
         </p>

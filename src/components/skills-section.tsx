@@ -31,13 +31,13 @@ export function SkillsSection() {
           {skills.map((category, idx) => (
             <div
               key={String(idx)}
-              className="group rounded-none border-l-4 border-slate-200 bg-white p-8 shadow-sm transition-all duration-300 hover:border-secondary"
+              className="group hover:border-secondary rounded-none border-l-4 border-slate-200 bg-white p-8 shadow-xs transition-all duration-300"
             >
               <div className="mb-8 flex items-center gap-4">
-                <div className="rounded-full border border-slate-100 bg-slate-50 p-3 text-slate-600 transition-colors group-hover:bg-blue-50 group-hover:text-secondary">
+                <div className="group-hover:text-secondary rounded-full border border-slate-100 bg-slate-50 p-3 text-slate-600 transition-colors group-hover:bg-blue-50">
                   {getIcon(category.category)}
                 </div>
-                <h3 className="font-serif text-xl font-bold text-primary">{category.category}</h3>
+                <h3 className="text-primary font-serif text-xl font-bold">{category.category}</h3>
               </div>
 
               <div className="flex flex-wrap gap-2">

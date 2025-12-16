@@ -32,25 +32,25 @@ export function OpenSourceSection() {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="flex flex-col rounded border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+              className="flex flex-col rounded-sm border border-slate-200 bg-white p-6 shadow-xs transition-all hover:shadow-md"
             >
               <div className="mb-4 flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="rounded bg-slate-100 p-2 text-slate-700">{getIcon(project.id)}</div>
-                  <h3 className="text-xl font-bold text-primary">{project.title}</h3>
+                  <div className="rounded-sm bg-slate-100 p-2 text-slate-700">{getIcon(project.id)}</div>
+                  <h3 className="text-primary text-xl font-bold">{project.title}</h3>
                 </div>
-                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-700">
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold tracking-wide text-blue-700 uppercase">
                   {project.metric}
                 </div>
               </div>
 
-              <p className="mb-6 flex-grow leading-relaxed text-slate-600">{project.description}</p>
+              <p className="mb-6 grow leading-relaxed text-slate-600">{project.description}</p>
 
               <div className="mb-4 flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
                   <span
                     key={i}
-                    className="rounded border border-slate-100 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-500"
+                    className="rounded-sm border border-slate-100 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-500"
                   >
                     {tech}
                   </span>

@@ -25,10 +25,10 @@ export function CaseStudies() {
             >
               {/* Left Column: Context */}
               <div className="lg:w-1/3">
-                <h3 className="mb-2 font-serif text-2xl font-bold text-primary">{study.title}</h3>
-                <p className="mb-6 font-medium text-secondary">{study.client}</p>
+                <h3 className="text-primary mb-2 font-serif text-2xl font-bold">{study.title}</h3>
+                <p className="text-secondary mb-6 font-medium">{study.client}</p>
                 <div className="mb-6">
-                  <h4 className="mb-3 text-sm font-bold uppercase tracking-widest text-muted">Tech Stack</h4>
+                  <h4 className="text-muted mb-3 text-sm font-bold tracking-widest uppercase">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
                     {study.technologies.map((tech) => (
                       <span key={tech} className="bg-slate-100 px-2 py-1 text-xs font-bold text-slate-600">
@@ -41,27 +41,27 @@ export function CaseStudies() {
 
               {/* Right Column: Details */}
               <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:w-2/3">
-                <div className="rounded border border-slate-100 bg-slate-50 p-6 transition-all hover:border-slate-200 hover:shadow-md">
-                  <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+                <div className="rounded-sm border border-slate-100 bg-slate-50 p-6 transition-all hover:border-slate-200 hover:shadow-md">
+                  <h4 className="text-primary mb-3 flex items-center gap-2 text-sm font-bold tracking-widest uppercase">
                     The Challenge
                   </h4>
-                  <p className="text-sm leading-relaxed text-body">{study.challenge}</p>
+                  <p className="text-body text-sm leading-relaxed">{study.challenge}</p>
                 </div>
 
-                <div className="rounded border border-slate-100 bg-slate-50 p-6 transition-all hover:border-slate-200 hover:shadow-md">
-                  <h4 className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-primary">
+                <div className="rounded-sm border border-slate-100 bg-slate-50 p-6 transition-all hover:border-slate-200 hover:shadow-md">
+                  <h4 className="text-primary mb-3 flex items-center gap-2 text-sm font-bold tracking-widest uppercase">
                     The Solution
                   </h4>
                   <p className="text-sm leading-relaxed text-slate-600">{study.solution}</p>
                 </div>
 
                 <div className="md:col-span-2">
-                  <h4 className="mb-4 text-sm font-bold uppercase tracking-widest text-primary">Key Outcomes</h4>
+                  <h4 className="text-primary mb-4 text-sm font-bold tracking-widest uppercase">Key Outcomes</h4>
                   <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
                     {study.results.map((result, rIdx) => (
                       <div key={rIdx} className="flex items-start gap-3">
-                        <CheckCircle2 className="mt-0.5 h-5 w-5 flex-shrink-0 text-green-500" />
-                        <span className="text-sm font-medium text-body">{result}</span>
+                        <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-green-500" />
+                        <span className="text-body text-sm font-medium">{result}</span>
                       </div>
                     ))}
                   </div>

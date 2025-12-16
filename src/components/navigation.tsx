@@ -39,7 +39,7 @@ export function Navigation() {
       <a
         href={`#${to}`}
         onClick={() => setMobileMenuOpen(false)}
-        className={`whitespace-nowrap rounded-sm text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 ${isActive ? "font-bold text-primary" : "text-muted hover:text-primary"}`}
+        className={`focus:ring-primary rounded-xs text-sm font-medium whitespace-nowrap transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-hidden ${isActive ? "text-primary font-bold" : "text-muted hover:text-primary"}`}
       >
         {children}
       </a>
@@ -48,23 +48,23 @@ export function Navigation() {
 
   return (
     <nav
-      className={`fixed left-0 right-0 top-0 z-40 border-b transition-all duration-300 ${
+      className={`fixed top-0 right-0 left-0 z-40 border-b transition-all duration-300 ${
         scrolled
-          ? "border-slate-200 bg-white/90 py-4 shadow-sm backdrop-blur-md"
+          ? "border-slate-200 bg-white/90 py-4 shadow-xs backdrop-blur-md"
           : "border-transparent bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto flex items-center justify-between px-6 md:px-12">
         <a
           href="#hero"
-          className="flex items-center gap-2 rounded-sm focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+          className="focus:ring-primary flex items-center gap-2 rounded-xs focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           aria-label="Go to top"
         >
-          <Layers className="h-6 w-6 text-primary" aria-hidden="true" />
-          <span className="hidden font-serif text-xl font-bold tracking-tight text-primary sm:inline">
+          <Layers className="text-primary h-6 w-6" aria-hidden="true" />
+          <span className="text-primary hidden font-serif text-xl font-bold tracking-tight sm:inline">
             {personalInfo.name}
           </span>
-          <span className="font-serif text-xl font-bold tracking-tight text-primary sm:hidden">
+          <span className="text-primary font-serif text-xl font-bold tracking-tight sm:hidden">
             {personalInfo.name
               .split(" ")
               .map((n) => n[0])
@@ -100,7 +100,7 @@ export function Navigation() {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div className="absolute left-0 right-0 top-full flex max-h-[80vh] flex-col items-center gap-6 overflow-y-auto border-b border-slate-200 bg-white p-6 shadow-xl lg:hidden">
+        <div className="absolute top-full right-0 left-0 flex max-h-[80vh] flex-col items-center gap-6 overflow-y-auto border-b border-slate-200 bg-white p-6 shadow-xl lg:hidden">
           <NavLink to={SectionId.ABOUT}>About</NavLink>
           <NavLink to={SectionId.CASE_STUDIES}>Case Studies</NavLink>
           <NavLink to={SectionId.SKILLS}>Skills</NavLink>
