@@ -19,7 +19,8 @@ export const projects: Project[] = [
   {
     id: "yet-another-chatting-software",
     title: "YACS (Yet Another Chatting Software)",
-    description: "Chat with anyone without sharing contacts - built during lockdown. PWA with smooth animations and offline support.",
+    description:
+      "Chat with anyone without sharing contacts - built during lockdown. PWA with smooth animations and offline support.",
     technologies: ["React", "TypeScript", "WebRTC", "WebSocket", "Node.js", "MongoDB", "Protobuf", "PWA"],
     metric: "Native-Smooth Performance",
     link: "https://yacs.in",

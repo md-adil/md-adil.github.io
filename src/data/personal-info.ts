@@ -1,4 +1,4 @@
-import { PersonalInfo } from './types';
+import { PersonalInfo } from "./types";
 
 const experienceSince = 2014;
 const experienceYears = `${new Date().getFullYear() - experienceSince}+`;
@@ -11,6 +11,6 @@ export const personalInfo: PersonalInfo = {
   stats: {
     years: experienceYears,
     users: "1M+",
-    uptime: "99.9%"
-  }
+    uptime: "99.9%",
+  },
 };

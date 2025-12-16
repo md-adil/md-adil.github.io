@@ -56,73 +56,61 @@ export function CreativeShowcase() {
   ];
 
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section className="relative overflow-hidden py-20">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl animate-float"></div>
+        <div className="animate-float absolute left-10 top-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl"></div>
         <div
-          className="absolute bottom-20 right-10 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float"
+          className="animate-float absolute bottom-20 right-10 h-80 w-80 rounded-full bg-secondary/10 blur-3xl"
           style={{ animationDelay: "3s" }}
         ></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container relative z-10 mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">
-            Creative Mind
-          </h2>
-          <p className="text-xl text-body max-w-3xl mx-auto">
+        <div className="mb-16 text-center">
+          <h2 className="gradient-text mb-6 text-4xl font-bold md:text-6xl">Creative Mind</h2>
+          <p className="mx-auto max-w-3xl text-xl text-body">
             Where passion meets profession, and creativity fuels innovation
           </p>
         </div>
 
         {/* Passion Grid */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
+        <div className="mb-20 grid gap-6 md:grid-cols-3">
           {passions.map((passion, index) => {
             const IconComponent = passion.icon;
             return (
               <div
                 key={index}
-                className="stagger-item group glass-effect rounded-2xl p-8 hover:bg-white/10 transition-all duration-500 hover-scale hover-glow relative overflow-hidden"
+                className="stagger-item glass-effect hover-scale hover-glow group relative overflow-hidden rounded-2xl p-8 transition-all duration-500 hover:bg-white/10"
               >
-                <div className="absolute top-0 right-0 w-20 h-20 bg-primary/10 rounded-bl-full"></div>
+                <div className="absolute right-0 top-0 h-20 w-20 rounded-bl-full bg-primary/10"></div>
                 <IconComponent
-                  className={`h-12 w-12 ${passion.color} mb-4 group-hover:scale-110 transition-transform duration-300`}
+                  className={`h-12 w-12 ${passion.color} mb-4 transition-transform duration-300 group-hover:scale-110`}
                 />
-                <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                <h3 className="text-foreground mb-3 text-xl font-semibold transition-colors group-hover:text-primary">
                   {passion.title}
                 </h3>
-                <p className="text-body group-hover:text-foreground/80 transition-colors">
-                  {passion.description}
-                </p>
+                <p className="group-hover:text-foreground/80 text-body transition-colors">{passion.description}</p>
               </div>
             );
           })}
         </div>
 
         {/* Code Philosophy */}
-        <div className="max-w-5xl mx-auto">
-          <h3 className="text-3xl font-bold text-center mb-12 text-shimmer">
-            Code Philosophy
-          </h3>
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="mx-auto max-w-5xl">
+          <h3 className="text-shimmer mb-12 text-center text-3xl font-bold">Code Philosophy</h3>
+          <div className="grid gap-8 md:grid-cols-3">
             {codeQuotes.map((quote, index) => (
               <div
                 key={index}
-                className="relative glass-effect rounded-xl p-6 hover:bg-white/5 transition-all duration-300 animate-fade-in"
+                className="glass-effect animate-fade-in relative rounded-xl p-6 transition-all duration-300 hover:bg-white/5"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className="absolute top-4 left-4 text-6xl text-primary/20 font-serif">
-                  "
-                </div>
+                <div className="absolute left-4 top-4 font-serif text-6xl text-primary/20">"</div>
                 <blockquote className="relative z-10 pt-8">
-                  <p className="text-foreground/90 italic mb-4 leading-relaxed">
-                    {quote.text}
-                  </p>
-                  <cite className="text-sm text-primary font-medium">
-                    — {quote.author}
-                  </cite>
+                  <p className="text-foreground/90 mb-4 italic leading-relaxed">{quote.text}</p>
+                  <cite className="text-sm font-medium text-primary">— {quote.author}</cite>
                 </blockquote>
               </div>
             ))}
@@ -130,7 +118,7 @@ export function CreativeShowcase() {
         </div>
 
         {/* Creative Stats */}
-        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="mt-20 grid grid-cols-2 gap-8 md:grid-cols-4">
           {[
             { number: "500+", label: "Commits This Year", icon: "📊" },
             { number: "24/7", label: "Learning Mode", icon: "🧠" },
@@ -139,13 +127,11 @@ export function CreativeShowcase() {
           ].map((stat, index) => (
             <div
               key={index}
-              className="text-center group animate-scale-in"
+              className="animate-scale-in group text-center"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="text-4xl mb-2 group-hover:scale-125 transition-transform duration-300">
-                {stat.icon}
-              </div>
-              <div className="text-2xl md:text-3xl font-bold text-primary mb-1 group-hover:text-secondary transition-colors">
+              <div className="mb-2 text-4xl transition-transform duration-300 group-hover:scale-125">{stat.icon}</div>
+              <div className="mb-1 text-2xl font-bold text-primary transition-colors group-hover:text-secondary md:text-3xl">
                 {stat.number}
               </div>
               <div className="text-sm text-body">{stat.label}</div>

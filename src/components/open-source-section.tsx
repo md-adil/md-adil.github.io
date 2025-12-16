@@ -14,43 +14,54 @@ const GithubIcon = ({ className }: { className?: string }) => (
 
 export function OpenSourceSection() {
   const getIcon = (id: string) => {
-    if (id.includes("os1")) return <Globe className="w-5 h-5" />;
-    if (id.includes("os2")) return <Package className="w-5 h-5" />;
-    if (id.includes("os3")) return <Cpu className="w-5 h-5" />;
-    return <GithubIcon className="w-5 h-5" />;
+    if (id.includes("os1")) return <Globe className="h-5 w-5" />;
+    if (id.includes("os2")) return <Package className="h-5 w-5" />;
+    if (id.includes("os3")) return <Cpu className="h-5 w-5" />;
+    return <GithubIcon className="h-5 w-5" />;
   };
 
   return (
-    <section id={SectionId.PROJECTS} className="py-24 bg-slate-50">
+    <section id={SectionId.PROJECTS} className="bg-slate-50 py-24">
       <div className="container mx-auto px-6 md:px-12">
-        <SectionHeading title="Open Source & Personal Projects" subtitle="Building tools and applications to solve real-world developer problems." />
+        <SectionHeading
+          title="Open Source & Personal Projects"
+          subtitle="Building tools and applications to solve real-world developer problems."
+        />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <div key={project.id} className="bg-white p-6 rounded border border-slate-200 shadow-sm hover:shadow-md transition-all flex flex-col">
-              <div className="flex justify-between items-start mb-4">
+            <div
+              key={project.id}
+              className="flex flex-col rounded border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md"
+            >
+              <div className="mb-4 flex items-start justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="p-2 bg-slate-100 rounded text-slate-700">{getIcon(project.id)}</div>
+                  <div className="rounded bg-slate-100 p-2 text-slate-700">{getIcon(project.id)}</div>
                   <h3 className="text-xl font-bold text-primary">{project.title}</h3>
                 </div>
-                <div className="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-wide rounded-full">{project.metric}</div>
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-wide text-blue-700">
+                  {project.metric}
+                </div>
               </div>
 
-              <p className="text-slate-600 mb-6 flex-grow leading-relaxed">{project.description}</p>
+              <p className="mb-6 flex-grow leading-relaxed text-slate-600">{project.description}</p>
 
-              <div className="flex flex-wrap gap-2 mb-4">
+              <div className="mb-4 flex flex-wrap gap-2">
                 {project.technologies.map((tech, i) => (
-                  <span key={i} className="px-2 py-1 bg-slate-50 text-slate-500 text-xs font-medium border border-slate-100 rounded">
+                  <span
+                    key={i}
+                    className="rounded border border-slate-100 bg-slate-50 px-2 py-1 text-xs font-medium text-slate-500"
+                  >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="flex gap-3 mt-auto pt-4 border-t border-slate-100">
+              <div className="mt-auto flex gap-3 border-t border-slate-100 pt-4">
                 {project.link && (
                   <Button variant="link" size="sm" asChild>
                     <a href={project.link} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
+                      <ExternalLink className="h-4 w-4" />
                       Website
                     </a>
                   </Button>
@@ -58,7 +69,7 @@ export function OpenSourceSection() {
                 {project.github && (
                   <Button variant="link" size="sm" asChild>
                     <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <GithubIcon className="w-4 h-4" />
+                      <GithubIcon className="h-4 w-4" />
                       GitHub
                     </a>
                   </Button>
@@ -66,7 +77,7 @@ export function OpenSourceSection() {
                 {project.npm && (
                   <Button variant="link" size="sm" asChild>
                     <a href={project.npm} target="_blank" rel="noopener noreferrer">
-                      <Package className="w-4 h-4" />
+                      <Package className="h-4 w-4" />
                       NPM
                     </a>
                   </Button>

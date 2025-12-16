@@ -1,14 +1,6 @@
 "use client";
 
-import {
-  Mail,
-  Linkedin,
-  Github,
-  Phone,
-  MapPin,
-  Hexagon as IconNode,
-  MessageCircle as ChatIcon,
-} from "lucide-react";
+import { Mail, Linkedin, Github, Phone, MapPin, Hexagon as IconNode, MessageCircle as ChatIcon } from "lucide-react";
 import { SectionId } from "@/data";
 import { ReactNode } from "react";
 
@@ -23,7 +15,7 @@ function SocialIcon({ href, name, icon }: SocialIconProps) {
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex items-center gap-2 text-primary hover:text-body font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+      className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
     >
       {icon} {name}
     </a>
@@ -32,22 +24,22 @@ function SocialIcon({ href, name, icon }: SocialIconProps) {
 
 export function ContactSection() {
   return (
-    <section id={SectionId.CONTACT} className="py-24 bg-slate-50" aria-labelledby="contact-heading">
-      <div className="container mx-auto px-6 md:px-12 text-center max-w-3xl">
-        <h2 id="contact-heading" className="text-3xl md:text-5xl font-serif font-bold text-slate-900 mb-6">
+    <section id={SectionId.CONTACT} className="bg-slate-50 py-24" aria-labelledby="contact-heading">
+      <div className="container mx-auto max-w-3xl px-6 text-center md:px-12">
+        <h2 id="contact-heading" className="mb-6 font-serif text-3xl font-bold text-slate-900 md:text-5xl">
           Let's Build Something Durable.
         </h2>
         {/* <p className="text-slate-600 text-lg mb-10">I am currently open to consulting engagements and senior leadership roles.</p> */}
-        <div className="flex flex-wrap justify-center gap-6 mb-12">
+        <div className="mb-12 flex flex-wrap justify-center gap-6">
           <a
             href="mailto:adil.sudo@gmail.com"
-            className="flex items-center gap-2 text-primary hover:text-body font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <Mail size={20} aria-hidden="true" /> adil.sudo@gmail.com
           </a>
           <a
             href="tel:+919818128797"
-            className="flex items-center gap-2 text-primary hover:text-body font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <Phone size={20} aria-hidden="true" /> +91 98 18 128797
           </a>
@@ -55,7 +47,7 @@ export function ContactSection() {
             href="https://linkedin.com/in/md-adil"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-primary hover:text-body font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <Linkedin size={20} aria-hidden="true" /> LinkedIn
           </a>
@@ -63,7 +55,7 @@ export function ContactSection() {
             href="https://github.com/md-adil"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 text-primary hover:text-body font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 rounded-sm"
+            className="flex items-center gap-2 rounded-sm font-medium text-primary transition-colors hover:text-body focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
           >
             <Github size={20} aria-hidden="true" /> GitHub
           </a>
@@ -72,14 +64,10 @@ export function ContactSection() {
             icon={<IconNode size={20} aria-hidden="true" />}
             name="NpmJS"
           />
-          <SocialIcon
-            href="https://yacs.in/@/admin"
-            icon={<ChatIcon size={20} aria-hidden="true" />}
-            name="Chat"
-          />
+          <SocialIcon href="https://yacs.in/@/admin" icon={<ChatIcon size={20} aria-hidden="true" />} name="Chat" />
         </div>
         <p className="text-sm text-muted">
-          <MapPin size={14} className="inline mr-1" aria-hidden="true" />
+          <MapPin size={14} className="mr-1 inline" aria-hidden="true" />
           Pune Maharashtra, India
         </p>
       </div>

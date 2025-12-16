@@ -3,13 +3,14 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --radius: 0.5rem;
-  }
-
   body {
-    @apply bg-white text-primary overflow-x-hidden;
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    @apply overflow-x-hidden bg-white text-primary;
+    font-family:
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      sans-serif;
   }
 
   html {

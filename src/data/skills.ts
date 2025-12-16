@@ -11,11 +11,29 @@ export const skills: SkillCategory[] = [
   },
   {
     category: "DevOps & Observability",
-    skills: ["DevOps", "Grafana", "ELK Stack", "Loki", "Tempo", "Prometheus", "Performance Optimization", "System Design"],
+    skills: [
+      "DevOps",
+      "Grafana",
+      "ELK Stack",
+      "Loki",
+      "Tempo",
+      "Prometheus",
+      "Performance Optimization",
+      "System Design",
+    ],
   },
   {
     category: "Databases & Scalability",
-    skills: ["MySQL", "MongoDB", "Redis", "Kafka", "Database Design", "Query Optimization", "Caching Strategies", "High Availability"],
+    skills: [
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Kafka",
+      "Database Design",
+      "Query Optimization",
+      "Caching Strategies",
+      "High Availability",
+    ],
   },
   {
     category: "Frontend Development",

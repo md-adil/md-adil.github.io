@@ -1,7 +1,9 @@
-import * as React from "react";
 import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
+import { Download, Eye, ChevronDown } from "lucide-react";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./dropdown-menu";
 import { twMerge } from "tailwind-merge";
+import { PropsWithChildren } from "react";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -26,17 +28,52 @@ const buttonVariants = cva(
       variant: "default",
       size: "default",
     },
-  }
+  },
 );
 
-export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>, VariantProps<typeof buttonVariants> {
   asChild?: boolean;
   ref?: React.Ref<HTMLButtonElement>;
 }
 
-function Button({ className, variant, size, asChild = false, ref, ...props }: ButtonProps) {
+export function Button({ className, variant, size, asChild = false, ref, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
   return <Comp className={twMerge(buttonVariants({ variant, size }), className)} ref={ref} {...props} />;
 }
 
-export { Button, buttonVariants };
+interface DownloadButtonProps extends PropsWithChildren {
+  url: string;
+  name: string;
+  filename: string;
+}
+
+export function DownloadButton({ url, name, children, filename }: DownloadButtonProps) {
+  return (
+    <div className="flex gap-0 transition-all hover:-translate-y-1">
+      <Button variant="outline" className="h-auto flex-1 rounded-r-none border-r-0 bg-white px-8 py-4" asChild>
+        <a href={url} download={filename}>
+          <Download size={18} className="mr-2" />
+          {children}
+        </a>
+      </Button>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant="outline" className="h-auto rounded-l-none bg-white px-3 py-4">
+            <ChevronDown size={16} />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align="end" className="w-48">
+          <DropdownMenuItem asChild>
+            <Button asChild variant="outline" className="flex cursor-pointer items-center bg-white">
+              <a href={url} target="_blank" rel="noopener noreferrer">
+                <Eye size={18} className="mr-2" />
+                <span>View {name}</span>
+              </a>
+            </Button>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </div>
+  );
+}
