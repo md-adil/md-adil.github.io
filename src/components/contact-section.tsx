@@ -2,7 +2,7 @@
 
 import { Mail, Linkedin, Github, Phone, MapPin, Hexagon as IconNode, MessageCircle as ChatIcon } from "lucide-react";
 import { SectionId } from "@/data";
-import { ReactNode } from "react";
+import { type ReactNode } from "react";
 
 interface SocialIconProps {
   href: string;

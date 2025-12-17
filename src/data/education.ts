@@ -1,4 +1,4 @@
-import { Education } from "./types";
+import { type Education } from "./types";
 
 const learningSince = 2019;
 

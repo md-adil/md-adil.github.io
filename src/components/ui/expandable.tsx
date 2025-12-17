@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { useState, ReactElement, cloneElement } from "react";
+import { useState, type ReactElement, cloneElement } from "react";
 import { twMerge } from "tailwind-merge";
 import { Button } from "./button";
 import { Modal } from "./modal";

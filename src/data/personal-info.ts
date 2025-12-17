@@ -1,4 +1,4 @@
-import { PersonalInfo } from "./types";
+import { type PersonalInfo } from "./types";
 
 const experienceSince = 2014;
 const experienceYears = `${new Date().getFullYear() - experienceSince}+`;
