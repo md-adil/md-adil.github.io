@@ -25,8 +25,8 @@ export function Modal({ open, onOpenChange, title, children, className }: ModalP
           )}
         >
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-slate-200 p-4 sm:px-6 sm:py-4">
-            <Dialog.Title className="text-primary font-serif text-lg font-semibold sm:text-xl">{title}</Dialog.Title>
+          <div className="flex items-center justify-between border-b border-slate-200 bg-white px-6 py-3">
+            <Dialog.Title className="text-primary font-sans text-lg font-semibold sm:text-xl">{title}</Dialog.Title>
             <Dialog.Close asChild>
               <Button
                 variant="ghost"

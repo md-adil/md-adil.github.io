@@ -16,7 +16,7 @@ export function CaseStudies() {
           subtitle="Deep dives into complex system challenges and delivered solutions."
         />
 
-        <Expandable title="Case Studies" count={3} className="space-y-16">
+        <Expandable title="Case Studies" count={2} className="space-y-16">
           {caseStudies.map((study) => (
             <div
               id={id + study.id}

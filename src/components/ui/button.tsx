@@ -13,7 +13,7 @@ const buttonVariants = cva(
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         // destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        secondary: "bg-white text-black border border-gray-200 hover:bg-gray-50 hover:shadow-none shadow-xs",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
@@ -22,6 +22,10 @@ const buttonVariants = cva(
         sm: "h-9 rounded-md px-3",
         lg: "h-11 rounded-md px-8",
         icon: "h-10 w-10",
+      },
+      rounded: {
+        true: "rounded-full",
+        false: "",
       },
     },
     defaultVariants: {
@@ -37,9 +41,9 @@ export interface ButtonProps
   ref?: React.Ref<HTMLButtonElement>;
 }
 
-export function Button({ className, variant, size, asChild = false, ref, ...props }: ButtonProps) {
+export function Button({ className, variant, size, rounded, asChild = false, ref, ...props }: ButtonProps) {
   const Comp = asChild ? Slot : "button";
-  return <Comp className={twMerge(buttonVariants({ variant, size }), className)} ref={ref} {...props} />;
+  return <Comp className={twMerge(buttonVariants({ variant, size, rounded }), className)} ref={ref} {...props} />;
 }
 
 interface DownloadButtonProps extends PropsWithChildren {
@@ -51,7 +55,7 @@ interface DownloadButtonProps extends PropsWithChildren {
 export function DownloadButton({ url, name, children, filename }: DownloadButtonProps) {
   return (
     <div className="flex gap-0 transition-all hover:-translate-y-1">
-      <Button variant="outline" className="h-auto flex-1 rounded-r-none border-r-0 bg-white px-8 py-4" asChild>
+      <Button variant="secondary" className="h-auto flex-1 rounded-r-none border-r-0 bg-white px-8 py-4" asChild>
         <a href={url} download={filename}>
           <Download size={18} className="mr-2" />
           {children}
@@ -59,7 +63,7 @@ export function DownloadButton({ url, name, children, filename }: DownloadButton
       </Button>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button variant="outline" className="h-auto rounded-l-none bg-white px-3 py-4">
+          <Button variant="secondary" className="h-auto rounded-l-none px-3 py-4">
             <ChevronDown size={16} />
           </Button>
         </DropdownMenuTrigger>

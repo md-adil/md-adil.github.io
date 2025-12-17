@@ -31,7 +31,7 @@ export function ProjectSection() {
 
         <Expandable
           title="Projects"
-          count={4}
+          count={2}
           modalClassName="bg-slate-50"
           className="grid grid-cols-1 gap-6 md:grid-cols-2"
         >
@@ -40,12 +40,12 @@ export function ProjectSection() {
               key={project.id}
               className="flex flex-col rounded-sm border border-slate-200 bg-white p-6 shadow-xs transition-all hover:shadow-md"
             >
-              <div className="mb-4 flex items-start justify-between">
+              <div className="mb-4 flex flex-wrap items-start justify-between gap-1 sm:flex-nowrap">
                 <div className="flex items-center gap-3">
                   <div className="rounded-sm bg-slate-100 p-2 text-slate-700">{getIcon(project.id)}</div>
                   <h3 className="text-primary text-xl font-bold">{project.title}</h3>
                 </div>
-                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold tracking-wide text-blue-700 uppercase">
+                <div className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold tracking-wide text-nowrap text-blue-700 uppercase">
                   {project.metric}
                 </div>
               </div>

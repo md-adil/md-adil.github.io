@@ -44,7 +44,8 @@ export function Expandable({
         <div className="mt-8 flex justify-center">
           <Button
             onClick={() => setIsModalOpen(true)}
-            variant="outline"
+            variant="secondary"
+            rounded
             className={twMerge("group flex cursor-pointer items-center gap-2 bg-white", buttonClassName)}
             aria-label={showMoreText}
           >

@@ -4,6 +4,7 @@ import { Terminal, Globe, Cpu, Layout, GitBranch, Server, Database, Shield } fro
 import { SectionId, skills } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Chip } from "./ui/chip";
+import { Expandable } from "./ui/expandable";
 
 export function SkillsSection() {
   const getIcon = (category: string) => {
@@ -27,7 +28,12 @@ export function SkillsSection() {
           subtitle="A comprehensive toolkit for building scalable, resilient systems."
         />
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <Expandable
+          title="Technical Expertise"
+          modalClassName="bg-slate-50"
+          count={4}
+          className="grid grid-cols-1 gap-8 md:grid-cols-2"
+        >
           {skills.map((category, idx) => (
             <div
               key={String(idx)}
@@ -47,7 +53,7 @@ export function SkillsSection() {
               </div>
             </div>
           ))}
-        </div>
+        </Expandable>
       </div>
     </section>
   );

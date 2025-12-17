@@ -4,7 +4,7 @@ export const projects: Project[] = [
   {
     id: "high-performance-on-demand-image-service",
     title: "High-Performance On-Demand Image Service",
-    description: `A high-concurrency image processing service in Go handling 100,000 requests per minute. Features real-time resizing via query parameters and automatic format conversion (WebP, AVIF). AWS CDN caching enables millions of requests with minimal origin load through edge delivery of repeated transformations.`,
+    description: `High-concurrency Go service handling 100K req/min. Real-time resizing and format conversion (WebP, AVIF). CDN-cached for millions of requests with minimal origin load.`,
     technologies: ["Go", "Kubernetes", "CDN"],
     metric: "100K req/min",
     github: "https://github.com/md-adil/image-optimizer",
@@ -12,7 +12,7 @@ export const projects: Project[] = [
   {
     id: "scalable-video-streaming-platform",
     title: "Scalable Video Streaming Platform (Live & VOD)",
-    description: `A video streaming platform supporting 400+ concurrent live streams for millions of users. Implements RTMP/NGINX ingestion with HLS adaptive delivery, DRM for premium content, and token-based CDN authentication. Kubernetes deployment enables horizontal scaling and high availability under peak traffic.`,
+    description: `Video platform supporting 400+ concurrent live streams for millions of users. RTMP/NGINX ingestion with HLS adaptive delivery, DRM protection, and token-based CDN auth. Kubernetes-powered horizontal scaling.`,
     technologies: ["RTMP", "Nginx", "Docker", "Kubernetes", "CDN"],
     metric: "400+ live streams",
   },

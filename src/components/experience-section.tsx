@@ -14,7 +14,7 @@ export function ExperienceSection() {
           subtitle="A track record of delivering scalable solutions in complex environments."
         />
 
-        <Expandable title="Experiences" count={3} className="space-y-12 pl-3">
+        <Expandable title="Experiences" count={2} className="space-y-12 pl-3">
           {experiences.map((exp) => (
             <div key={exp.id} className="group relative border-l-2 border-slate-100 pb-2 pl-8 last:pb-0 md:pl-12">
               {/* Timeline Dot */}

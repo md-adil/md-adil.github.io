@@ -80,7 +80,7 @@ export function Navigation() {
           <NavLink to={SectionId.EXPERIENCE}>Experience</NavLink>
           <NavLink to={SectionId.PROJECTS}>Projects / Open Source</NavLink>
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
-          <Button asChild className="ml-2 shadow-lg transition-all hover:shadow-xl">
+          <Button asChild rounded className="ml-2 shadow-lg transition-all hover:shadow-xl">
             <a href={`#${SectionId.CONTACT}`}>Contact</a>
           </Button>
         </div>
