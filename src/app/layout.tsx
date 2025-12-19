@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { Inter } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 import { domain, experienceYears } from "@/config";
 import { personalInfo } from "@/data";
@@ -100,6 +101,7 @@ export default function RootLayout({
       </head>
       <body className={inter.className}>
         <>{children}</>
+        <Toaster />
       </body>
     </html>
   );
