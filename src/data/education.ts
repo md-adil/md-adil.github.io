@@ -1,6 +1,6 @@
 import { type Education } from "./types";
 
-const learningSince = 2019;
+const learningSince = 2009;
 
 export const education: Education[] = [
   {
@@ -8,7 +8,7 @@ export const education: Education[] = [
     degree: "Self-Taught Software Engineering",
     institution: "School of Internet",
     year: `${learningSince} - Present`,
-    details: "Continuous learning through online resources, documentation, and hands-on projects",
+    details: "Guided by a fascination with technology, I learned software engineering, system design, and computing fundamentals through self-directed study and hands-on experimentation.",
   },
   {
     id: "edu2-bachelor",
