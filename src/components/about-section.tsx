@@ -3,6 +3,7 @@
 import { Layers, ShieldCheck, Server, Code } from "lucide-react";
 import { personalInfo, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
+import { MotionSection, StaggerGroup, StaggerItem, fadeRight } from "./ui/motion";
 
 export function AboutSection() {
   return (
@@ -11,14 +12,14 @@ export function AboutSection() {
         <SectionHeading title="Philosophy" subtitle="Simplicity is the ultimate sophistication in system design." />
 
         <div className="grid grid-cols-1 gap-16 md:grid-cols-2">
-          <div>
+          <MotionSection variants={fadeRight}>
             <p className="text-body mb-6 text-lg leading-relaxed">{personalInfo.about}</p>
             <p className="text-body text-lg leading-relaxed">
               I believe great system design comes from understanding trade-offs — consistency, availability, partition
               tolerance — and choosing what matters most for the business.
             </p>
-          </div>
-          <div className="grid grid-cols-2 gap-6">
+          </MotionSection>
+          <StaggerGroup className="grid grid-cols-2 gap-6">
             {[
               {
                 icon: Layers,
@@ -41,16 +42,15 @@ export function AboutSection() {
                 desc: "Right tool for the right job, no dogma.",
               },
             ].map((item, idx) => (
-              <div
-                key={idx}
-                className="rounded-lg border border-slate-100 bg-white p-6 shadow-xs transition-shadow hover:shadow-md"
-              >
-                <item.icon className="mb-4 h-8 w-8 text-slate-800" />
-                <h3 className="text-primary mb-2 font-serif font-bold">{item.title}</h3>
-                <p className="text-muted text-sm">{item.desc}</p>
-              </div>
+              <StaggerItem key={idx}>
+                <div className="group rounded-lg border border-slate-100 bg-white p-6 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                  <item.icon className="mb-4 h-8 w-8 text-slate-800 transition-transform duration-300 group-hover:scale-110" />
+                  <h3 className="text-primary mb-2 font-serif font-bold">{item.title}</h3>
+                  <p className="text-muted text-sm">{item.desc}</p>
+                </div>
+              </StaggerItem>
             ))}
-          </div>
+          </StaggerGroup>
         </div>
       </div>
     </section>

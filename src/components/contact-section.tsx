@@ -1,8 +1,11 @@
 "use client";
 
-import { Mail, Linkedin, Github, Phone, MapPin, Hexagon as IconNode, MessageCircle as ChatIcon } from "lucide-react";
+import { Mail, Phone, MapPin, MessageCircle as ChatIcon } from "lucide-react";
 import { SectionId } from "@/data";
 import { type ReactNode } from "react";
+import { MotionSection, StaggerGroup, StaggerItem } from "./ui/motion";
+import { LinkedinIcon, GithubIcon, NpmIcon } from "./icons";
+import { AnimatedBackground } from "./ui/animated-background";
 
 interface SocialIconProps {
   href: string;
@@ -23,53 +26,78 @@ function SocialIcon({ href, name, icon }: SocialIconProps) {
 }
 
 export function ContactSection() {
+  const links = [
+    {
+      href: "mailto:adil.sudo@gmail.com",
+      icon: <Mail size={20} aria-hidden="true" />,
+      name: "adil.sudo@gmail.com",
+    },
+    {
+      href: "tel:+919818128797",
+      icon: <Phone size={20} aria-hidden="true" />,
+      name: "+91 98 18 128797",
+    },
+    {
+      href: "https://linkedin.com/in/md-adil",
+      icon: <LinkedinIcon size={20} />,
+      name: "LinkedIn",
+      external: true,
+    },
+    {
+      href: "https://github.com/md-adil",
+      icon: <GithubIcon size={20} />,
+      name: "GitHub",
+      external: true,
+    },
+    {
+      href: "https://www.npmjs.com/~adil.sudo",
+      icon: <NpmIcon size={20} />,
+      name: "NpmJS",
+      external: true,
+    },
+    {
+      href: "https://yacs.in/@/admin",
+      icon: <ChatIcon size={20} aria-hidden="true" />,
+      name: "Chat",
+      external: true,
+    },
+  ];
+
   return (
-    <section id={SectionId.CONTACT} className="bg-slate-50 py-24" aria-labelledby="contact-heading">
-      <div className="container mx-auto max-w-3xl px-6 text-center md:px-12">
-        <h2 id="contact-heading" className="mb-6 font-serif text-3xl font-bold text-slate-900 md:text-5xl">
-          Let's Build Something Durable.
-        </h2>
-        {/* <p className="text-slate-600 text-lg mb-10">I am currently open to consulting engagements and senior leadership roles.</p> */}
-        <div className="mb-12 flex flex-wrap justify-center gap-6">
-          <a
-            href="mailto:adil.sudo@gmail.com"
-            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
-          >
-            <Mail size={20} aria-hidden="true" /> adil.sudo@gmail.com
-          </a>
-          <a
-            href="tel:+919818128797"
-            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
-          >
-            <Phone size={20} aria-hidden="true" /> +91 98 18 128797
-          </a>
-          <a
-            href="https://linkedin.com/in/md-adil"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
-          >
-            <Linkedin size={20} aria-hidden="true" /> LinkedIn
-          </a>
-          <a
-            href="https://github.com/md-adil"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
-          >
-            <Github size={20} aria-hidden="true" /> GitHub
-          </a>
-          <SocialIcon
-            href="https://www.npmjs.com/~adil.sudo"
-            icon={<IconNode size={20} aria-hidden="true" />}
-            name="NpmJS"
-          />
-          <SocialIcon href="https://yacs.in/@/admin" icon={<ChatIcon size={20} aria-hidden="true" />} name="Chat" />
-        </div>
-        <p className="text-muted text-sm">
-          <MapPin size={14} className="mr-1 inline" aria-hidden="true" />
-          Pune Maharashtra, India
-        </p>
+    <section
+      id={SectionId.CONTACT}
+      className="relative overflow-hidden bg-slate-50 py-24"
+      aria-labelledby="contact-heading"
+    >
+      <AnimatedBackground variant="orbs" />
+      <div className="relative z-10 container mx-auto max-w-3xl px-6 text-center md:px-12">
+        <MotionSection>
+          <h2 id="contact-heading" className="mb-6 font-serif text-3xl font-bold text-slate-900 md:text-5xl">
+            Let's Build Something Durable.
+          </h2>
+        </MotionSection>
+        <StaggerGroup className="mb-12 flex flex-wrap justify-center gap-6">
+          {links.map((link) => (
+            <StaggerItem key={link.name}>
+              {link.external ? (
+                <SocialIcon href={link.href} icon={link.icon} name={link.name} />
+              ) : (
+                <a
+                  href={link.href}
+                  className="text-primary hover:text-body focus:ring-primary flex items-center gap-2 rounded-xs font-medium transition-colors focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
+                >
+                  {link.icon} {link.name}
+                </a>
+              )}
+            </StaggerItem>
+          ))}
+        </StaggerGroup>
+        <MotionSection>
+          <p className="text-muted text-sm">
+            <MapPin size={14} className="mr-1 inline" aria-hidden="true" />
+            Pune Maharashtra, India
+          </p>
+        </MotionSection>
       </div>
     </section>
   );

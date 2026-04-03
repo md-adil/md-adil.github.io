@@ -5,6 +5,8 @@ import { SectionId, skills } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Chip } from "./ui/chip";
 import { Expandable } from "./ui/expandable";
+import { StaggerItem } from "./ui/motion";
+import { AnimatedBackground } from "./ui/animated-background";
 
 export function SkillsSection() {
   const getIcon = (category: string) => {
@@ -21,8 +23,9 @@ export function SkillsSection() {
   };
 
   return (
-    <section id={SectionId.SKILLS} className="bg-slate-50 py-24">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id={SectionId.SKILLS} className="relative overflow-hidden bg-slate-50 py-24">
+      <AnimatedBackground variant="orbs" />
+      <div className="relative z-10 container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Technical Expertise"
           subtitle="A comprehensive toolkit for building scalable, resilient systems."
@@ -35,23 +38,22 @@ export function SkillsSection() {
           className="grid grid-cols-1 gap-8 md:grid-cols-2"
         >
           {skills.map((category, idx) => (
-            <div
-              key={String(idx)}
-              className="group hover:border-secondary rounded-none border-l-4 border-slate-200 bg-white p-8 shadow-xs transition-all duration-300"
-            >
-              <div className="mb-8 flex items-center gap-4">
-                <div className="group-hover:text-secondary rounded-full border border-slate-100 bg-slate-50 p-3 text-slate-600 transition-colors group-hover:bg-blue-50">
-                  {getIcon(category.category)}
+            <StaggerItem key={String(idx)}>
+              <div className="group hover:border-secondary h-full rounded-none border-l-4 border-slate-200 bg-white p-8 shadow-xs transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <div className="mb-8 flex items-center gap-4">
+                  <div className="group-hover:text-secondary rounded-full border border-slate-100 bg-slate-50 p-3 text-slate-600 transition-all duration-300 group-hover:scale-110 group-hover:bg-blue-50">
+                    {getIcon(category.category)}
+                  </div>
+                  <h3 className="text-primary font-serif text-xl font-bold">{category.category}</h3>
                 </div>
-                <h3 className="text-primary font-serif text-xl font-bold">{category.category}</h3>
-              </div>
 
-              <div className="flex flex-wrap gap-2">
-                {category.skills.map((skill, sIdx) => (
-                  <Chip key={sIdx}>{skill}</Chip>
-                ))}
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill, sIdx) => (
+                    <Chip key={sIdx}>{skill}</Chip>
+                  ))}
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
         </Expandable>
       </div>

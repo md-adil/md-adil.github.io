@@ -4,13 +4,16 @@ import { CheckCircle2 } from "lucide-react";
 import { caseStudies, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Expandable } from "./ui/expandable";
+import { MotionSection } from "./ui/motion";
+import { AnimatedBackground } from "./ui/animated-background";
 import { useId } from "react";
 
 export function CaseStudies() {
   const id = useId();
   return (
-    <section id={SectionId.CASE_STUDIES} className="bg-white py-24">
-      <div className="container mx-auto px-6 md:px-12">
+    <section id={SectionId.CASE_STUDIES} className="relative overflow-hidden bg-white py-24">
+      <AnimatedBackground variant="dots" />
+      <div className="relative z-10 container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Case Studies"
           subtitle="Deep dives into complex system challenges and delivered solutions."
@@ -18,11 +21,11 @@ export function CaseStudies() {
 
         <Expandable title="Case Studies" count={2} className="space-y-16">
           {caseStudies.map((study) => (
-            <div
-              id={id + study.id}
+            <MotionSection
               key={study.id}
               className="flex flex-col gap-8 border-t border-slate-100 pt-12 first:border-0 first:pt-0 lg:flex-row lg:gap-16"
             >
+              <div id={id + study.id}></div>
               {/* Left Column: Context */}
               <div className="lg:w-1/3">
                 <h3 className="text-primary mb-2 font-serif text-2xl font-bold">{study.title}</h3>
@@ -67,7 +70,7 @@ export function CaseStudies() {
                   </div>
                 </div>
               </div>
-            </div>
+            </MotionSection>
           ))}
         </Expandable>
       </div>
