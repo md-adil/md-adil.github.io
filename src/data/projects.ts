@@ -2,19 +2,29 @@ import { type Project } from "./types";
 
 export const projects: Project[] = [
   {
-    id: "high-performance-on-demand-image-service",
-    title: "High-Performance On-Demand Image Service",
-    description: `High-concurrency Go service handling 100K req/min. Real-time resizing and format conversion (WebP, AVIF). CDN-cached for millions of requests with minimal origin load.`,
-    technologies: ["Go", "Kubernetes", "CDN"],
-    metric: "100K req/min",
-    github: "https://github.com/md-adil/image-optimizer",
+    id: "os3",
+    title: "Minima.js – Lightweight Node.js Framework",
+    description: `TypeScript-first web framework built from scratch for Bun and Node.js. Features file-based modules, context-aware design using AsyncLocalStorage, Web Standard APIs (Request, Response, File, Blob), and a unified plugin system — all with zero abstraction overhead.`,
+    technologies: ["TypeScript", "Node.js", "Bun", "AsyncLocalStorage", "Web Standards"],
+    metric: "High Throughput / Open Source",
+    link: "https://minimajs.com",
+    github: "https://github.com/minima-js/minimajs",
   },
+
   {
     id: "scalable-video-streaming-platform",
     title: "Scalable Video Streaming Platform (Live & VOD)",
     description: `Video platform supporting 400+ concurrent live streams for millions of users. RTMP/NGINX ingestion with HLS adaptive delivery, DRM protection, and token-based CDN auth. Kubernetes-powered horizontal scaling.`,
     technologies: ["RTMP", "Nginx", "Docker", "Kubernetes", "CDN"],
     metric: "400+ live streams",
+  },
+  {
+    id: "high-performance-on-demand-image-service",
+    title: "High-Performance On-Demand Image Service",
+    description: `High-concurrency Go service handling 100K req/min. Real-time resizing and format conversion (WebP, AVIF). CDN-cached for millions of requests with minimal origin load.`,
+    technologies: ["Go", "Kubernetes", "CDN"],
+    metric: "100K req/min",
+    github: "https://github.com/md-adil/image-optimizer",
   },
   {
     id: "yet-another-chatting-software",
@@ -34,15 +44,7 @@ export const projects: Project[] = [
     npm: "https://www.npmjs.com/package/react-read-otp",
     github: "https://github.com/md-adil/react-read-otp",
   },
-  {
-    id: "os3",
-    title: "Minima.js – Lightweight Node.js Framework",
-    description: "Lightweight Node.js framework built for speed. TypeScript-first, functional approach.",
-    technologies: ["Node.js", "TypeScript", "Functional Programming"],
-    metric: "High Throughput / Open Source",
-    link: "https://minima-js.github.io",
-    github: "https://github.com/minima-js/minimajs",
-  },
+
   {
     id: "os4-ebx",
     title: "ebx",

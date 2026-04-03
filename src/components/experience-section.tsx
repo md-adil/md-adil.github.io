@@ -10,7 +10,7 @@ import { AnimatedBackground } from "./ui/animated-background";
 export function ExperienceSection() {
   return (
     <section id={SectionId.EXPERIENCE} className="relative overflow-hidden bg-white py-24">
-      <AnimatedBackground variant="dots-orbs" />
+      <AnimatedBackground variant="dots" />
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Professional Experience"

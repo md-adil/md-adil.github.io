@@ -6,10 +6,8 @@ import { SectionHeading } from "./section-heading";
 import { Expandable } from "./ui/expandable";
 import { MotionSection } from "./ui/motion";
 import { AnimatedBackground } from "./ui/animated-background";
-import { useId } from "react";
 
 export function CaseStudies() {
-  const id = useId();
   return (
     <section id={SectionId.CASE_STUDIES} className="relative overflow-hidden bg-white py-24">
       <AnimatedBackground variant="dots" />
@@ -25,7 +23,6 @@ export function CaseStudies() {
               key={study.id}
               className="flex flex-col gap-8 border-t border-slate-100 pt-12 first:border-0 first:pt-0 lg:flex-row lg:gap-16"
             >
-              <div id={id + study.id}></div>
               {/* Left Column: Context */}
               <div className="lg:w-1/3">
                 <h3 className="text-primary mb-2 font-serif text-2xl font-bold">{study.title}</h3>

@@ -12,7 +12,7 @@ export function FeaturedProjects() {
   const uniqId = useId();
   return (
     <section id={SectionId.PROJECTS} className="relative overflow-hidden bg-white py-24">
-      <AnimatedBackground variant="orbs" />
+      <AnimatedBackground variant="grid" />
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Selected Works"

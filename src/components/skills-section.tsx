@@ -24,7 +24,7 @@ export function SkillsSection() {
 
   return (
     <section id={SectionId.SKILLS} className="relative overflow-hidden bg-slate-50 py-24">
-      <AnimatedBackground variant="orbs" />
+      <AnimatedBackground variant="grid" />
       <div className="relative z-10 container mx-auto px-6 md:px-12">
         <SectionHeading
           title="Technical Expertise"

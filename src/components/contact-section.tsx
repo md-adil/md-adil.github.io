@@ -69,7 +69,6 @@ export function ContactSection() {
       className="relative overflow-hidden bg-slate-50 py-24"
       aria-labelledby="contact-heading"
     >
-      <AnimatedBackground variant="orbs" />
       <div className="relative z-10 container mx-auto max-w-3xl px-6 text-center md:px-12">
         <MotionSection>
           <h2 id="contact-heading" className="mb-6 font-serif text-3xl font-bold text-slate-900 md:text-5xl">

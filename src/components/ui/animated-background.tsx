@@ -10,14 +10,13 @@ export function AnimatedBackground({
   variant = "dots",
   className = "",
 }: {
-  variant?: "dots" | "grid" | "orbs" | "dots-orbs";
+  variant?: "dots" | "grid";
   className?: string;
 }) {
   return (
     <div className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`} aria-hidden="true">
-      {(variant === "dots" || variant === "dots-orbs") && <DotGrid />}
+      {variant === "dots" && <DotGrid />}
       {variant === "grid" && <LineGrid />}
-      {(variant === "orbs" || variant === "dots-orbs") && <FloatingOrbs />}
     </div>
   );
 }
@@ -62,55 +61,6 @@ function LineGrid() {
         }}
       />
     </motion.div>
-  );
-}
-
-function FloatingOrbs() {
-  const orbs = [
-    {
-      size: "h-80 w-80",
-      color: "bg-blue-400/10",
-      position: "top-[5%] left-[5%]",
-      duration: 6,
-      delay: 0,
-    },
-    {
-      size: "h-96 w-96",
-      color: "bg-indigo-400/7",
-      position: "top-[50%] right-[5%]",
-      duration: 8,
-      delay: 1,
-    },
-    {
-      size: "h-72 w-72",
-      color: "bg-sky-400/10",
-      position: "bottom-[10%] left-[25%]",
-      duration: 7,
-      delay: 2,
-    },
-  ];
-  return (
-    <>
-      {orbs.map((orb, i) => (
-        <motion.div
-          key={i}
-          className={`absolute rounded-full blur-2xl ${orb.size} ${orb.color} ${orb.position}`}
-          animate={{
-            x: [0, 40, -30, 20, 0],
-            y: [0, -30, 20, -15, 0],
-            scale: [1, 1.08, 0.95, 1.04, 1],
-          }}
-          transition={{
-            duration: orb.duration,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-            delay: orb.delay,
-            times: [0, 0.25, 0.5, 0.75, 1],
-          }}
-        />
-      ))}
-    </>
   );
 }
 
