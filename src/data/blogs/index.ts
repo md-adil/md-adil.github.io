@@ -1,12 +1,12 @@
-import { type BlogPost } from "./types";
-import argocdGitops from "./blogs/argocd-gitops.json" with { type: "json" };
-import capsuleDesignSystem from "./blogs/capsule-design-system.json" with { type: "json" };
-import laravelOctane from "./blogs/laravel-octane.json" with { type: "json" };
-import lizard from "./blogs/lizard.json" with { type: "json" };
-import microservices from "./blogs/microservices.json" with { type: "json" };
-import minimajs from "./blogs/minimajs.json" with { type: "json" };
-import observability from "./blogs/observability.json" with { type: "json" };
-import proxysqlHorizontalScaling from "./blogs/proxysql-horizontal-scaling.json" with { type: "json" };
+import { type BlogPost } from "../types";
+import argocdGitops from "./argocd-gitops.json" with { type: "json" };
+import capsuleDesignSystem from "./capsule-design-system.json" with { type: "json" };
+import laravelOctane from "./laravel-octane.json" with { type: "json" };
+import lizard from "./lizard.json" with { type: "json" };
+import microservices from "./microservices.json" with { type: "json" };
+import minimajs from "./minimajs.json" with { type: "json" };
+import observability from "./observability.json" with { type: "json" };
+import proxysqlHorizontalScaling from "./proxysql-horizontal-scaling.json" with { type: "json" };
 
 /** Post metadata keyed by slug; each entry lives in `./blogs/<slug>.json`. */
 export const blogPosts = {

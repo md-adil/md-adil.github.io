@@ -7,4 +7,4 @@ export * from "./education";
 export * from "./skills";
 export * from "./projects";
 export * from "./case-studies";
-export * from "./blog-posts";
+export * from "./blogs";
