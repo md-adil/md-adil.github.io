@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-import { BlogHeader } from "@/components/blog/blog-header";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { formatDate } from "@/components/blog/format-date";
 import { Badge } from "@/components/ui/badge";
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
 export default function BlogIndex() {
   return (
     <div className="bg-background min-h-screen">
-      <BlogHeader />
-      <main className="container mx-auto px-6 py-16 md:px-12 md:py-24">
+      <Navigation />
+      <main className="container mx-auto px-6 pt-32 pb-16 md:px-12 md:pt-40 md:pb-24">
         <MotionSection className="mb-16">
           <p className="text-secondary mb-3 text-sm font-bold tracking-widest uppercase">Engineering Blog</p>
           <h1 className="text-primary mb-6 font-serif text-4xl font-bold md:text-5xl">Notes from the field</h1>

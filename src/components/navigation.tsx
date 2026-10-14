@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X, Layers } from "lucide-react";
 import { personalInfo, SectionId } from "@/data";
 import { Button } from "./ui/button";
@@ -10,6 +11,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
+  const onBlog = usePathname().startsWith("/blog");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,11 +36,12 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Section links are absolute (/#id) so the same nav works on blog pages; on the home page they only scroll.
   const NavLink = ({ to, children }: { to: SectionId; children: React.ReactNode }) => {
-    const isActive = activeSection === to;
+    const isActive = !onBlog && activeSection === to;
     return (
       <a
-        href={`#${to}`}
+        href={`/#${to}`}
         onClick={() => setMobileMenuOpen(false)}
         className={`focus:ring-primary rounded-xs text-sm font-medium whitespace-nowrap transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-hidden ${isActive ? "text-primary font-bold" : "text-muted hover:text-primary"}`}
       >
@@ -50,7 +53,8 @@ export function Navigation() {
   const BlogLink = () => (
     <Link
       href="/blog/"
-      className="text-muted hover:text-primary focus:ring-primary rounded-xs text-sm font-medium whitespace-nowrap transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
+      onClick={() => setMobileMenuOpen(false)}
+      className={`focus:ring-primary rounded-xs text-sm font-medium whitespace-nowrap transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-hidden ${onBlog ? "text-primary font-bold" : "text-muted hover:text-primary"}`}
     >
       Blog
     </Link>
@@ -66,7 +70,7 @@ export function Navigation() {
     >
       <div className="container mx-auto flex items-center justify-between px-6 md:px-12">
         <a
-          href="#hero"
+          href={`/#${SectionId.HERO}`}
           className="focus:ring-primary flex items-center gap-2 rounded-xs focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
           aria-label="Go to top"
         >
@@ -92,7 +96,7 @@ export function Navigation() {
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
           <BlogLink />
           <Button asChild rounded className="ml-2 shadow-lg transition-all hover:shadow-xl">
-            <a href={`#${SectionId.CONTACT}`}>Contact</a>
+            <a href={`/#${SectionId.CONTACT}`}>Contact</a>
           </Button>
         </div>
 

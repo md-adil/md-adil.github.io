@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2 } from "lucide-react";
-import { BlogHeader } from "@/components/blog/blog-header";
+import { Navigation } from "@/components/navigation";
 import { Footer } from "@/components/footer";
 import { formatDate } from "@/components/blog/format-date";
 import { ReadingProgress } from "@/components/blog/reading-progress";
@@ -93,10 +93,10 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <div className="bg-background min-h-screen">
       <ReadingProgress />
-      <BlogHeader />
+      <Navigation />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <main>
-        <article className="container mx-auto px-6 py-16 md:px-12 md:py-24">
+        <article className="container mx-auto px-6 pt-32 pb-16 md:px-12 md:pt-40 md:pb-24">
           <Link
             href="/blog/"
             className="text-muted hover:text-primary mb-10 inline-flex items-center gap-2 text-sm font-medium transition-colors"
