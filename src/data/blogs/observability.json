@@ -1,0 +1,7 @@
+{
+  "title": "Cutting MTTR from Hours to Minutes with a Real Observability Stack",
+  "description": "Incidents are slow because diagnosis is slow. How correlated metrics, logs and traces, and alerts based on error budgets, took resolution time from four hours to thirty minutes.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 8,
+  "tags": ["Observability", "Grafana", "Prometheus", "SRE"]
+}

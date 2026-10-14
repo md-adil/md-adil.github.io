@@ -1,0 +1,7 @@
+{
+  "title": "From 800ms to 50ms: Migrating PHP-FPM to Laravel Octane",
+  "description": "PHP-FPM rebuilds your application on every request. What it costs, what changes when the application stays in memory, and the bugs you must remove first.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 8,
+  "tags": ["PHP", "Laravel", "Performance", "Swoole"]
+}

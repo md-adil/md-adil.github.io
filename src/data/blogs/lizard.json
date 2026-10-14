@@ -1,0 +1,7 @@
+{
+  "title": "Lizard: One Console for All Your Databases",
+  "description": "Microservices split your data across many databases, and everyday questions need it back together. What Lizard does, how it joins data across databases, and why it's safe to let AI write the queries.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 9,
+  "tags": ["AI", "Databases", "DuckDB", "Security"]
+}

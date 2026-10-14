@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { Menu, X, Layers } from "lucide-react";
 import { personalInfo, SectionId } from "@/data";
 import { Button } from "./ui/button";
@@ -46,6 +47,15 @@ export function Navigation() {
     );
   };
 
+  const BlogLink = () => (
+    <Link
+      href="/blog/"
+      className="text-muted hover:text-primary focus:ring-primary rounded-xs text-sm font-medium whitespace-nowrap transition-all duration-200 focus:ring-2 focus:ring-offset-2 focus:outline-hidden"
+    >
+      Blog
+    </Link>
+  );
+
   return (
     <nav
       className={`fixed top-0 right-0 left-0 z-40 border-b transition-all duration-300 ${
@@ -80,6 +90,7 @@ export function Navigation() {
           <NavLink to={SectionId.EXPERIENCE}>Experience</NavLink>
           <NavLink to={SectionId.PROJECTS}>Projects / Open Source</NavLink>
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
+          <BlogLink />
           <Button asChild rounded className="ml-2 shadow-lg transition-all hover:shadow-xl">
             <a href={`#${SectionId.CONTACT}`}>Contact</a>
           </Button>
@@ -107,6 +118,7 @@ export function Navigation() {
           <NavLink to={SectionId.EXPERIENCE}>Experience</NavLink>
           <NavLink to={SectionId.EDUCATION}>Education</NavLink>
           <NavLink to={SectionId.PROJECTS}>Projects / Open Source</NavLink>
+          <BlogLink />
           <NavLink to={SectionId.CONTACT}>Contact</NavLink>
         </div>
       )}

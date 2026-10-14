@@ -1,0 +1,7 @@
+{
+  "title": "Scaling MySQL Reads Horizontally with ProxySQL",
+  "description": "Why a database can run out of connections while its CPU sits idle, why PHP and Knex make that hard to fix in code, and how a protocol-aware proxy resolves it.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 9,
+  "tags": ["MySQL", "ProxySQL", "Databases", "High Availability"]
+}

@@ -1,7 +1,8 @@
 "use client";
 
-import { CheckCircle2 } from "lucide-react";
-import { caseStudies, SectionId } from "@/data";
+import Link from "next/link";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import { caseStudies, isBlogSlug, SectionId } from "@/data";
 import { SectionHeading } from "./section-heading";
 import { Expandable } from "./ui/expandable";
 import { MotionSection } from "./ui/motion";
@@ -27,6 +28,15 @@ export function CaseStudies() {
               <div className="lg:w-1/3">
                 <h3 className="text-primary mb-2 font-serif text-2xl font-bold">{study.title}</h3>
                 <p className="text-secondary mb-6 font-medium">{study.client}</p>
+                {isBlogSlug(study.id) && (
+                  <Link
+                    href={`/blog/${study.id}/`}
+                    className="group text-secondary mb-6 inline-flex items-center gap-1 text-sm font-bold"
+                  >
+                    Read the full write-up
+                    <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
+                  </Link>
+                )}
                 <div className="mb-6">
                   <h4 className="text-muted mb-3 text-sm font-bold tracking-widest uppercase">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">

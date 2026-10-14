@@ -1,0 +1,7 @@
+{
+  "title": "GitOps at Scale: Moving 600+ Microservices to ArgoCD",
+  "description": "Push-based deployments leave production defined by its history. Here is what changed when six hundred services moved to a pull-based model with Git as the source of truth.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 8,
+  "tags": ["GitOps", "ArgoCD", "Kubernetes", "Azure DevOps"]
+}

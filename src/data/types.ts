@@ -43,6 +43,15 @@ export interface CaseStudy {
   technologies: string[];
 }
 
+/** Blog post metadata; the slug is its key in `blogPosts` (and matches a case study id where one exists). */
+export interface BlogPost {
+  title: string;
+  description: string;
+  publishedAt: string;
+  readingMinutes: number;
+  tags: string[];
+}
+
 export enum SectionId {
   HERO = "hero",
   ABOUT = "about",

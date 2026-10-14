@@ -1,0 +1,7 @@
+{
+  "title": "Strangling a Monolith: A Practical Path to Microservices on Kubernetes",
+  "description": "Breaking up a monolith without a rewrite. The services are the easy part; data ownership and the arithmetic of failure decide whether it works.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 8,
+  "tags": ["Architecture", "Microservices", "Kubernetes"]
+}

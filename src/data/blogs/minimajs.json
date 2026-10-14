@@ -1,0 +1,7 @@
+{
+  "title": "The Problems Minima.js Was Written to Solve",
+  "description": "Request objects threaded through every layer, central route wiring, middleware whose scope depends on line order, and framework-specific HTTP types. An author's account of each problem and the design response.",
+  "publishedAt": "2026-10-14",
+  "readingMinutes": 9,
+  "tags": ["TypeScript", "Node.js", "Bun", "Open Source"]
+}

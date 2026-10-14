@@ -1,6 +1,11 @@
 @import "tailwindcss";
 
 @plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+/* The site is light-only: tie dark: variants (used by shadcn components) to a .dark class
+   instead of the OS color scheme, so they never apply on their own. */
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-body: var(--color-slate-600);
@@ -63,6 +68,59 @@
   h5,
   h6 {
     font-family: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  }
+}
+
+/* Prism syntax highlighting for blog code blocks (dark background) */
+@layer components {
+  .token.comment,
+  .token.prolog,
+  .token.doctype,
+  .token.cdata {
+    @apply text-slate-500 italic;
+  }
+  .token.punctuation {
+    @apply text-slate-400;
+  }
+  .token.property,
+  .token.key,
+  .token.tag,
+  .token.constant,
+  .token.symbol {
+    @apply text-sky-300;
+  }
+  .token.boolean,
+  .token.number {
+    @apply text-amber-300;
+  }
+  .token.string,
+  .token.char,
+  .token.attr-value,
+  .token.inserted {
+    @apply text-emerald-300;
+  }
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .token.variable {
+    @apply text-slate-200;
+  }
+  .token.keyword,
+  .token.atrule,
+  .token.important {
+    @apply text-violet-300;
+  }
+  .token.function,
+  .token.class-name {
+    @apply text-blue-300;
+  }
+  .token.attr-name,
+  .token.builtin,
+  .token.selector {
+    @apply text-teal-300;
+  }
+  .token.deleted {
+    @apply text-rose-300;
   }
 }
 

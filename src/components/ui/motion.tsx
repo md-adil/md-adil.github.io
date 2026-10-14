@@ -70,7 +70,9 @@ export function useScrollReveal(options?: { once?: boolean; margin?: string; amo
   const inView = useInView(ref, {
     once: options?.once ?? true,
     margin: (options?.margin ?? "0px 0px -80px 0px") as `${number}px ${number}px ${number}px ${number}px`,
-    amount: options?.amount ?? 0.1,
+    // Trigger as soon as the element's top edge enters (minus the margin). A fractional amount never
+    // fires for elements taller than ~10× the viewport, e.g. a full article body, leaving them invisible.
+    amount: options?.amount ?? 0,
   });
   return { ref, inView };
 }
